@@ -51,7 +51,7 @@
         </style>
     </head>
     <body>
-        <div id="nav">
+<!--        <div id="nav">
             <div class="homePagePanel">
                 <div class="panelTop"></div>
                 <div class="panelBody">
@@ -79,16 +79,15 @@
                 </div>
                 <div class="panelBtm"></div>
             </div>
-        </div>
-        <div id="pageBody">
-            <h1>Welcome to Grails</h1>
-            <p>Congratulations, you have successfully started your first Grails application! At the moment
-            this is the default page, feel free to modify it to either redirect to a controller or display whatever
-            content you may choose. Below is a list of controllers that are currently deployed in this application,
-            click on each to execute its default action:</p>
+        </div>-->
+
+        <div id="body">
+            <h1>Bienvenido al Sistema de Control de Feligresia de la IASD</h1>
+            
+            <p>Aqui usted podra administrar los datos de los miembros de su Distrito, con las siguientes opciones:</p>
 
             <div id="controllerList" class="dialog">
-                <h2>Available Controllers:</h2>
+                <h2>Controladores Activos:</h2>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
                         <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
