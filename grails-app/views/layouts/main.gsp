@@ -15,7 +15,7 @@
 
       <!--        Llamando al Topbar-->
         <div id="header">
-          <h1>Siscofe</h1>
+          <h1>Sistema de Control de Feligresia de la IASD</h1>
         </div>
 
         <div id="content">

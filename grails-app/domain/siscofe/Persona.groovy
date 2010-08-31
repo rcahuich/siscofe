@@ -30,4 +30,8 @@ class Persona {
         apellidoMaterno index:'persona_apellido_materno_idx','persona_nombre_completo_idx'
     }
 
+    String toString () {
+        "$nombre $apellidoPaterno $apellidoMaterno"
+    }
+
 }
