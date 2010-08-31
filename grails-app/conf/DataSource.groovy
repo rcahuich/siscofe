@@ -27,7 +27,6 @@ environments {
     }
     production {
         dataSource {
-
         }
     }
 }

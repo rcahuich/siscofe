@@ -80,4 +80,10 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+
+    debug  'grails.app'
+}
+
+grails.gorm.default.mapping = {
+    id generator:'identity'
 }
