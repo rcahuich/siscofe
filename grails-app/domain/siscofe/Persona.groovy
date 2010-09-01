@@ -12,6 +12,12 @@ class Persona {
     String nivelEstudio
     String religionAnterior
     String codigo
+    //List direcciones
+    //Membresia membresia
+    //List correosElectronicos
+    //List telefonos
+    //List hijos
+    //List oficios
 
     static constraints = {
         nombre maxSize:64, blank:false

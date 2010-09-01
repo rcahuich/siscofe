@@ -15,7 +15,7 @@
 
       <!--        Llamando al Topbar-->
         <div id="header">
-          <h1>Sistema de Control de Feligresia de la IASD</h1>
+          <h1>Sistema de Informacion y Control de Feligresia para la Iglesia Adventista del Septimo Dia</h1>
         </div>
 
         <div id="content">

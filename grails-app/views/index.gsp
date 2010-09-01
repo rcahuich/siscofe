@@ -82,7 +82,7 @@
         </div>-->
 
         <div id="body">
-            <h1>Bienvenido al Sistema de Control de Feligresia de la IASD</h1>
+            <h1>Bienvenido</h1>
             
             <p>Aqui usted podra administrar los datos de los miembros de su Distrito, con las siguientes opciones:</p>
 
