@@ -36,6 +36,27 @@
                             
                         </tr>
                     
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="membresia.iglesia.label" default="Iglesia" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="iglesia" action="show" id="${membresiaInstance?.iglesia?.id}">${membresiaInstance?.iglesia?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="membresia.tipoIngreso.label" default="Tipo Ingreso" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: membresiaInstance, field: "tipoIngreso")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="membresia.bautismo.label" default="Bautismo" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="bautismo" action="show" id="${membresiaInstance?.bautismo?.id}">${membresiaInstance?.bautismo?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
                     </tbody>
                 </table>
             </div>

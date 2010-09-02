@@ -26,6 +26,12 @@
                         
                             <th><g:message code="membresia.persona.label" default="Persona" /></th>
                         
+                            <th><g:message code="membresia.iglesia.label" default="Iglesia" /></th>
+                        
+                            <g:sortableColumn property="tipoIngreso" title="${message(code: 'membresia.tipoIngreso.label', default: 'Tipo Ingreso')}" />
+                        
+                            <th><g:message code="membresia.bautismo.label" default="Bautismo" /></th>
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +41,12 @@
                             <td><g:link action="show" id="${membresiaInstance.id}">${fieldValue(bean: membresiaInstance, field: "id")}</g:link></td>
                         
                             <td>${fieldValue(bean: membresiaInstance, field: "persona")}</td>
+                        
+                            <td>${fieldValue(bean: membresiaInstance, field: "iglesia")}</td>
+                        
+                            <td>${fieldValue(bean: membresiaInstance, field: "tipoIngreso")}</td>
+                        
+                            <td>${fieldValue(bean: membresiaInstance, field: "bautismo")}</td>
                         
                         </tr>
                     </g:each>

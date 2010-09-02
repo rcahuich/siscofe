@@ -40,6 +40,33 @@
                                 </td>
                             </tr>
                         
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="iglesia"><g:message code="membresia.iglesia.label" default="Iglesia" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: membresiaInstance, field: 'iglesia', 'errors')}">
+                                    <g:select name="iglesia.id" from="${siscofe.Iglesia.list()}" optionKey="id" value="${membresiaInstance?.iglesia?.id}"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="tipoIngreso"><g:message code="membresia.tipoIngreso.label" default="Tipo Ingreso" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: membresiaInstance, field: 'tipoIngreso', 'errors')}">
+                                    <g:select name="tipoIngreso" from="${membresiaInstance.constraints.tipoIngreso.inList}" value="${membresiaInstance?.tipoIngreso}" valueMessagePrefix="membresia.tipoIngreso"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="bautismo"><g:message code="membresia.bautismo.label" default="Bautismo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: membresiaInstance, field: 'bautismo', 'errors')}">
+                                    <g:select name="bautismo.id" from="${siscofe.Bautismo.list()}" optionKey="id" value="${membresiaInstance?.bautismo?.id}"  />
+                                </td>
+                            </tr>
+                        
                         </tbody>
                     </table>
                 </div>

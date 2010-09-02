@@ -42,10 +42,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="nombrePastorQueBautizo"><g:message code="bautismo.nombrePastorQueBautizo.label" default="Nombre Pastor Que Bautizo" /></label>
+                                  <label for="ministroOficiante"><g:message code="bautismo.ministroOficiante.label" default="Ministro Oficiante" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'nombrePastorQueBautizo', 'errors')}">
-                                    <g:textField name="nombrePastorQueBautizo" maxlength="64" value="${bautismoInstance?.nombrePastorQueBautizo}" />
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'ministroOficiante', 'errors')}">
+                                    <g:textField name="ministroOficiante" maxlength="64" value="${bautismoInstance?.ministroOficiante}" />
                                 </td>
                             </tr>
                         
@@ -73,6 +73,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroVotoJuntaDirectiva', 'errors')}">
                                     <g:textField name="numeroVotoJuntaDirectiva" maxlength="10" value="${bautismoInstance?.numeroVotoJuntaDirectiva}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="numeroBautismo"><g:message code="bautismo.numeroBautismo.label" default="Numero Bautismo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroBautismo', 'errors')}">
+                                    <g:textField name="numeroBautismo" value="${fieldValue(bean: bautismoInstance, field: 'numeroBautismo')}" />
                                 </td>
                             </tr>
                         

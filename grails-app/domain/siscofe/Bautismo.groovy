@@ -15,7 +15,7 @@ class Bautismo {
     Iglesia iglesia
     //Persona adoctrinador
 
-    static belongsTo = Persona
+    static belongsTo = Membresia
 
     static constraints = {
         lugarBautismo maxSize:64, blank:false

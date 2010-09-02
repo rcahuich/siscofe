@@ -26,7 +26,7 @@
                         
                             <g:sortableColumn property="lugarBautismo" title="${message(code: 'bautismo.lugarBautismo.label', default: 'Lugar Bautismo')}" />
                         
-                            <g:sortableColumn property="nombrePastorQueBautizo" title="${message(code: 'bautismo.nombrePastorQueBautizo.label', default: 'Nombre Pastor Que Bautizo')}" />
+                            <g:sortableColumn property="ministroOficiante" title="${message(code: 'bautismo.ministroOficiante.label', default: 'Ministro Oficiante')}" />
                         
                             <g:sortableColumn property="cursoBiblico" title="${message(code: 'bautismo.cursoBiblico.label', default: 'Curso Biblico')}" />
                         
@@ -44,7 +44,7 @@
                         
                             <td>${fieldValue(bean: bautismoInstance, field: "lugarBautismo")}</td>
                         
-                            <td>${fieldValue(bean: bautismoInstance, field: "nombrePastorQueBautizo")}</td>
+                            <td>${fieldValue(bean: bautismoInstance, field: "ministroOficiante")}</td>
                         
                             <td>${fieldValue(bean: bautismoInstance, field: "cursoBiblico")}</td>
                         

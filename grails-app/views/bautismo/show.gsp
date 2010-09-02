@@ -37,9 +37,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="bautismo.nombrePastorQueBautizo.label" default="Nombre Pastor Que Bautizo" /></td>
+                            <td valign="top" class="name"><g:message code="bautismo.ministroOficiante.label" default="Ministro Oficiante" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "nombrePastorQueBautizo")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "ministroOficiante")}</td>
                             
                         </tr>
                     
@@ -61,6 +61,13 @@
                             <td valign="top" class="name"><g:message code="bautismo.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaDirectiva")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="bautismo.numeroBautismo.label" default="Numero Bautismo" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "numeroBautismo")}</td>
                             
                         </tr>
                     
