@@ -2,7 +2,6 @@ package siscofe
 
 class Membresia {
     Persona persona
-
     Iglesia iglesia
     Bautismo bautismo
     String tipoIngreso
