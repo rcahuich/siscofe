@@ -87,3 +87,15 @@ log4j = {
 grails.gorm.default.mapping = {
     id generator:'identity'
 }
+
+
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'roles.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'roles.UserRole'
+grails.plugins.springsecurity.authority.className = 'roles.Role'
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'roles.Usuario'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'roles.UsuarioRol'
+grails.plugins.springsecurity.authority.className = 'roles.Rol'

@@ -12,12 +12,15 @@ class Persona {
     String nivelEstudio
     String religionAnterior
     String codigo
+    Set bautismos
     //List direcciones
     //Membresia membresia
     //List correosElectronicos
     //List telefonos
     //List hijos
     //List oficios
+
+    static hasMany = [bautismos : Bautismo]
 
     static constraints = {
         nombre maxSize:64, blank:false

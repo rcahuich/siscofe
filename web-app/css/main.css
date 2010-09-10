@@ -341,3 +341,11 @@ body {
     color: #000;
     padding: 3px;
 }
+
+#status {
+    position: inherit;
+    top: 20px;
+    right: 6px;
+    text-align: right;
+    color: white;
+}

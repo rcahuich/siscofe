@@ -15,7 +15,15 @@
 
       <!--        Llamando al Topbar-->
         <div id="header">
-          <h1>Sistema de Informacion y Control de Feligresia para la Iglesia Adventista del Septimo Dia</h1>
+          <h1>Siscofe</h1>
+
+          <div id="status">
+                <sec:ifLoggedIn>
+                Bienvenido <sec:loggedInUserInfo field="username" /><br/>
+
+                </sec:ifLoggedIn>
+          </div>
+          
         </div>
 
         <div id="content">
