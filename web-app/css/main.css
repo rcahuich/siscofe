@@ -293,10 +293,10 @@ th.desc a {
 }
 
 #header {
-    width: 1000px;
+    width: auto;
     background: #FFFFFF repeat-x;
     height: 70px;
-    margin: 0px auto;
+    margin: 0px auto;   
     background-color: #336600;
 }
 
@@ -343,7 +343,7 @@ body {
 }
 
 #status {
-    position: inherit;
+    margin-right: auto;
     top: 20px;
     right: 6px;
     text-align: right;

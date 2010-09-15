@@ -15,8 +15,11 @@
 
             <span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id]" class="create" action="create" > <g:message code="Agregar Inf. Bautismo" /></g:link></span>
 
+            <span class="menuButton"><g:link controller="bautismo" params="[bautismoId:personaInstance.id]" class="show" action="show" > <g:message code="Ver Inf. Bautismo" /></g:link></span>
+        
         </div>
         <div class="body">
+          
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
@@ -108,6 +111,7 @@
                             <td valign="top" class="value"><g:formatBoolean boolean="${personaInstance?.sabeLeer}" /></td>
                             
                         </tr>
+                    
                     
                     </tbody>
                 </table>

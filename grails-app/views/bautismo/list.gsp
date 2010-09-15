@@ -10,7 +10,7 @@
     <body>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+<!--            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>-->
         </div>
         <div class="body">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
@@ -24,16 +24,16 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'bautismo.id.label', default: 'Id')}" />
                         
+                            <g:sortableColumn property="persona" title="${message(code: 'bautismo.persona.label', default: 'Persona')}" />
+
+                            <g:sortableColumn property="iglesia" title="${message(code: 'bautismo.iglesia.label', default: 'Iglesia')}" />
+
+                            <g:sortableColumn property="ministroOficiante" title="${message(code: 'bautismo.ministroOficiante.label', default: 'Ministro Oficiante')}" />
+
                             <g:sortableColumn property="lugarBautismo" title="${message(code: 'bautismo.lugarBautismo.label', default: 'Lugar Bautismo')}" />
                         
-                            <g:sortableColumn property="ministroOficiante" title="${message(code: 'bautismo.ministroOficiante.label', default: 'Ministro Oficiante')}" />
-                        
-                            <g:sortableColumn property="cursoBiblico" title="${message(code: 'bautismo.cursoBiblico.label', default: 'Curso Biblico')}" />
-                        
-                            <g:sortableColumn property="numeroVotoJuntaAdministrativa" title="${message(code: 'bautismo.numeroVotoJuntaAdministrativa.label', default: 'Numero Voto Junta Administrativa')}" />
-                        
-                            <g:sortableColumn property="numeroVotoJuntaDirectiva" title="${message(code: 'bautismo.numeroVotoJuntaDirectiva.label', default: 'Numero Voto Junta Directiva')}" />
-                        
+                            <g:sortableColumn property="fechaBautismo" title="${message(code: 'bautismo.fechaBautismo.label', default: 'Fecha de Bautizo')}" />
+
                         </tr>
                     </thead>
                     <tbody>
@@ -42,15 +42,15 @@
                         
                             <td><g:link action="show" id="${bautismoInstance.id}">${fieldValue(bean: bautismoInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: bautismoInstance, field: "lugarBautismo")}</td>
-                        
+                            <td>${fieldValue(bean: bautismoInstance, field: "persona")}</td>
+
+                            <td>${fieldValue(bean: bautismoInstance, field: "iglesia")}</td>
+
                             <td>${fieldValue(bean: bautismoInstance, field: "ministroOficiante")}</td>
-                        
-                            <td>${fieldValue(bean: bautismoInstance, field: "cursoBiblico")}</td>
-                        
-                            <td>${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaAdministrativa")}</td>
-                        
-                            <td>${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaDirectiva")}</td>
+
+                            <td>${fieldValue(bean: bautismoInstance, field: "lugarBautismo")}</td>
+
+                            <td>${fieldValue(bean: bautismoInstance, field: "fechaBautismo")}</td>
                         
                         </tr>
                     </g:each>

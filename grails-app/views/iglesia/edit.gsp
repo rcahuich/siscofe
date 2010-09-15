@@ -40,6 +40,21 @@
                                 </td>
                             </tr>
                         
+                            <tr class="prop">
+                              <td valign="top" class="name">
+                                <label for="direcciones"><g:message code="iglesia.direcciones.label" default="Direcciones" /></label>
+                              </td>
+
+                              <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direcciones', 'errors')}">
+                                <ul>
+                                  <g:each in="${iglesiaInstance?.direcciones?}" var="d">
+                                    <li><g:link controller="direccion" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></li>
+                                  </g:each>
+                                </ul>
+                                    <g:link controller="direccion" action="create" params="['iglesia.id': iglesiaInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'direccion.label', default: 'Direccion')])}</g:link>
+                              </td>
+                             </tr>
+                        
                         </tbody>
                     </table>
                 </div>

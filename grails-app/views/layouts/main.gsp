@@ -1,47 +1,33 @@
 <html>
     <head>
-        <title><g:layoutTitle default="Grails" /></title>
+        <title>Siscofe - <g:layoutTitle default="Grails" /></title>
         <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}" />
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
         <g:layoutHead />
         <g:javascript library="application" />
     </head>
 
+
+
     <body>
       <div id="page">
         <div id="spinner" class="spinner" style="display:none;">
-            <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
+          <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
         </div>
 
-      <!--        Llamando al Topbar-->
         <div id="header">
-          <h1>Siscofe</h1>
-
-          <div id="status">
-                <sec:ifLoggedIn>
-                Bienvenido <sec:loggedInUserInfo field="username" /><br/>
-
-                </sec:ifLoggedIn>
-          </div>
-          
+          <g:render template="/common/header" />
         </div>
-
-        <div id="content">
-          <g:layoutBody />
-        </div>
-
-        <div id="sidebar">
-          <g:render template="/common/buddies" />
-        </div>
-
         
-
-<!--        <div id="grailsLogo"><a href="http://grails.org"><img src="${resource(dir:'images',file:'grails_logo.png')}" alt="Grails" border="0" /></a></div>-->
         <g:layoutBody />
 
+<!--        <div id="grailsLogo"><a href="http://grails.org"><img src="${resource(dir:'images',file:'grails_logo.png')}" alt="Grails" border="0" /></a></div>-->
+
+        
         <div id="footer">
           <g:render template="/common/footer" />
         </div>
+
       </div>
     </body>
 </html>
