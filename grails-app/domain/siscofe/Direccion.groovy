@@ -1,7 +1,7 @@
 package siscofe
 
 class Direccion {
-    Iglesia iglesia
+//    Iglesia iglesia
     String pais
     String estado
     String municipio
@@ -11,14 +11,9 @@ class Direccion {
     String calle
     String numero
     String codigoPostal
-    boolean _deleted
+    
 
-
-    //static belongsTo = Iglesia//muchos a uno
-
-    static transients = ['_deleted']
-
-    static belongsTo = [iglesia:Iglesia]
+//    static belongsTo = Iglesia
 
 
     static constraints = {
@@ -38,6 +33,6 @@ class Direccion {
     }
 
     String toString () {
-        "Cd. de $ciudad, $ejido Col. $colonia, Calle $calle Num. $numero, CP: $codigoPostal"
+        "Mun. $municipio, Cd. de $ciudad, $ejido Col. $colonia, Calle $calle Num. $numero, CP: $codigoPostal"
     }
 }

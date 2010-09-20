@@ -1,18 +1,20 @@
 
 
+<%@ page import="siscofe.Iglesia" %>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <title>Create iglesia</title>
+        <g:set var="entityName" value="${message(code: 'iglesia.label', default: 'Iglesia')}" />
+        <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${resource(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">Iglesia List</g:link></span>
+            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+            <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
-            <h1>Create iglesia</h1>
+            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -21,7 +23,6 @@
                 <g:renderErrors bean="${iglesiaInstance}" as="list" />
             </div>
             </g:hasErrors>
-
             <g:form action="save" >
                 <div class="dialog">
                     <table>
@@ -35,12 +36,103 @@
                                     <g:textField name="nombre" maxlength="64" value="${iglesiaInstance?.nombre}" />
                                 </td>
                             </tr>
-                        
 
-            <g:form action="save" method="post" >
-                <g:render template="iglesia" model="['iglesiaInstance':iglesiaInstance]"/>
+
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <h4><g:message code="direccion" default="Dirección" /></h4>
+                                </td>
+                                <td
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.pais"><g:message code="direccion.pais.label" default="Pais" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.pais', 'errors')}">
+                                    <g:textField name="direccion.pais" maxlength="16" value="${iglesiaInstance?.direccion?.pais}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.estado"><g:message code="direccion.estado.label" default="Estado" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.estado', 'errors')}">
+                                    <g:textField name="direccion.estado" maxlength="16" value="${iglesiaInstance?.direccion?.estado}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.municipio"><g:message code="direccion.municipio.label" default="Municipio" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.municipio', 'errors')}">
+                                    <g:textField name="direccion.municipio" maxlength="32" value="${iglesiaInstance?.direccion?.municipio}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.ciudad"><g:message code="direccion.ciudad.label" default="Ciudad" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.ciudad', 'errors')}">
+                                    <g:textField name="direccion.ciudad" maxlength="32" value="${iglesiaInstance?.direccion?.ciudad}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.ejido"><g:message code="direccion.ejido.label" default="Ejido" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.ejido', 'errors')}">
+                                    <g:textField name="direccion.ejido" maxlength="32" value="${iglesiaInstance?.direccion?.ejido}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.colonia"><g:message code="direccion.colonia.label" default="Colonia" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.colonia', 'errors')}">
+                                    <g:textField name="direccion.colonia" maxlength="32" value="${iglesiaInstance?.direccion?.colonia}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.calle"><g:message code="direccion.calle.label" default="Calle" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.calle', 'errors')}">
+                                    <g:textField name="direccion.calle" maxlength="32" value="${iglesiaInstance?.direccion?.calle}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.numero"><g:message code="direccion.numero.label" default="Numero" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.numero', 'errors')}">
+                                    <g:textField name="direccion.numero" maxlength="8" value="${iglesiaInstance?.direccion?.numero}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.codigoPostal"><g:message code="direccion.codigoPostal.label" default="Codigo Postal" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.codigoPostal', 'errors')}">
+                                    <g:textField name="direccion.codigoPostal" maxlength="16" value="${iglesiaInstance?.direccion?.codigoPostal}" />
+                                </td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="create" /></span>
+                    <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
                 </div>
             </g:form>
         </div>

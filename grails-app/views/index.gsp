@@ -10,7 +10,7 @@
 
                     <span class="menuButton"><a class="home" href="${resource(dir: '')}"><g:message code="Inicio" /></a></span> |
 
-                    <span class="menuButton"><g:link class="direccion" controller="direccion"><g:message code="Dirección" /></g:link></span> |
+<!--                    <span class="menuButton"><g:link class="direccion" controller="direccion"><g:message code="Dirección" /></g:link></span> |-->
 
                     <span class="menuButton"><g:link class="iglesia" controller="iglesia"><g:message code="Iglesia" /></g:link></span> |
 

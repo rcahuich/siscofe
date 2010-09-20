@@ -2,7 +2,7 @@
     <head>
         <title>Siscofe - <g:layoutTitle default="Grails" /></title>
         <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}" />
-        <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+        <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon-Siscofe.ico')}" type="image/x-icon" />
         <g:layoutHead />
         <g:javascript library="application" />
         <g:javascript src="jquery-1.3.2.min.js" />
@@ -11,6 +11,7 @@
 
 
     <body>
+
       <div id="page">
         <div id="spinner" class="spinner" style="display:none;">
           <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />

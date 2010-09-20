@@ -27,6 +27,8 @@
             <g:form method="post" >
                 <g:hiddenField name="id" value="${iglesiaInstance?.id}" />
                 <g:hiddenField name="version" value="${iglesiaInstance?.version}" />
+                <g:hiddenField name="direccion.id" value="${iglesiaInstance?.direccion?.id}" />
+                <g:hiddenField name="direccion.version" value="${iglesiaInstance?.direccion?.version}" />
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -40,12 +42,92 @@
                                 </td>
                             </tr>
                         
+                             <tr class="prop">
+                                <td valign="top" class="name">
+                                  <h4><g:message code="direccion" default="Dirección" /></h4>
+                                </td>
+                                <td
+                                </td>
+                            </tr>
+
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="direccion"><g:message code="iglesia.direccion.label" default="Direccion" /></label>
+                                    <label for="direccion.pais"><g:message code="direccion.pais.label" default="Pais" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion', 'errors')}">
-                                    <g:select name="direccion.id" from="${siscofe.Direccion.list()}" optionKey="id" value="${iglesiaInstance?.direccion?.id}"  />
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.pais', 'errors')}">
+                                    <g:textField name="direccion.pais" maxlength="16" value="${iglesiaInstance?.direccion?.pais}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.estado"><g:message code="direccion.estado.label" default="Estado" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.estado', 'errors')}">
+                                    <g:textField name="direccion.estado" maxlength="16" value="${iglesiaInstance?.direccion?.estado}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.municipio"><g:message code="direccion.municipio.label" default="Municipio" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.municipio', 'errors')}">
+                                    <g:textField name="direccion.municipio" maxlength="32" value="${iglesiaInstance?.direccion?.municipio}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.ciudad"><g:message code="direccion.ciudad.label" default="Ciudad" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.ciudad', 'errors')}">
+                                    <g:textField name="direccion.ciudad" maxlength="32" value="${iglesiaInstance?.direccion?.ciudad}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.ejido"><g:message code="direccion.ejido.label" default="Ejido" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.ejido', 'errors')}">
+                                    <g:textField name="direccion.ejido" maxlength="32" value="${iglesiaInstance?.direccion?.ejido}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.colonia"><g:message code="direccion.colonia.label" default="Colonia" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.colonia', 'errors')}">
+                                    <g:textField name="direccion.colonia" maxlength="32" value="${iglesiaInstance?.direccion?.colonia}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.calle"><g:message code="direccion.calle.label" default="Calle" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.calle', 'errors')}">
+                                    <g:textField name="direccion.calle" maxlength="32" value="${iglesiaInstance?.direccion?.calle}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.numero"><g:message code="direccion.numero.label" default="Numero" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.numero', 'errors')}">
+                                    <g:textField name="direccion.numero" maxlength="8" value="${iglesiaInstance?.direccion?.numero}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion.codigoPostal"><g:message code="direccion.codigoPostal.label" default="Codigo Postal" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.codigoPostal', 'errors')}">
+                                    <g:textField name="direccion.codigoPostal" maxlength="16" value="${iglesiaInstance?.direccion?.codigoPostal}" />
                                 </td>
                             </tr>
                         

@@ -81,7 +81,7 @@ log4j = {
 
     warn   'org.mortbay.log'
 
-    debug  'grails.app'
+    debug  'grails.app','org.hibernate.SQL'
 }
 
 grails.gorm.default.mapping = {
