@@ -1,7 +1,7 @@
 package siscofe
 
 class Direccion {
-    //Iglesia iglesia
+    Iglesia iglesia
     String pais
     String estado
     String municipio
@@ -12,7 +12,7 @@ class Direccion {
     String numero
     String codigoPostal
 
-    static belongsTo = Iglesia//muchos a uno
+    //static belongsTo = Iglesia//muchos a uno
 
     static constraints = {
         pais maxSize:16, blank:false
@@ -31,6 +31,6 @@ class Direccion {
     }
 
     String toString () {
-        "$ciudad, $ejido, $colonia, $calle $numero, CP: $codigoPostal"
+        "Cd. de $ciudad, $ejido Col. $colonia, Calle $calle Num. $numero, CP: $codigoPostal"
     }
 }

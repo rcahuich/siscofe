@@ -6,18 +6,12 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <div id="menu">
-  <nobr>
+ 
+   <div id="status">
+        <sec:ifLoggedIn>
+            Bienvenido <sec:loggedInUserInfo field="username" /> |
+            <g:link class="perfil" controller="logout" style="color:black;font-weight:normal;"><g:message code="Salir" /></g:link>
+        </sec:ifLoggedIn>
+   </div>
 
-          
-
-
-
-<!--    <g:if test="${session.user}">
-      <b>${session.user?.firstName}&nbsp;${session.user?.lastName}</b> |
-      <g:link controller="user" action="logout">Logout</g:link>
-    </g:if>
-    <g:else>
-      <g:link controller="user" action="login">Login</g:link>
-    </g:else>-->
-  </nobr>
 </div>

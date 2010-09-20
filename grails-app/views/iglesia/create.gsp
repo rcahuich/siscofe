@@ -36,13 +36,19 @@
                                     <g:textField name="nombre" maxlength="64" value="${iglesiaInstance?.nombre}" />
                                 </td>
                             </tr>
+                        
+<!--                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="direccion"><g:message code="iglesia.direccion.label" default="Direccion" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion', 'errors')}">
+                                    <g:select name="direccion.id" from="${siscofe.Direccion.list()}" optionKey="id" value="${iglesiaInstance?.direccion?.id}"  />
+                                </td>
+                            </tr>-->
 
 
 
-
-
-
-                            <tr class="prop">
+                          <tr class="prop">
                               <td valign="top" class="name">
                                 <label ><h4><g:message code="Dirección" /></h4></label>
                               </td>
@@ -132,8 +138,8 @@
                                     <g:textField name="codigoPostal" maxlength="16" value="${direccionInstance?.codigoPostal}" />
                                 </td>
                             </tr>
-                        
-                        
+
+
                         </tbody>
                     </table>
                 </div>

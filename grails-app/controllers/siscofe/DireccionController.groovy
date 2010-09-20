@@ -1,8 +1,5 @@
 package siscofe
 
-import grails.plugins.springsecurity.Secured
-
-@Secured(['ROLE_ADMIN'])
 class DireccionController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]

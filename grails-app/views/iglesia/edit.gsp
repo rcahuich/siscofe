@@ -41,19 +41,13 @@
                             </tr>
                         
                             <tr class="prop">
-                              <td valign="top" class="name">
-                                <label for="direcciones"><g:message code="iglesia.direcciones.label" default="Direcciones" /></label>
-                              </td>
-
-                              <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direcciones', 'errors')}">
-                                <ul>
-                                  <g:each in="${iglesiaInstance?.direcciones?}" var="d">
-                                    <li><g:link controller="direccion" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></li>
-                                  </g:each>
-                                </ul>
-                                    <g:link controller="direccion" action="create" params="['iglesia.id': iglesiaInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'direccion.label', default: 'Direccion')])}</g:link>
-                              </td>
-                             </tr>
+                                <td valign="top" class="name">
+                                  <label for="direccion"><g:message code="iglesia.direccion.label" default="Direccion" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion', 'errors')}">
+                                    <g:select name="direccion.id" from="${siscofe.Direccion.list()}" optionKey="id" value="${iglesiaInstance?.direccion?.id}"  />
+                                </td>
+                            </tr>
                         
                         </tbody>
                     </table>

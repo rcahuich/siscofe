@@ -15,6 +15,10 @@
           <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
         </div>
 
+        <div id="topbar">
+          <g:render template="/common/topbar" />
+        </div>
+
         <div id="header">
           <g:render template="/common/header" />
         </div>

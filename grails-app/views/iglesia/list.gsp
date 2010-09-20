@@ -25,8 +25,9 @@
                             <g:sortableColumn property="id" title="${message(code: 'iglesia.id.label', default: 'Id')}" />
                         
                             <g:sortableColumn property="nombre" title="${message(code: 'iglesia.nombre.label', default: 'Nombre')}" />
-
-                            <g:sortableColumn property="nombre" title="${message(code: 'iglesia.direccion.label', default: 'Dirección')}" />
+                        
+                            <th><g:message code="iglesia.direccion.label" default="Direccion" /></th>
+                        
                         </tr>
                     </thead>
                     <tbody>
@@ -37,7 +38,8 @@
                         
                             <td>${fieldValue(bean: iglesiaInstance, field: "nombre")}</td>
                         
-                            <td>${fieldValue(bean: iglesiaInstance, field: "direcciones")}</td>
+                            <td>${fieldValue(bean: iglesiaInstance, field: "direccion")}</td>
+                        
                         </tr>
                     </g:each>
                     </tbody>

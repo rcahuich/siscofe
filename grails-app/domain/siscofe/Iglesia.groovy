@@ -2,10 +2,9 @@ package siscofe
 
 class Iglesia {
     String nombre
-    Set direcciones
-
     
-    static hasMany = [direcciones : Direccion]
+    
+    static hasOne = [direccion : Direccion]
 
     static constraints = {
         nombre maxSize:64, blank:false

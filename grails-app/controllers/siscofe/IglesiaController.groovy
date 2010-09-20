@@ -1,8 +1,5 @@
 package siscofe
 
-import grails.plugins.springsecurity.Secured
-
-@Secured(['ROLE_ADMIN'])
 class IglesiaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -19,10 +16,10 @@ class IglesiaController {
     def create = {
         def iglesiaInstance = new Iglesia()
         def direccionInstance = new Direccion()
-        iglesiaInstance.properties = params
-        log.debug "##############################  Iglesia: $iglesiaInstance.properties"
         direccionInstance.properties = params
-        log.debug "##############################  Direccion: $direccionInstance.properties"
+        log.debug"################# Direccion = $direccionInstance.properties ######################"
+        iglesiaInstance.properties = params
+        log.debug"################# Iglesia = $iglesiaInstance.properties ######################"
         return [iglesiaInstance: iglesiaInstance]
         return [direccionInstance: direccionInstance]
 
@@ -30,10 +27,11 @@ class IglesiaController {
 
     def save = {
         def iglesiaInstance = new Iglesia(params)
-        log.debug "#################################################  Iglesia: $iglesiaInstance"        
-        def direccionInstance = new Direccion(params)//agregado
-        log.debug "#################################################  Direccion: $direccionInstance"
-        if (iglesiaInstance.save(flush: true) && direccionInstance.save(flush: true)) {
+        log.debug"################# Iglesia = $iglesiaInstance ######################"
+        def direccionInstance = new Direccion(params)
+        log.debug"################# Direccion = $direccionInstance ######################"
+        new Iglesia(direccion:new Direccion()).save()
+        if (iglesiaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), iglesiaInstance.id])}"
             redirect(action: "show", id: iglesiaInstance.id)
         }
