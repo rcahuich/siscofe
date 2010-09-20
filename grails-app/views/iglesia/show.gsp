@@ -22,12 +22,12 @@
                 <table>
                     <tbody>
                     
-                        <tr class="prop">
+<!--                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="iglesia.id.label" default="Id" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "id")}</td>
                             
-                        </tr>
+                        </tr>-->
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="iglesia.nombre.label" default="Nombre" /></td>

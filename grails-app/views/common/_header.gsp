@@ -1,2 +1,5 @@
+
 <!--<h1><a class="home" href="${createLinkTo(dir:'')}" style="color:white;font-weight:normal; text-align:left">Siscofe</a></h1>-->
   <div id="grailsLogo"><a href="${createLinkTo(dir:'')}"><img src="${resource(dir:'images',file:'logoSiscofe-white1.png')}" alt="Grails" border="0" /></a></div>
+
+
