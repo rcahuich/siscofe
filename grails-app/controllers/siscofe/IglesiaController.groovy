@@ -1,8 +1,8 @@
 package siscofe
 
-import grails.plugins.springsecurity.Secured
+//import grails.plugins.springsecurity.Secured
 
-@Secured(['ROLE_ADMIN'])
+//@Secured(['ROLE_ADMIN'])
 class IglesiaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -18,43 +18,43 @@ class IglesiaController {
 
     def create = {
         def iglesiaInstance = new Iglesia()
-        def direccionInstance = new Direccion()
+
         iglesiaInstance.properties = params
         log.debug "##############################  Iglesia: $iglesiaInstance.properties"
-        direccionInstance.properties = params
-        log.debug "##############################  Direccion: $direccionInstance.properties"
-        return [iglesiaInstance: iglesiaInstance]
-        return [direccionInstance: direccionInstance]
-
+        
+        return ['iglesiaInstance': iglesiaInstance]
+        
     }
 
     def save = {
         def iglesiaInstance = new Iglesia(params)
+        
         log.debug "#################################################  Iglesia: $iglesiaInstance"        
-        def direccionInstance = new Direccion(params)//agregado
-        log.debug "#################################################  Direccion: $direccionInstance"
-        if (iglesiaInstance.save(flush: true) && direccionInstance.save(flush: true)) {
-            flash.message = "${message(code: 'default.created.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), iglesiaInstance.id])}"
-            redirect(action: "show", id: iglesiaInstance.id)
+
+          if(!iglesiaInstance.hasErrors() && iglesiaInstance.save()) {
+            flash.message = "Iglesia ${iglesiaInstance.id} created"
+            redirect(action:show,id:iglesiaInstance.id)
         }
         else {
-            render(view: "create", model: [iglesiaInstance: iglesiaInstance])
+            render(view:'create',model:[iglesiaInstance:iglesiaInstance])
         }
     }
 
     def show = {
         def iglesiaInstance = Iglesia.get(params.id)
+        
         if (!iglesiaInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), params.id])}"
             redirect(action: "list")
         }
         else {
-            [iglesiaInstance: iglesiaInstance]
+            return [iglesiaInstance: iglesiaInstance]
         }
     }
 
     def edit = {
         def iglesiaInstance = Iglesia.get(params.id)
+
         if (!iglesiaInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), params.id])}"
             redirect(action: "list")
@@ -77,17 +77,24 @@ class IglesiaController {
                 }
             }
             iglesiaInstance.properties = params
-            if (!iglesiaInstance.hasErrors() && iglesiaInstance.save(flush: true)) {
-                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), iglesiaInstance.id])}"
-                redirect(action: "show", id: iglesiaInstance.id)
+
+            def _toBeDeleted = iglesiaInstance.direcciones.findAll {it._deleted}
+            if (_toBeDeleted) {
+                iglesiaInstance.direcciones.removeAll(_toBeDeleted)
+            }
+            log.debug "#################################################  Iglesia(antes save): $iglesiaInstance"
+            if(!iglesiaInstance.hasErrors() && iglesiaInstance.save()) {
+                log.debug "#################################################  Iglesia(despues save): $iglesiaInstance"
+                flash.message = "Iglesia ${params.id} actualizada"
+                redirect(action:show,id:iglesiaInstance.id)
             }
             else {
-                render(view: "edit", model: [iglesiaInstance: iglesiaInstance])
+                render(view:'edit',model:[iglesiaInstance:iglesiaInstance])
             }
         }
         else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), params.id])}"
-            redirect(action: "list")
+            flash.message = "Iglesia not found with id ${params.id}"
+            redirect(action:list)
         }
     }
 

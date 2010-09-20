@@ -281,7 +281,7 @@ th.desc a {
 
 #topbar {
     text-align:left;
-    width: 738px;
+    width: auto;
     margin: 0px auto;
     padding: 5px 0;
 }
@@ -289,7 +289,7 @@ th.desc a {
     float: right;
     width: 240px;
     text-align: right;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 #header {
@@ -347,5 +347,5 @@ body {
     top: 20px;
     right: 6px;
     text-align: right;
-    color: white;
+    color: black;
 }

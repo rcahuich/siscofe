@@ -11,8 +11,11 @@ class Direccion {
     String calle
     String numero
     String codigoPostal
+    boolean _deleted
 
-    static belongsTo = Iglesia//muchos a uno
+    static transients = ['_deleted']
+
+    static belongsTo = [iglesia:Iglesia]
 
     static constraints = {
         pais maxSize:16, blank:false
@@ -31,6 +34,6 @@ class Direccion {
     }
 
     String toString () {
-        "$ciudad, $ejido, $colonia, $calle $numero, CP: $codigoPostal"
+        "Cd. de $ciudad, $ejido Col. $colonia, Calle $calle Num. $numero, CP: $codigoPostal"
     }
 }
