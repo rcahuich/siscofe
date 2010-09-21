@@ -111,7 +111,7 @@
                             <td valign="top" class="value"><g:formatBoolean boolean="${personaInstance?.sabeLeer}" /></td>
                             
                         </tr>
-                    
+
                     
                     </tbody>
                 </table>

@@ -26,6 +26,7 @@ class Persona {
         nombre maxSize:64, blank:false
         apellidoPaterno maxSize:64, blank:false
         apellidoMaterno maxSize:64, blank:false
+        fechaNacimiento()
         estadoCivil maxSize:32,inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO','UNION LIBRE']
         nivelEstudio maxSize:32,inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
         religionAnterior maxSize:32,inList:['NINGUNO','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']

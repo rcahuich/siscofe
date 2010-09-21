@@ -18,11 +18,11 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="list">
-                <table>
+                <table id="iglesiaInstanceList">
                     <thead>
                         <tr>
                         
-                            <g:sortableColumn property="id" title="${message(code: 'iglesia.id.label', default: 'Id')}" />
+<!--                            <g:sortableColumn property="id" title="${message(code: 'iglesia.id.label', default: 'Id')}" />-->
                         
                             <g:sortableColumn property="nombre" title="${message(code: 'iglesia.nombre.label', default: 'Nombre')}" />
                         
@@ -34,9 +34,9 @@
                     <g:each in="${iglesiaInstanceList}" status="i" var="iglesiaInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${iglesiaInstance.id}">${fieldValue(bean: iglesiaInstance, field: "id")}</g:link></td>
+                            <td><g:link action="show" id="${iglesiaInstance.id}">${fieldValue(bean: iglesiaInstance, field: "nombre")}</g:link></td>
                         
-                            <td>${fieldValue(bean: iglesiaInstance, field: "nombre")}</td>
+<!--                            <td>${fieldValue(bean: iglesiaInstance, field: "nombre")}</td>-->
                         
                             <td>${fieldValue(bean: iglesiaInstance, field: "direccion")}</td>
                         
@@ -49,5 +49,8 @@
                 <g:paginate total="${iglesiaInstanceTotal}" />
             </div>
         </div>
+        <g:javascript>
+            highlightTableRows('iglesiaInstanceList')
+        </g:javascript>
     </body>
 </html>

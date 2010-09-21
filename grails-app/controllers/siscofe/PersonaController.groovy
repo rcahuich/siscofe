@@ -34,6 +34,7 @@ class PersonaController {
     }
 
     def show = {
+        log.debug"############### params $params"
         def personaInstance = Persona.get(params.id)
         if (!personaInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"

@@ -5,6 +5,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
+        <g:javascript library="jquery" />
+        <link rel="stylesheet" href="${resource(contextPath:"",dir:'css',file:'jquery.ui.all.css')}" />
+        <script type="text/javascript" src="${resource(contextPath:"",dir:'js/jquery',file:'jquery.ui.core.min.js')}"></script>
+        <script type="text/javascript" src="${resource(contextPath:"",dir:'js/jquery',file:'jquery.ui.widget.min.js')}"></script>
+        <script type="text/javascript" src="${resource(contextPath:"",dir:'js/jquery',file:'jquery.ui.position.min.js')}"></script>
+        <script type="text/javascript" src="${resource(contextPath:"",dir:'js/jquery',file:'jquery.ui.autocomplete.min.js')}"></script>
+        <script type="text/javascript" src="${resource(contextPath:"",dir:'js/jquery',file:'jquery.ui.datepicker.min.js')}"></script>
+        <script type="text/javascript" src="${resource(contextPath:"",dir:'js/jquery/i18n',file:'jquery.ui.datepicker-es.js')}"></script>
+
         <g:set var="entityName" value="${message(code: 'persona.label', default: 'Persona')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
@@ -25,8 +34,8 @@
             </g:hasErrors>
             <g:form action="save" >
                 <div class="dialog">
-                    <table>
-                        <tbody>
+                  <table>
+                        <tbody >
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -135,5 +144,11 @@
                 </div>
             </g:form>
         </div>
+      <g:javascript>
+            jQuery(document).ready(function() {
+            jQuery("input#fechaNacimiento").datepicker(jQuery.datepicker.regional['es']);
+            jQuery("input#fechaNacimiento").datepicker("option","firstDay",0);
+          });
+        </g:javascript>
     </body>
 </html>
