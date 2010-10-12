@@ -24,6 +24,9 @@ class PersonaController {
 
     def save = {
         def personaInstance = new Persona(params)
+		Persona.withTransaction {
+			def direccion = personaInstance.direccion
+			personaInstance.direccion = direccion.save()
         if (personaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'persona.label', default: 'Persona'), personaInstance.id])}"
             redirect(action: "show", id: personaInstance.id)
@@ -31,10 +34,10 @@ class PersonaController {
         else {
             render(view: "create", model: [personaInstance: personaInstance])
         }
+			}
     }
 
     def show = {
-        log.debug"############### params $params"
         def personaInstance = Persona.get(params.id)
         if (!personaInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"
@@ -45,6 +48,19 @@ class PersonaController {
         }
     }
 
+
+    def personaCompleta = {
+        def personaInstance = Persona.get(params.id)
+        if (!personaInstance) {
+            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"
+            redirect(action: "personaCompleta")
+        }
+        else {
+            [personaInstance: personaInstance]
+        }
+    }
+	
+	
     def edit = {
         def personaInstance = Persona.get(params.id)
         if (!personaInstance) {
@@ -58,6 +74,11 @@ class PersonaController {
 
     def update = {
         def personaInstance = Persona.get(params.id)
+		Persona.withTransaction {
+			log.debug"----------------- Iglesia: $personaInstance"
+            def direccion = personaInstance.direccion
+            personaInstance.direccion = direccion.save()
+            log.debug"----------------- Iglesia: $personaInstance.direccion"
         if (personaInstance) {
             if (params.version) {
                 def version = params.version.toLong()
@@ -81,6 +102,7 @@ class PersonaController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"
             redirect(action: "list")
         }
+	}
     }
 
     def delete = {

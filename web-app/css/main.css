@@ -20,6 +20,10 @@ html * {
 	padding:15px;
 }
 
+#iasdLogo {
+	padding:5px;
+}
+
 a:link, a:visited, a:hover {
     color: #666;
     font-weight: bold;

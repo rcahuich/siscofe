@@ -14,8 +14,6 @@
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
 
             <span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id]" class="create" action="create" > <g:message code="Agregar Inf. Bautismo" /></g:link></span>
-
-            <span class="menuButton"><g:link controller="bautismo" params="[bautismoId:personaInstance.id]" class="show" action="show" > <g:message code="Ver Inf. Bautismo" /></g:link></span>
         
         </div>
         <div class="body">
@@ -86,31 +84,34 @@
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.esHombre.label" default="Es Hombre" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${personaInstance?.esHombre}" /></td>
-                            
+                            <td valign="top" class="value"><g:checkBox name="esHombre" value="${personaInstance?.esHombre}" disabled="true"/></td>                           
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.fechaNacimiento.label" default="Fecha Nacimiento" /></td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${personaInstance?.fechaNacimiento}" /></td>
+                            <td valign="top" class="value"><g:formatDate format="dd-MM-yyyy" date="${personaInstance?.fechaNacimiento}"/></td>
                             
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.miembro.label" default="Miembro" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${personaInstance?.miembro}" /></td>
-                            
+                            <td valign="top" class="value"><g:checkBox name="miembro" value="${personaInstance?.miembro}" disabled="true"/></td>                   
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.sabeLeer.label" default="Sabe Leer" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${personaInstance?.sabeLeer}" /></td>
+                            <td valign="top" class="value"><g:checkBox name="sabeLeer" value="${personaInstance?.sabeLeer}" disabled="true"/></td>
                             
                         </tr>
+
+						<tr class="prop">
+                            <td valign="top" class="name"><g:message code="persona.direccion.label" default="Direccion" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="direccion" action="show" id="${personaInstance?.direccion?.id}">${personaInstance?.direccion?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+
 
                     
                     </tbody>

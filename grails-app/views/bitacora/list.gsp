@@ -25,7 +25,6 @@
                             <g:sortableColumn property="id" title="${message(code: 'bitacora.id.label', default: 'Id')}" />
                             <g:sortableColumn property="usuario" title="${message(code: 'bitacora.usuario.label', default: 'Usuario')}" />
                             <g:sortableColumn property="fecha" title="${message(code: 'bitacora.fecha.label', default: 'Fecha')}" />
-                        
                             <g:sortableColumn property="comentario" title="${message(code: 'bitacora.comentario.label', default: 'Comentario')}" />
                         
                         
@@ -36,11 +35,9 @@
                     <g:each in="${bitacoraInstanceList}" status="i" var="bitacoraInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${bitacoraInstance.id}">${fieldValue(bean: bitacoraInstance, field: "id")}</g:link></td>
-                        
-                            <td>${fieldValue(bean: bitacoraInstance, field: "usuario")}</td>
-                        
-                            <td><g:formatDate date="${bitacoraInstance.fecha}" /></td>
+                            <td><g:link action="show" id="${bitacoraInstance.id}">${fieldValue(bean: bitacoraInstance, field: "id")}</g:link></td>                   
+                            <td>${fieldValue(bean: bitacoraInstance, field: "usuario")}</td>                    
+                            <td><g:formatDate format="dd-MM-yyyy HH:mm:ss" date="${bitacoraInstance.fecha}" /></td>
                             <td>${fieldValue(bean: bitacoraInstance, field: "comentario")}</td>
                         
                         

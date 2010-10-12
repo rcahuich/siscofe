@@ -56,6 +56,13 @@
                             <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "ministroOficiante")}</td>
                             
                         </tr>
+						
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="bautismo.fechaBautismo.label" default="Fecha Bautismo" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate format="dd-MM-yyyy" date="${bautismoInstance?.fechaBautismo}" /></td>
+                            
+                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="bautismo.cursoBiblico.label" default="Curso Biblico" /></td>
@@ -63,6 +70,12 @@
                             <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "cursoBiblico")}</td>
                             
                         </tr>
+
+			<tr class="prop">
+	                    <td valign="top" class="name"><g:message code="bautismo.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></td>
+                            <td valign="top" class="value"><g:checkBox name="estudioVeintiochoCreencias" value="${bautismoInstance?.estudioVeintiochoCreencias}" disabled="true"/></td>
+
+	                </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="bautismo.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></td>
@@ -71,13 +84,27 @@
                             
                         </tr>
                     
+						<tr class="prop">
+                            <td valign="top" class="name"><g:message code="bautismo.fechaVotoJuntaAdministrativa.label" default="Fecha Voto Junta Administrativa" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate format="dd-MM-yyyy" date="${bautismoInstance?.fechaVotoJuntaAdministrativa}" /></td>
+                            
+                        </tr>
+
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="bautismo.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaDirectiva")}</td>
                             
                         </tr>
-                    
+         
+             			<tr class="prop">
+                 			<td valign="top" class="name"><g:message code="bautismo.fechaVotoJuntaDirectiva.label" default="Fecha Voto Junta Directiva" /></td>
+                 
+                 			<td valign="top" class="value"><g:formatDate format="dd-MM-yyyy" date="${bautismoInstance?.fechaVotoJuntaDirectiva}" /></td>
+                 
+             			</tr>
+
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="bautismo.numeroBautismo.label" default="Numero Bautismo" /></td>
                             
@@ -85,34 +112,7 @@
                             
                         </tr>
                     
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="bautismo.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${bautismoInstance?.estudioVeintiochoCreencias}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="bautismo.fechaBautismo.label" default="Fecha Bautismo" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${bautismoInstance?.fechaBautismo}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="bautismo.fechaVotoJuntaAdministrativa.label" default="Fecha Voto Junta Administrativa" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${bautismoInstance?.fechaVotoJuntaAdministrativa}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="bautismo.fechaVotoJuntaDirectiva.label" default="Fecha Voto Junta Directiva" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${bautismoInstance?.fechaVotoJuntaDirectiva}" /></td>
-                            
-                        </tr>
-                    
+                                          
                     
                     
                     </tbody>

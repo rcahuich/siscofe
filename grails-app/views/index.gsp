@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>Siscofe</title>
-        <meta name="layout" content="main" />       
+        <meta name="layout" content="main" />    
+   		
     </head>
 
     <body>
@@ -12,11 +13,11 @@
 
 <!--                    <span class="menuButton"><g:link class="direccion" controller="direccion"><g:message code="Dirección" /></g:link></span> |-->
 
-                    <span class="menuButton"><g:link class="iglesia" controller="iglesia"><g:message code="Iglesia" /></g:link></span> |
+                    <span class="menuButton"><g:link class="iglesia" controller="iglesia"><g:message code="Iglesias" /></g:link></span> |
 
-                    <span class="menuButton"><g:link class="membresia" controller="membresia"><g:message code="Membresia" /></g:link></span>|
+<!--                    <span class="menuButton"><g:link class="membresia" controller="membresia"><g:message code="Membresia" /></g:link></span>|-->
 
-                    <span class="menuButton"><g:link class="persona" controller="persona"><g:message code="Persona" /></g:link></span> |
+                    <span class="menuButton"><g:link class="persona" controller="persona"><g:message code="Miembros" /></g:link></span> |
           </div>
 
 
@@ -28,10 +29,7 @@
             <div class="dialog">
                 <ul >
 
-                  <li> </li>
-                  <li> </li>
-                  <li> </li>
-                  <li> </li>
+
 
                 </ul>
             </div>

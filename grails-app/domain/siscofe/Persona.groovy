@@ -13,7 +13,7 @@ class Persona {
     String religionAnterior
     String codigo
     Set bautismos
-    //List direcciones
+    Direccion direccion
     //Membresia membresia
     //List correosElectronicos
     //List telefonos
@@ -31,6 +31,7 @@ class Persona {
         nivelEstudio maxSize:32,inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
         religionAnterior maxSize:32,inList:['NINGUNO','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
         codigo maxSize:32, nullable:true
+		direccion unique: true
     }
 
     static mapping = {

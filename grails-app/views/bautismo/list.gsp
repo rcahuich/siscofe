@@ -50,7 +50,7 @@
 
                             <td>${fieldValue(bean: bautismoInstance, field: "lugarBautismo")}</td>
 
-                            <td>${fieldValue(bean: bautismoInstance, field: "fechaBautismo")}</td>
+                            <td><g:formatDate format="dd-MM-yyyy" ${fieldValue(bean: bautismoInstance, field: "fechaBautismo")}/></td>
                         
                         </tr>
                     </g:each>

@@ -39,7 +39,7 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="bitacora.fecha.label" default="Fecha" /></td>
 
-                            <td valign="top" class="value"><g:formatDate date="${bitacoraInstance?.fecha}" /></td>
+                            <td valign="top" class="value"><g:formatDate format="dd-MM-yyyy" date="${bitacoraInstance?.fecha}" /></td>
 
                         </tr>
 
