@@ -5,13 +5,14 @@ class UrlMappings {
         "/login/$action"(controller: "login")
         "/logout/$action"(controller: "logout")
 
-		"/$controller/$action?/$id?"{
+	"/$controller/$action?/$id?"{
             constraints {
                 // apply constraints here
             }
         }
 
-		"/"(view:"/index")
-		"500"(view:'/error')
+	"/"(controller:"inicio",view:"/index")
+        "500"(view:'/error')
+
     }
 }

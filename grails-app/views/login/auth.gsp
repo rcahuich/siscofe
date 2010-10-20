@@ -70,7 +70,7 @@
 		</div>
 	</div>
 <script type='text/javascript'>
-<!--
+//<!--
 (function(){
 	document.forms['loginForm'].elements['j_username'].focus();
 })();

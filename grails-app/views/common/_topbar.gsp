@@ -10,7 +10,7 @@
    <div id="status">
         <sec:ifLoggedIn>
             Bienvenido <sec:loggedInUserInfo field="username" /> |
-            <g:link class="perfil" controller="logout" style="color:black;font-weight:normal;"><g:message code="Salir" /></g:link>
+            <g:link class="perfil" controller="logout" style="color:white;font-weight:normal;"><g:message code="Salir" /></g:link>
         </sec:ifLoggedIn>
    </div>
 

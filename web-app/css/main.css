@@ -302,10 +302,10 @@ th.desc a {
 
 #header {
     width: auto;
-    background: #FFFFFF repeat-x;
+    background: #021f02 repeat-x;
     height: 70px;
-    margin: 0px auto;   
-    background-color: #336600;
+    margin: 20px auto;
+    background-color: darkgreen;
 }
 
 #header h1 {
@@ -355,5 +355,5 @@ body {
     top: 20px;
     right: 6px;
     text-align: right;
-    color: black;
+    color: white;
 }

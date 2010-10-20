@@ -89,7 +89,6 @@ grails.gorm.default.mapping = {
 }
 
 grails.gorm.failOnError = true
-grails.views.javascript.library="jquery"
 
 // Added by the Spring Security Core plugin:
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'roles.User'
