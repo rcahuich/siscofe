@@ -5,6 +5,7 @@ class Membresia {
     Iglesia iglesia
     Bautismo bautismo
     String tipoIngreso
+    String codigo
 
     //AQUI HAY QUE AGREGAR LOS CAMPOS QUE SE RELLENARAN EN CASO DE QUE VENGA POR TRASLADO O PROFESION DE FE
     //String pastorQueRecomienda //Para Traslado y Profesion de Fe
