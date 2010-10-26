@@ -4,34 +4,31 @@ class Persona {
     String nombre
     String apellidoPaterno
     String apellidoMaterno
-    Boolean miembro = true
-    Date fechaNacimiento
     String estadoCivil
-    Boolean esHombre = true
-    Boolean sabeLeer = true
     String nivelEstudio
     String religionAnterior
-    String codigo
-    Set bautismos
+    String tipoDeSangre
+    String enfermedades
+    Date fechaNacimiento
+    Boolean miembro = false
+    Boolean esHombre = true
+    Boolean sabeLeer = true
     Direccion direccion
-    //Membresia membresia
-    //List correosElectronicos
-    //List telefonos
-    //List hijos
-    //List oficios
-
+    Set bautismos
+    
     static hasMany = [bautismos : Bautismo]
 
     static constraints = {
         nombre maxSize:64, blank:false
         apellidoPaterno maxSize:64, blank:false
         apellidoMaterno maxSize:64, blank:false
-        fechaNacimiento()
-        estadoCivil maxSize:32,inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO','UNION LIBRE']
-        nivelEstudio maxSize:32,inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
-        religionAnterior maxSize:32,inList:['NINGUNO','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
-        codigo maxSize:32, nullable:true
-		direccion unique: true
+        estadoCivil maxSize:32, inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO','UNION LIBRE']
+        nivelEstudio maxSize:32, inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
+        religionAnterior maxSize:32, inList:['NINGUNO','ADVENTISTA DEL SEPTIMO DIA','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
+        tipoDeSangre maxSize:4, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-']
+        enfermedades maxSize:128
+        fechaNacimiento blank:false
+        direccion blank:false, unique:true
     }
 
     static mapping = {

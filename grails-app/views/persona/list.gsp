@@ -22,17 +22,15 @@
                     <thead>
                         <tr>
                         
-<!--                            <g:sortableColumn property="id" title="${message(code: 'persona.id.label', default: 'Id')}" />-->
+<!--                        <g:sortableColumn property="id" title="${message(code: 'persona.id.label', default: 'Id')}" />-->
                         
-                            <g:sortableColumn property="codigo" title="${message(code: 'persona.codigo.label', default: 'Codigo')}" />
-
                             <g:sortableColumn property="nombre" title="${message(code: 'persona.nombre.label', default: 'Nombre')}" />
                         
                             <g:sortableColumn property="apellidoPaterno" title="${message(code: 'persona.apellidoPaterno.label', default: 'Apellido Paterno')}" />
                         
                             <g:sortableColumn property="apellidoMaterno" title="${message(code: 'persona.apellidoMaterno.label', default: 'Apellido Materno')}" />
                         
-<!--                            <g:sortableColumn property="estadoCivil" title="${message(code: 'persona.estadoCivil.label', default: 'Estado Civil')}" />
+<!--                        <g:sortableColumn property="estadoCivil" title="${message(code: 'persona.estadoCivil.label', default: 'Estado Civil')}" />
                         
                             <g:sortableColumn property="nivelEstudio" title="${message(code: 'persona.nivelEstudio.label', default: 'Nivel Estudio')}" />
                         
@@ -52,7 +50,7 @@
                         
                             <td><g:link controller="persona" action="personaCompleta" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "codigo")}</g:link></td>
                         
-<!--                            <td>${fieldValue(bean: personaInstance, field: "codigo")}</td>-->
+<!--                        <td>${fieldValue(bean: personaInstance, field: "codigo")}</td>-->
                             
                             <td>${fieldValue(bean: personaInstance, field: "nombre")}</td>
                         
@@ -60,7 +58,7 @@
                         
                             <td>${fieldValue(bean: personaInstance, field: "apellidoMaterno")}</td>
                         
-<!--                            <td>${fieldValue(bean: personaInstance, field: "estadoCivil")}</td>
+<!--                         <td>${fieldValue(bean: personaInstance, field: "estadoCivil")}</td>
                         
                             <td>${fieldValue(bean: personaInstance, field: "nivelEstudio")}</td>
                         

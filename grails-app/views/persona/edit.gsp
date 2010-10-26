@@ -59,7 +59,34 @@
                                     <g:textField name="apellidoMaterno" maxlength="64" value="${personaInstance?.apellidoMaterno}" />
                                 </td>
                             </tr>
-                        
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="fechaNacimiento"><g:message code="persona.fechaNacimiento.label" default="Fecha Nacimiento" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'fechaNacimiento', 'errors')}">
+                                    <g:datePicker name="fechaNacimiento" precision="day" value="${personaInstance?.fechaNacimiento}"  />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="tipoDeSangre"><g:message code="persona.tipoDeSangre.label" default="Tipo de Sangre" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'tipoDeSangre', 'errors')}">
+                                    <g:select name="tipoDeSangre" from="${personaInstance.constraints.tipoDeSangre.inList}" value="${personaInstance?.tipoDeSangre}" valueMessagePrefix="persona.tipoDeSangre"  />
+                                </td>
+                            </tr>
+
+                           <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="esHombre"><g:message code="persona.esHombre.label" default="Es Hombre" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'esHombre', 'errors')}">
+                                    <g:checkBox name="esHombre" value="${personaInstance?.esHombre}" />
+                                </td>
+                            </tr
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="estadoCivil"><g:message code="persona.estadoCivil.label" default="Estado Civil" /></label>
@@ -86,43 +113,7 @@
                                     <g:select name="religionAnterior" from="${personaInstance.constraints.religionAnterior.inList}" value="${personaInstance?.religionAnterior}" valueMessagePrefix="persona.religionAnterior"  />
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="codigo"><g:message code="persona.codigo.label" default="Codigo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'codigo', 'errors')}">
-                                    <g:textField name="codigo" maxlength="32" value="${personaInstance?.codigo}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="esHombre"><g:message code="persona.esHombre.label" default="Es Hombre" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'esHombre', 'errors')}">
-                                    <g:checkBox name="esHombre" value="${personaInstance?.esHombre}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="fechaNacimiento"><g:message code="persona.fechaNacimiento.label" default="Fecha Nacimiento" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'fechaNacimiento', 'errors')}">
-                                    <g:datePicker name="fechaNacimiento" precision="day" value="${personaInstance?.fechaNacimiento}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="miembro"><g:message code="persona.miembro.label" default="Miembro" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'miembro', 'errors')}">
-                                    <g:checkBox name="miembro" value="${personaInstance?.miembro}" />
-                                </td>
-                            </tr>
-                        
+ 
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="sabeLeer"><g:message code="persona.sabeLeer.label" default="Sabe Leer" /></label>
@@ -131,11 +122,20 @@
                                     <g:checkBox name="sabeLeer" value="${personaInstance?.sabeLeer}" />
                                 </td>
                             </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="enfermedades"><g:message code="persona.enfermedades.label" default="Enfermedades o Padecimientos" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'enfermedades', 'errors')}">
+                                    <g:textField name="enfermedades" maxlength="64" value="${personaInstance?.enfermedades}" />
+                                </td>
+                            </tr>
                         
 
 
 
-							<tr class="prop">
+                            <tr class="prop">
                                 <td valign="top" class="name">
                                   <h4><g:message code="direccion" default="Dirección" /></h4>
                                 </td>
