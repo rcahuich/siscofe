@@ -10,7 +10,7 @@ class Persona {
     String tipoDeSangre
     String enfermedades
     Date fechaNacimiento
-    Boolean miembro = true
+    Boolean miembro = false
     Boolean esHombre = true
     Boolean sabeLeer = true
     Direccion direccion
@@ -22,14 +22,13 @@ class Persona {
         nombre maxSize:64, blank:false
         apellidoPaterno maxSize:64, blank:false
         apellidoMaterno maxSize:64, blank:false
+        estadoCivil maxSize:32, inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO','UNION LIBRE']
+        nivelEstudio maxSize:32, inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
+        religionAnterior maxSize:32, inList:['NINGUNO','ADVENTISTA DEL SEPTIMO DIA','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
+        tipoDeSangre maxSize:4, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-']
+        enfermedades maxSize:128
         fechaNacimiento blank:false
-        estadoCivil maxSize:32, blank:false, inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO','UNION LIBRE']
-        nivelEstudio maxSize:32, blank:false, inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
-        religionAnterior maxSize:32, blank:false, inList:['NINGUNO','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
-        tipoDeSangre maxSize:32, blank:false, inList: ['A+','A-','B+','B-','AB+','AB-','O+','O-']
-	enferemedades maxSize:512
-        fechaNacimiento blank:false
-        direccion unique: true
+        direccion blank:false, unique:true
     }
 
     static mapping = {

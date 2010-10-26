@@ -1,4 +1,5 @@
-html * {
+html{
+    background:none repeat scroll 0 0 #F2F2F2;
     margin: 0;
     /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
 }
@@ -16,6 +17,7 @@ html * {
     color: #333;
     font: 11px verdana, arial, helvetica, sans-serif;
 }*/
+
 #grailsLogo {
 	padding:15px;
 }
@@ -73,7 +75,7 @@ input:focus, select:focus, textarea:focus {
     border: 1px solid #ccc;
     border-style: solid none solid none;
     margin-top: 5px;
-    padding: 7px 12px;
+    padding: 7px 20px;
    
 }
 
@@ -124,7 +126,7 @@ div.errors ul {
     padding: 0;
 }
 div.errors li {
-	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
+    background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
     line-height: 16px;
     padding-left: 30px;
 }
@@ -139,6 +141,7 @@ td.errors input {
 /* TABLES */
 
 table {
+    
     border: 1px solid #ccc;
     width: 100%
 }
@@ -302,10 +305,10 @@ th.desc a {
 
 #header {
     width: auto;
-    background: #021f02 repeat-x;
-    height: 70px;
-    margin: 20px auto;
-    background-color: darkgreen;
+    -moz-box-shadow:0 1px 3px #444444;
+    background: #0075B5;
+    height:70px;
+    margin:25px 0 5px;
 }
 
 #header h1 {
@@ -316,6 +319,7 @@ th.desc a {
 }
 
 body {
+   
     margin: 0px;
     padding: 0px;
     text-align:center;
@@ -331,6 +335,7 @@ body {
 }
 
 #page {
+    
     width: 1000px;
     margin: 0px auto;
     padding: 4px 0;
@@ -338,6 +343,7 @@ body {
 }
 
 #content {
+    
     float: left;
     width: 1000px;
     color: #000;
@@ -351,6 +357,7 @@ body {
 }
 
 #status {
+    background: #0075B5;
     margin-right: auto;
     top: 20px;
     right: 6px;

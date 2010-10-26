@@ -74,16 +74,15 @@ class PersonaController {
 
     def update = {
         def personaInstance = Persona.get(params.id)
-		Persona.withTransaction {
-			log.debug"----------------- Iglesia: $personaInstance"
-            def direccion = personaInstance.direccion
-            personaInstance.direccion = direccion.save()
-            log.debug"----------------- Iglesia: $personaInstance.direccion"
+            Persona.withTransaction {
+		//log.debug"----------------- Direccion: $personaInstance"
+                def direccion = personaInstance.direccion
+                personaInstance.direccion = direccion.save()
+                //log.debug"----------------- Direccion: $personaInstance.direccion"
         if (personaInstance) {
             if (params.version) {
                 def version = params.version.toLong()
                 if (personaInstance.version > version) {
-                    
                     personaInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'persona.label', default: 'Persona')] as Object[], "Another user has updated this Persona while you were editing")
                     render(view: "edit", model: [personaInstance: personaInstance])
                     return

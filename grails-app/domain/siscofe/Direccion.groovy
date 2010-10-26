@@ -1,7 +1,6 @@
 package siscofe
 
 class Direccion {
-//    Iglesia iglesia
     String pais
     String estado
     String municipio
@@ -12,10 +11,6 @@ class Direccion {
     String numero
     String codigoPostal
     
-
-//    static belongsTo = Iglesia
-
-
     static constraints = {
         pais maxSize:16, blank:false
         estado maxSize:16, blank:false

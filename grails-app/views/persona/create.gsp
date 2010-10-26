@@ -62,43 +62,7 @@
                                     <g:textField name="apellidoMaterno" maxlength="64" value="${personaInstance?.apellidoMaterno}" />
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="estadoCivil"><g:message code="persona.estadoCivil.label" default="Estado Civil" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'estadoCivil', 'errors')}">
-                                    <g:select name="estadoCivil" from="${personaInstance.constraints.estadoCivil.inList}" value="${personaInstance?.estadoCivil}" valueMessagePrefix="persona.estadoCivil"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="nivelEstudio"><g:message code="persona.nivelEstudio.label" default="Nivel Estudio" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'nivelEstudio', 'errors')}">
-                                    <g:select name="nivelEstudio" from="${personaInstance.constraints.nivelEstudio.inList}" value="${personaInstance?.nivelEstudio}" valueMessagePrefix="persona.nivelEstudio"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="religionAnterior"><g:message code="persona.religionAnterior.label" default="Religion Anterior" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'religionAnterior', 'errors')}">
-                                    <g:select name="religionAnterior" from="${personaInstance.constraints.religionAnterior.inList}" value="${personaInstance?.religionAnterior}" valueMessagePrefix="persona.religionAnterior"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="codigo"><g:message code="persona.codigo.label" default="Codigo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'codigo', 'errors')}">
-                                    <g:textField name="codigo" maxlength="32" value="${personaInstance?.codigo}" />
-                                </td>
-                            </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="esHombre"><g:message code="persona.esHombre.label" default="Es Hombre" /></label>
@@ -116,13 +80,40 @@
                                     <g:datePicker name="fechaNacimiento" precision="day" value="${personaInstance?.fechaNacimiento}"  />
                                 </td>
                             </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="estadoCivil"><g:message code="persona.estadoCivil.label" default="Estado Civil" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'estadoCivil', 'errors')}">
+                                    <g:select name="estadoCivil" from="${personaInstance.constraints.estadoCivil.inList}" value="${personaInstance?.estadoCivil}" valueMessagePrefix="persona.estadoCivil"  />
+                                </td>
+                            </tr>
+
+                             <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="tipoDeSangre"><g:message code="persona.tipoDeSangre.label" default="Tipo de Sangre" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'tipoDeSangre', 'errors')}">
+                                    <g:select name="tipoDeSangre" from="${personaInstance.constraints.tipoDeSangre.inList}" value="${personaInstance?.tipoDeSangre}" valueMessagePrefix="persona.tipoDeSangre"  />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="enfermedades"><g:message code="persona.enfermedades.label" default="Enfermedades o Padecimientos" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'enfermedades', 'errors')}">
+                                    <g:textField name="enfermedades" maxlength="64" value="${personaInstance?.enfermedades}" />
+                                </td>
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="miembro"><g:message code="persona.miembro.label" default="Miembro" /></label>
+                                    <label for="nivelEstudio"><g:message code="persona.nivelEstudio.label" default="Nivel Estudio" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'miembro', 'errors')}">
-                                    <g:checkBox name="miembro" value="${personaInstance?.miembro}" />
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'nivelEstudio', 'errors')}">
+                                    <g:select name="nivelEstudio" from="${personaInstance.constraints.nivelEstudio.inList}" value="${personaInstance?.nivelEstudio}" valueMessagePrefix="persona.nivelEstudio"  />
                                 </td>
                             </tr>
                         
@@ -135,6 +126,14 @@
                                 </td>
                             </tr>
 
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="religionAnterior"><g:message code="persona.religionAnterior.label" default="Religion Anterior" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'religionAnterior', 'errors')}">
+                                    <g:select name="religionAnterior" from="${personaInstance.constraints.religionAnterior.inList}" value="${personaInstance?.religionAnterior}" valueMessagePrefix="persona.religionAnterior"  />
+                                </td>
+                            </tr>
 
                             <tr class="prop">
                                 <td valign="top" class="name">

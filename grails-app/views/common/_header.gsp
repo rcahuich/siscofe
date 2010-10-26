@@ -1,10 +1,7 @@
 
-<!--<h1><a class="home" href="${createLinkTo(dir:'')}" style="color:white;font-weight:normal; text-align:left">Siscofe</a></h1>-->
-<!--<div id="iasdLogo"><a href="${createLinkTo(dir:'')}"><img src="${resource(dir:'images',file:'iasd1.png')}" alt="Grails" border="0" align="right"/></a></div>-->
-
 <head>
 
-  <script language="javascript" type="text/javascript">
+<!--  <script language="javascript" type="text/javascript">
 //RELOJ 24 HORAS
 //
 //Autor: Iván Nieto Pérez
@@ -67,14 +64,11 @@ if (document.captureEvents) {			//N4 requiere invocar la funcion captureEvents
 
 
 
-</script>
+</script>-->
 
 
 </head>
-
-
-
-<div style="margin-left: 180px;margin-right: 190px">
+<div id="header" style="margin-left: 180px;margin-right: 190px">
               <div id="grailsLogo">
                 <a href="${createLinkTo(dir:'')}">
                   <img src="${resource(dir:'images',file:'logoSiscofe-white1.png')}" alt="Grails" border="0" align="left"/>
@@ -84,12 +78,12 @@ if (document.captureEvents) {			//N4 requiere invocar la funcion captureEvents
   <div>
         <sec:ifLoggedIn>
            <p>
-            Bienvenido <sec:loggedInUserInfo field="username" /> | 
+            Hola <sec:loggedInUserInfo field="username" />! |
             <g:link class="perfil" controller="logout" style="color:white;font-weight:normal;"><g:message code="Salir" /></g:link>
            </p>
-           <form name="reloj24">
+<!--           <form name="reloj24">
              <input type="text" size="8" name="digitos" style="background: darkgreen;color: white"/>
-           </form>
+           </form>-->
         </sec:ifLoggedIn>
 
 </div>
