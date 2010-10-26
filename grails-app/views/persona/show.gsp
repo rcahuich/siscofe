@@ -91,9 +91,25 @@
                     <g:hiddenField name="id" value="${personaInstance?.id}" />
                     <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
                     <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
-                    <span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Alta de Membresia" /></g:link></span>
+                    <!--<span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Alta de Membresia" /></g:link></span>-->
                 </g:form>
             </div>
+
+
+   <body>
+        <div id="body">
+            <p>Elige el tipo de Ingreso:</p>
+
+            <div class="dialog">
+                <ul>
+                    <li><g:link controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Agregar Bautismo" /></g:link></li>
+                    <li><g:link controller="cartaDeTraslado" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Agregar Carta de Traslado" /></g:link></li>
+                    <li><g:link controller="profesionDeFe" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Agregar Profesion de Fe" /></g:link></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+
         </div>
     </body>
 </html>

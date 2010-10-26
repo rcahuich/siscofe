@@ -4,15 +4,9 @@ class Membresia {
     Persona persona
     Iglesia iglesia
     Bautismo bautismo
-    String tipoIngreso
-    String codigo
-
-    //AQUI HAY QUE AGREGAR LOS CAMPOS QUE SE RELLENARAN EN CASO DE QUE VENGA POR TRASLADO O PROFESION DE FE
-    //String pastorQueRecomienda //Para Traslado y Profesion de Fe
-    //Iglesia iglesiaProcedenciaDentro //Para traslado de dentro
-    //String iglesiaProcedenciaFuera //Para traslado de fuera
-
-
+    ProfesionDeFe profesionDeFe
+    CartaDeTraslado cartaDeTraslado
+    
     static constraints = {
         persona blank:false
         iglesia blank:false

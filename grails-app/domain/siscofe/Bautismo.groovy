@@ -2,25 +2,25 @@ package siscofe
 
 class Bautismo {
 
-    //Tipos de Bautismo: Bautismo, Profesion de Fe, Traslado;
     String lugarBautismo
-    Date fechaBautismo
     String ministroOficiante
     String codigo
-    Boolean estudioVeintiochoCreencias = true
     String cursoBiblico
     String numeroVotoJuntaAdministrativa
-    Date fechaVotoJuntaAdministrativa
     String numeroVotoJuntaDirectiva
-    Date fechaVotoJuntaDirectiva
     String numeroBautismo
+    String comentarios
+    Date fechaBautismo
+    Date fechaVotoJuntaAdministrativa
+    Date fechaVotoJuntaDirectiva
+    Date fechaAlta = new Date()
+    Boolean estudioVeintiochoCreencias = true
     Persona persona
     Iglesia iglesia
  
-    static belongsTo = Persona//muchos a uno
+    static belongsTo = Persona//muchos a uno (Una persona tienen muchos Bautismo)
 
     static constraints = {
-
         lugarBautismo maxSize:64, blank:false
         ministroOficiante maxSize:64, blank:false
         codigo maxSize:6, blank:false
@@ -28,6 +28,7 @@ class Bautismo {
         numeroVotoJuntaAdministrativa maxSize:10, blank:false
         numeroVotoJuntaDirectiva maxSize:10, blank:false
         numeroBautismo maxSize:5, inList:['1','2','3']
+        comentarios maxSize:512
     }
     
     static mapping = {
