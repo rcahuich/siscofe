@@ -13,7 +13,7 @@
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
 
-            <span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id]" class="create" action="create" > <g:message code="Agregar Inf. Bautismo" /></g:link></span>
+            <span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Agregar Inf. Bautismo" /></g:link></span>
         
         </div>
         <div class="body">

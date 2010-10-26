@@ -12,7 +12,7 @@
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-<!--            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>-->
+            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
             <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
@@ -81,7 +81,7 @@
                                   <label for="numeroBautismo"><g:message code="bautismo.numeroBautismo.label" default="Numero Bautismo" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroBautismo', 'errors')}">
-                                    <g:textField name="numeroBautismo" value="${fieldValue(bean: bautismoInstance, field: 'numeroBautismo')}" />
+                                    <g:select name="numeroBautismo" from="${bautismoInstance.constraints.numeroBautismo.inList}" value="${fieldValue(bean: bautismoInstance, field: 'numeroBautismo')}" valueMessagePrefix="bautismo.numeroBautismo"  />
                                 </td>
                             </tr>
                         
@@ -130,14 +130,14 @@
                                 </td>
                             </tr>
                         
-<!--                            <tr class="prop">
+                            <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="persona"><g:message code="bautismo.persona.label" default="Persona" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'persona', 'errors')}">
                                     <g:select name="persona.id" from="${siscofe.Persona.list()}" optionKey="id" value="${bautismoInstance?.persona?.id}"  />
                                 </td>
-                            </tr>-->
+                            </tr>
                         
                         </tbody>
                     </table>
