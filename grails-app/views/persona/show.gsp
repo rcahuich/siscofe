@@ -28,58 +28,37 @@
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.id.label" default="Id" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "id")}</td>
-                            
+                             <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "id")}</td>
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.nombre.label" default="Nombre" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "nombre")}</td>
-                            
+                             <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "nombre")}</td>
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.apellidoPaterno.label" default="Apellido Paterno" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "apellidoPaterno")}</td>
-                            
+                             <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "apellidoPaterno")}</td>
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.apellidoMaterno.label" default="Apellido Materno" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "apellidoMaterno")}</td>
-                            
+                             <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "apellidoMaterno")}</td>
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.estadoCivil.label" default="Estado Civil" /></td>
-                            
                             <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "estadoCivil")}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.nivelEstudio.label" default="Nivel Estudio" /></td>
-                            
                             <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "nivelEstudio")}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.religionAnterior.label" default="Religion Anterior" /></td>
-                            
                             <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "religionAnterior")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="persona.codigo.label" default="Codigo" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "codigo")}</td>
-                            
                         </tr>
                     
                         <tr class="prop">
@@ -89,9 +68,7 @@
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.fechaNacimiento.label" default="Fecha Nacimiento" /></td>
-                            
                             <td valign="top" class="value"><g:formatDate format="dd-MM-yyyy" date="${personaInstance?.fechaNacimiento}"/></td>
-                            
                         </tr>
                     
                         <tr class="prop">
@@ -102,17 +79,12 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.sabeLeer.label" default="Sabe Leer" /></td>
                             <td valign="top" class="value"><g:checkBox name="sabeLeer" value="${personaInstance?.sabeLeer}" disabled="true"/></td>
-                            
                         </tr>
 
-						<tr class="prop">
+			<tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.direccion.label" default="Direccion" /></td>
-                            
                             <td valign="top" class="value"><g:link controller="direccion" action="show" id="${personaInstance?.direccion?.id}">${personaInstance?.direccion?.encodeAsHTML()}</g:link></td>
-                            
                         </tr>
-
-
                     
                     </tbody>
                 </table>
