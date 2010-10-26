@@ -3,7 +3,6 @@ package siscofe
 class Bautismo {
 
     //Tipos de Bautismo: Bautismo, Profesion de Fe, Traslado;
-    
     String lugarBautismo
     Date fechaBautismo
     String ministroOficiante
@@ -17,8 +16,7 @@ class Bautismo {
     String numeroBautismo
     Persona persona
     Iglesia iglesia
-    //Persona adoctrinador
-
+ 
     static belongsTo = Persona//muchos a uno
 
     static constraints = {
