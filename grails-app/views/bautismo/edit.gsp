@@ -51,6 +51,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="codigo"><g:message code="bautismo.codigo.label" default="Codigo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'codigo', 'errors')}">
+                                    <g:textField name="codigo" maxlength="6" value="${bautismoInstance?.codigo}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="cursoBiblico"><g:message code="bautismo.cursoBiblico.label" default="Curso Biblico" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'cursoBiblico', 'errors')}">
@@ -81,7 +90,7 @@
                                   <label for="numeroBautismo"><g:message code="bautismo.numeroBautismo.label" default="Numero Bautismo" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroBautismo', 'errors')}">
-                                    <g:select name="numeroBautismo" from="${bautismoInstance.constraints.numeroBautismo.inList}" value="${fieldValue(bean: bautismoInstance, field: 'numeroBautismo')}" valueMessagePrefix="bautismo.numeroBautismo"  />
+                                    <g:select name="numeroBautismo" from="${bautismoInstance.constraints.numeroBautismo.inList}" value="${bautismoInstance?.numeroBautismo}" valueMessagePrefix="bautismo.numeroBautismo"  />
                                 </td>
                             </tr>
                         

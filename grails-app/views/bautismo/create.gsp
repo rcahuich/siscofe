@@ -24,12 +24,12 @@
             </div>
             </g:hasErrors>
             <g:form action="save" >
-              <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
+               <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
               <g:hiddenField name="persona.id" value="${params.personaId}"/>
                 <div class="dialog">
-                    <table>
+                                        <table>
                         <tbody>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="iglesia"><g:message code="bautismo.iglesia.label" default="Iglesia" /></label>
@@ -59,6 +59,15 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="codigo"><g:message code="bautismo.codigo.label" default="Codigo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'codigo', 'errors')}">
+                                    <g:textField name="codigo" maxlength="6" value="${bautismoInstance?.codigo}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="estudioVeintiochoCreencias"><g:message code="bautismo.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'estudioVeintiochoCreencias', 'errors')}">
@@ -74,7 +83,7 @@
                                     <g:textField name="cursoBiblico" maxlength="64" value="${bautismoInstance?.cursoBiblico}" />
                                 </td>
                             </tr>
-                            
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="lugarBautismo"><g:message code="bautismo.lugarBautismo.label" default="Lugar Bautismo" /></label>
@@ -101,7 +110,7 @@
                                     <g:textField name="numeroVotoJuntaAdministrativa" maxlength="10" value="${bautismoInstance?.numeroVotoJuntaAdministrativa}" />
                                 </td>
                             </tr>
-                            
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="fechaVotoJuntaAdministrativa"><g:message code="bautismo.fechaVotoJuntaAdministrativa.label" default="Fecha Voto Junta Administrativa" /></label>
@@ -129,8 +138,8 @@
                                 </td>
                             </tr>
 
-                        
-                        
+
+
                         </tbody>
                     </table>
                 </div>

@@ -7,6 +7,7 @@ class Bautismo {
     String lugarBautismo
     Date fechaBautismo
     String ministroOficiante
+    String codigo
     Boolean estudioVeintiochoCreencias = true
     String cursoBiblico
     String numeroVotoJuntaAdministrativa
@@ -24,6 +25,7 @@ class Bautismo {
 
         lugarBautismo maxSize:64, blank:false
         ministroOficiante maxSize:64, blank:false
+        codigo maxSize:6, blank:false
         cursoBiblico maxSize:64, blank:false
         numeroVotoJuntaAdministrativa maxSize:10, blank:false
         numeroVotoJuntaDirectiva maxSize:10, blank:false
