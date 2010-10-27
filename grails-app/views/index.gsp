@@ -13,6 +13,7 @@
                     <span class="menuButton"><g:link class="iglesia" controller="iglesia"><g:message code="Iglesias" /></g:link></span> |
                     <span class="menuButton"><g:link class="persona" controller="persona"><g:message code="Personas" /></g:link></span> |
                     <span class="menuButton"><g:link class="persona" controller="persona"><g:message code="Miembros" /></g:link></span> |
+                    <span class="menuButton"><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span> |
           </div>
 
 
