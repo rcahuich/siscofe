@@ -29,16 +29,17 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="lugarBautismo"><g:message code="cartaDeTraslado.lugarBautismo.label" default="Lugar Bautismo" /></label>
+                                    <label for="iglesia"><g:message code="cartaDeTraslado.iglesia.label" default="Iglesia" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'lugarBautismo', 'errors')}">
-                                    <g:textField name="lugarBautismo" maxlength="64" value="${cartaDeTrasladoInstance?.lugarBautismo}" />
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'iglesia', 'errors')}">
+                                    <g:select name="iglesia.id" from="${siscofe.Iglesia.list()}" optionKey="id" value="${cartaDeTrasladoInstance?.iglesia?.id}"  />
                                 </td>
                             </tr>
-                        
+
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="ministroOficiante"><g:message code="cartaDeTraslado.ministroOficiante.label" default="Ministro Oficiante" /></label>
@@ -47,7 +48,17 @@
                                     <g:textField name="ministroOficiante" maxlength="64" value="${cartaDeTrasladoInstance?.ministroOficiante}" />
                                 </td>
                             </tr>
-                        
+
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="numeroBautismo"><g:message code="cartaDeTraslado.numeroBautismo.label" default="Numero Bautismo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'numeroBautismo', 'errors')}">
+                                    <g:select name="numeroBautismo" from="${cartaDeTrasladoInstance.constraints.numeroBautismo.inList}" value="${cartaDeTrasladoInstance?.numeroBautismo}" valueMessagePrefix="cartaDeTraslado.numeroBautismo"  />
+                                </td>
+                            </tr>
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="codigo"><g:message code="cartaDeTraslado.codigo.label" default="Codigo" /></label>
@@ -59,13 +70,52 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="estudioVeintiochoCreencias"><g:message code="cartaDeTraslado.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'estudioVeintiochoCreencias', 'errors')}">
+                                    <g:checkBox name="estudioVeintiochoCreencias" value="${cartaDeTrasladoInstance?.estudioVeintiochoCreencias}" />
+                                </td>
+                            </tr>
+
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="cursoBiblico"><g:message code="cartaDeTraslado.cursoBiblico.label" default="Curso Biblico" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'cursoBiblico', 'errors')}">
                                     <g:textField name="cursoBiblico" maxlength="64" value="${cartaDeTrasladoInstance?.cursoBiblico}" />
                                 </td>
                             </tr>
-                        
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="lugarBautismo"><g:message code="cartaDeTraslado.lugarBautismo.label" default="Lugar Bautismo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'lugarBautismo', 'errors')}">
+                                    <g:textField name="lugarBautismo" maxlength="64" value="${cartaDeTrasladoInstance?.lugarBautismo}" />
+                                </td>
+                            </tr>
+
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="fechaBautismo"><g:message code="cartaDeTraslado.fechaBautismo.label" default="Fecha Bautismo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'fechaBautismo', 'errors')}">
+                                    <g:datePicker name="fechaBautismo" precision="day" value="${cartaDeTrasladoInstance?.fechaBautismo}"  />
+                                </td>
+                            </tr>
+
+
+                             <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="pastorEnFuncion"><g:message code="cartaDeTraslado.pastorEnFuncion.label" default="Pastor En Funcion" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'pastorEnFuncion', 'errors')}">
+                                    <g:textField name="pastorEnFuncion" maxlength="64" value="${cartaDeTrasladoInstance?.pastorEnFuncion}" />
+                                </td>
+                            </tr>
+                            
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="numeroVotoJuntaAdministrativa"><g:message code="cartaDeTraslado.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></label>
@@ -74,6 +124,17 @@
                                     <g:textField name="numeroVotoJuntaAdministrativa" maxlength="10" value="${cartaDeTrasladoInstance?.numeroVotoJuntaAdministrativa}" />
                                 </td>
                             </tr>
+
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="fechaVotoJuntaAdministrativa"><g:message code="cartaDeTraslado.fechaVotoJuntaAdministrativa.label" default="Fecha Voto Junta Administrativa" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'fechaVotoJuntaAdministrativa', 'errors')}">
+                                    <g:datePicker name="fechaVotoJuntaAdministrativa" precision="day" value="${cartaDeTrasladoInstance?.fechaVotoJuntaAdministrativa}"  />
+                                </td>
+                            </tr>
+
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -83,13 +144,16 @@
                                     <g:textField name="numeroVotoJuntaDirectiva" maxlength="10" value="${cartaDeTrasladoInstance?.numeroVotoJuntaDirectiva}" />
                                 </td>
                             </tr>
-                        
+
+
+
+
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="numeroBautismo"><g:message code="cartaDeTraslado.numeroBautismo.label" default="Numero Bautismo" /></label>
+                                    <label for="fechaVotoJuntaDirectiva"><g:message code="cartaDeTraslado.fechaVotoJuntaDirectiva.label" default="Fecha Voto Junta Directiva" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'numeroBautismo', 'errors')}">
-                                    <g:select name="numeroBautismo" from="${cartaDeTrasladoInstance.constraints.numeroBautismo.inList}" value="${cartaDeTrasladoInstance?.numeroBautismo}" valueMessagePrefix="cartaDeTraslado.numeroBautismo"  />
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'fechaVotoJuntaDirectiva', 'errors')}">
+                                    <g:datePicker name="fechaVotoJuntaDirectiva" precision="day" value="${cartaDeTrasladoInstance?.fechaVotoJuntaDirectiva}"  />
                                 </td>
                             </tr>
                         
@@ -102,68 +166,9 @@
                                 </td>
                             </tr>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="pastorEnFuncion"><g:message code="cartaDeTraslado.pastorEnFuncion.label" default="Pastor En Funcion" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'pastorEnFuncion', 'errors')}">
-                                    <g:textField name="pastorEnFuncion" maxlength="64" value="${cartaDeTrasladoInstance?.pastorEnFuncion}" />
-                                </td>
-                            </tr>
+                           
+    
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="estudioVeintiochoCreencias"><g:message code="cartaDeTraslado.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'estudioVeintiochoCreencias', 'errors')}">
-                                    <g:checkBox name="estudioVeintiochoCreencias" value="${cartaDeTrasladoInstance?.estudioVeintiochoCreencias}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="fechaAlta"><g:message code="cartaDeTraslado.fechaAlta.label" default="Fecha Alta" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'fechaAlta', 'errors')}">
-                                    <g:datePicker name="fechaAlta" precision="day" value="${cartaDeTrasladoInstance?.fechaAlta}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="fechaBautismo"><g:message code="cartaDeTraslado.fechaBautismo.label" default="Fecha Bautismo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'fechaBautismo', 'errors')}">
-                                    <g:datePicker name="fechaBautismo" precision="day" value="${cartaDeTrasladoInstance?.fechaBautismo}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="fechaVotoJuntaAdministrativa"><g:message code="cartaDeTraslado.fechaVotoJuntaAdministrativa.label" default="Fecha Voto Junta Administrativa" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'fechaVotoJuntaAdministrativa', 'errors')}">
-                                    <g:datePicker name="fechaVotoJuntaAdministrativa" precision="day" value="${cartaDeTrasladoInstance?.fechaVotoJuntaAdministrativa}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="fechaVotoJuntaDirectiva"><g:message code="cartaDeTraslado.fechaVotoJuntaDirectiva.label" default="Fecha Voto Junta Directiva" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'fechaVotoJuntaDirectiva', 'errors')}">
-                                    <g:datePicker name="fechaVotoJuntaDirectiva" precision="day" value="${cartaDeTrasladoInstance?.fechaVotoJuntaDirectiva}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="iglesia"><g:message code="cartaDeTraslado.iglesia.label" default="Iglesia" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'iglesia', 'errors')}">
-                                    <g:select name="iglesia.id" from="${siscofe.Iglesia.list()}" optionKey="id" value="${cartaDeTrasladoInstance?.iglesia?.id}"  />
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
