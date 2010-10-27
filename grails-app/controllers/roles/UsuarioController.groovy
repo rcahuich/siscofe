@@ -7,6 +7,7 @@ class UsuarioController {
 
     def usuarioService
     def springSecurityService
+    def sessionFactory
     
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -28,17 +29,18 @@ class UsuarioController {
 
     def save = {
         def usuarioInstance = new Usuario(params)
-        log.debug "Agregando nuevo usuario $usuarioInstance.nombre"
+        log.debug "Agregando nuevo usuario --$usuarioInstance.nombre"
         usuarioInstance.password = springSecurityService.encodePassword(params.password)
                 def roles = [] as Set
                 if (params.ROLE_ADMIN) {
                     roles << Rol.findByAuthority('ROLE_ADMIN')
+                }else {
+                    roles << Rol.findByAuthority('ROLE_USER')
                 }
-
 
         if (usuarioInstance.save(flush: true)) {
             for(rol in roles) {
-                    roles.UsuarioRol.create(usuarioInstance, rol, false)
+                    UsuarioRol.create(usuarioInstance, rol)
                 }
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])}"
             redirect(action: "show", id: usuarioInstance.id)
@@ -97,15 +99,17 @@ class UsuarioController {
                 def roles = [] as Set
                 if (params.ROLE_ADMIN) {
                     roles << Rol.findByAuthority('ROLE_ADMIN')
+                }else {
+                    roles << Rol.findByAuthority('ROLE_USER')
                 }
 
             if (!usuarioInstance.hasErrors() && usuarioInstance.save(flush: true)) {
-                            if (roles) {
-                        roles.UsuarioRol.removeAll(usuarioInstance)
+                    if (roles) {
+                        UsuarioRol.removeAll(usuarioInstance)
                         sessionFactory.currentSession.flush()
 
                         for(rol in roles) {
-                            roles.UsuarioRol.create(usuarioInstance, rol, false)
+                            UsuarioRol.create(usuarioInstance, rol, false)
                         }
                     }
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])}"
