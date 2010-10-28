@@ -1,29 +1,34 @@
 package siscofe
 
 class Bautismo {
+
     String lugarBautismo
-    Date fechaBautismo
     String ministroOficiante
-    Boolean estudioVeintiochoCreencias = true
+    String codigo
     String cursoBiblico
     String numeroVotoJuntaAdministrativa
-    Date fechaVotoJuntaAdministrativa
     String numeroVotoJuntaDirectiva
+    String numeroBautismo
+    String comentarios
+    Date fechaBautismo
+    Date fechaVotoJuntaAdministrativa
     Date fechaVotoJuntaDirectiva
-    Integer numeroBautismo
+    Date fechaAlta = new Date()
+    Boolean estudioVeintiochoCreencias = true
     Persona persona
     Iglesia iglesia
-    //Persona adoctrinador
-
-    static belongsTo = Persona//muchos a uno
+ 
+    static belongsTo = Persona//muchos a uno (Una persona tienen muchos Bautismo)
 
     static constraints = {
         lugarBautismo maxSize:64, blank:false
         ministroOficiante maxSize:64, blank:false
+        codigo maxSize:6, blank:false
         cursoBiblico maxSize:64, blank:false
         numeroVotoJuntaAdministrativa maxSize:10, blank:false
         numeroVotoJuntaDirectiva maxSize:10, blank:false
-        numeroBautismo blank:false
+        numeroBautismo maxSize:5, inList:['1','2','3']
+        comentarios maxSize:512
     }
     
     static mapping = {

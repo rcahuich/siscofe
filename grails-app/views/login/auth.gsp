@@ -3,7 +3,9 @@
 <title>Login</title>
 <style type='text/css' media='screen'>
 #login {
-	margin:15px 0px; padding:0px;
+        
+	margin:30px 0px;
+        padding:30px;
 	text-align:center;
 }
 #login .inner {
@@ -42,8 +44,10 @@
 </style>
 </head>
 
+
 <body>
-	<div id='login'>
+
+      <div id='login'>
 		<div class='inner'>
 			<g:if test='${flash.message}'>
 			<div class='login_message'>${flash.message}</div>
@@ -69,6 +73,7 @@
 			</form>
 		</div>
 	</div>
+
 <script type='text/javascript'>
 //<!--
 (function(){
@@ -76,4 +81,5 @@
 })();
 // -->
 </script>
+
 </body>
