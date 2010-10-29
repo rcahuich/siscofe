@@ -74,6 +74,7 @@ if (document.captureEvents) {			//N4 requiere invocar la funcion captureEvents
                   <img src="${resource(dir:'images',file:'logoSiscofe-white1.png')}" alt="Grails" border="0" align="left"/>
                 </a>
               </div>
+
 <div id="status">
   <div>
         <sec:ifLoggedIn>

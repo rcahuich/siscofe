@@ -69,11 +69,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="persona.miembro.label" default="Miembro" /></td>
-                            <td valign="top" class="value"><g:checkBox name="miembro" value="${personaInstance?.miembro}" disabled="true"/></td>                   
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.sabeLeer.label" default="Sabe Leer" /></td>
                             <td valign="top" class="value"><g:checkBox name="sabeLeer" value="${personaInstance?.sabeLeer}" disabled="true"/></td>
                         </tr>
@@ -86,16 +81,22 @@
                     </tbody>
                 </table>
             </div>
-            <div class="buttons">
-                <g:form>
-                    <g:hiddenField name="id" value="${personaInstance?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
-                    <!--<span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Alta de Membresia" /></g:link></span>-->
+            
+            <div>
+              <p>Selecciona el tipo de Ingreso:</p>
+                <g:form controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]">
+                    <span class="menuButton"><g:actionSubmit class="create" action="create" value="${message(code: 'Agregar info Bautismo', default: 'Agregar informacion de Bautismo')}" /></span>
+                </g:form>
+                <g:form controller="cartaDeTraslado" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]">
+                    <span class="menuButton"><g:actionSubmit class="create" action="create" value="${message(code: 'Agregar Carta de Traslado', default: 'Agregar por Carta de Traslado')}" /></span>
+                </g:form>
+                <g:form controller="profesionDeFe" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]">
+                    <span class="menuButton"><g:actionSubmit class="create" action="create" value="${message(code: 'Agregar Profesion de Fe', default: 'Agregar por Profesion de Fe')}" /></span>
                 </g:form>
             </div>
+           
 
-
+<!--
    <body>
         <div id="body">
             <p>Elige el tipo de Ingreso:</p>
@@ -108,7 +109,7 @@
                 </ul>
             </div>
         </div>
-    </body>
+    </body>-->
 
         </div>
     </body>

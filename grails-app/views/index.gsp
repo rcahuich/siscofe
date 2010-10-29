@@ -2,18 +2,46 @@
     <head>
         <title>Siscofe</title>
         <meta name="layout" content="main" />    
-   		
+        
     </head>
 
     <body>
+
+        <div id="menu">
+		<ul class="menu">
+			<li><a href="${resource(dir: '')}" class="parent"><span>Inicio</span></a>
+			</li>
+			<li><a href="#"><span>Iglesias</span></a>
+				<div><ul>
+					<li><a href="#"<span><g:link class="iglesia" controller="iglesia"><g:message code="Iglesias" /></g:link></span></a></li>
+				</ul></div>
+			</li>
+                        <li><a href="#"><span>Comunidad</span></a>
+				<div><ul>
+					<li><a href="#"<span><g:link class="persona" controller="persona"><g:message code="Lista de Personas" /></g:link></span></a></li>
+					<li><a href="#"><span>Lista de Bautizados</span></a></li>
+				</ul></div>
+			</li>
+                        <li><a href=""><span>Administración</span></a>
+				<div><ul>
+					<li><a href=""<span><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span></a></li>
+				</ul></div>
+			</li>
+			<li><a href="ayuda.gsp"><span>Ayuda</span></a></li>
+		</ul>
+	</div>
+
+
+
+
         <div id="body">
-          <div class="nav">
+<!--          <div class="nav">
 
                     <span class="menuButton"><a class="home" href="${resource(dir: '')}"><g:message code="Inicio" /></a></span> |
                     <span class="menuButton"><g:link class="iglesia" controller="iglesia"><g:message code="Iglesias" /></g:link></span> |
                     <span class="menuButton"><g:link class="persona" controller="persona"><g:message code="Comunidad" /></g:link></span> |
                     <span class="menuButton"><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span> |
-          </div>
+          </div>-->
 
 
           <h1>Bienvenido</h1>
