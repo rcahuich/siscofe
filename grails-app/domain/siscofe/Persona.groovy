@@ -30,6 +30,7 @@ class Persona {
         religionAnterior maxSize:32, inList:['NINGUNO','ADVENTISTA DEL SEPTIMO DIA','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
         tipoDeSangre maxSize:12, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-','No sabe']
         sexo maxSize:12, inList:['Masculino','Femenino']
+        phoneCelular blank:true
         enfermedades maxSize:128
         fechaNacimiento blank:false
         direccion blank:false, unique:true
