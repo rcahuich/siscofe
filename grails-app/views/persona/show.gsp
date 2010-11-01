@@ -82,14 +82,12 @@
                 </table>
             </div>
 
-            <div class="buttons">
-                <g:form>
-                    <g:hiddenField name="id" value="${personaInstance?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
+        <div class="nav">
+            <span class="menuButton"><g:link class="create" action="create"controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" /><g:message code="default.new.label" args="[entityName]" /></span>
+            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+        </div>
 
-                    <!--<span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Alta de Membresia" /></g:link></span>-->
-
+            <div>
               <p>Selecciona el tipo de Ingreso:</p>
                 <g:form controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]">
                     <span class="menuButton"><g:actionSubmit class="create" action="create" value="${message(code: 'Agregar info Bautismo', default: 'Agregar informacion de Bautismo')}" /></span>
