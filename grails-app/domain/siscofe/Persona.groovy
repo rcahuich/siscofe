@@ -10,8 +10,11 @@ class Persona {
     String tipoDeSangre
     String enfermedades
     Date fechaNacimiento
-    Boolean miembro = false
-    Boolean esHombre = true
+    Integer phoneCasa
+    Integer phoneTrabajo
+    Integer phoneCelular
+    String correo   
+    String sexo
     Boolean sabeLeer = true
     Direccion direccion
     Set bautismos
@@ -22,10 +25,12 @@ class Persona {
         nombre maxSize:64, blank:false
         apellidoPaterno maxSize:64, blank:false
         apellidoMaterno maxSize:64, blank:false
-        estadoCivil maxSize:32, inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO','UNION LIBRE']
+        estadoCivil maxSize:32, inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO']
         nivelEstudio maxSize:32, inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
         religionAnterior maxSize:32, inList:['NINGUNO','ADVENTISTA DEL SEPTIMO DIA','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
-        tipoDeSangre maxSize:4, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-']
+        tipoDeSangre maxSize:12, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-','No sabe']
+        sexo maxSize:12, inList:['Masculino','Femenino']
+        phoneCelular blank:true
         enfermedades maxSize:128
         fechaNacimiento blank:false
         direccion blank:false, unique:true
