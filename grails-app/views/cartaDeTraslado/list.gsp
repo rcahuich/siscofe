@@ -28,11 +28,11 @@
                         
                             <g:sortableColumn property="numeroVotoJuntaDirectiva" title="${message(code: 'cartaDeTraslado.numeroVotoJuntaDirectiva.label', default: 'Numero Voto Junta Directiva')}" />
                         
+                            <g:sortableColumn property="comentarios" title="${message(code: 'cartaDeTraslado.comentarios.label', default: 'Comentarios')}" />
+                        
                             <g:sortableColumn property="pastorEnFuncion" title="${message(code: 'cartaDeTraslado.pastorEnFuncion.label', default: 'Pastor En Funcion')}" />
                         
                             <g:sortableColumn property="iglesiaProcedencia" title="${message(code: 'cartaDeTraslado.iglesiaProcedencia.label', default: 'Iglesia Procedencia')}" />
-                        
-                            <g:sortableColumn property="trasladadoA" title="${message(code: 'cartaDeTraslado.trasladadoA.label', default: 'Trasladado A')}" />
                         
                         </tr>
                     </thead>
@@ -46,11 +46,11 @@
                         
                             <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "numeroVotoJuntaDirectiva")}</td>
                         
+                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "comentarios")}</td>
+                        
                             <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "pastorEnFuncion")}</td>
                         
                             <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "iglesiaProcedencia")}</td>
-                        
-                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "trasladadoA")}</td>
                         
                         </tr>
                     </g:each>

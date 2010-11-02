@@ -28,11 +28,11 @@
                         
                             <g:sortableColumn property="numeroVotoJuntaDirectiva" title="${message(code: 'bautismo.numeroVotoJuntaDirectiva.label', default: 'Numero Voto Junta Directiva')}" />
                         
+                            <g:sortableColumn property="comentarios" title="${message(code: 'bautismo.comentarios.label', default: 'Comentarios')}" />
+                        
                             <g:sortableColumn property="lugarBautismo" title="${message(code: 'bautismo.lugarBautismo.label', default: 'Lugar Bautismo')}" />
                         
                             <g:sortableColumn property="ministroOficiante" title="${message(code: 'bautismo.ministroOficiante.label', default: 'Ministro Oficiante')}" />
-                        
-                            <g:sortableColumn property="codigo" title="${message(code: 'bautismo.codigo.label', default: 'Codigo')}" />
                         
                         </tr>
                     </thead>
@@ -46,11 +46,11 @@
                         
                             <td>${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaDirectiva")}</td>
                         
+                            <td>${fieldValue(bean: bautismoInstance, field: "comentarios")}</td>
+                        
                             <td>${fieldValue(bean: bautismoInstance, field: "lugarBautismo")}</td>
                         
                             <td>${fieldValue(bean: bautismoInstance, field: "ministroOficiante")}</td>
-                        
-                            <td>${fieldValue(bean: bautismoInstance, field: "codigo")}</td>
                         
                         </tr>
                     </g:each>

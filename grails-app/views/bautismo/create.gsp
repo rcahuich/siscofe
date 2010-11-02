@@ -14,7 +14,7 @@
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+            <h1><g:message code="Agregando Bautismo para: "/> ${params.personaNombre}</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -24,6 +24,8 @@
             </div>
             </g:hasErrors>
             <g:form action="save" >
+            <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
+            <g:hiddenField name="persona.id" value="${params.personaId}"/>
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -43,6 +45,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroVotoJuntaDirectiva', 'errors')}">
                                     <g:textField name="numeroVotoJuntaDirectiva" maxlength="10" value="${bautismoInstance?.numeroVotoJuntaDirectiva}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="comentarios"><g:message code="bautismo.comentarios.label" default="Comentarios" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'comentarios', 'errors')}">
+                                    <g:textArea name="comentarios" cols="40" rows="5" value="${bautismoInstance?.comentarios}" />
                                 </td>
                             </tr>
                         
@@ -144,16 +155,7 @@
                                     <g:select name="iglesia.id" from="${siscofe.Iglesia.list()}" optionKey="id" value="${bautismoInstance?.iglesia?.id}"  />
                                 </td>
                             </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="persona"><g:message code="bautismo.persona.label" default="Persona" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'persona', 'errors')}">
-                                    <g:select name="persona.id" from="${siscofe.Persona.list()}" optionKey="id" value="${bautismoInstance?.persona?.id}"  />
-                                </td>
-                            </tr>
-                        
+                           
                         </tbody>
                     </table>
                 </div>

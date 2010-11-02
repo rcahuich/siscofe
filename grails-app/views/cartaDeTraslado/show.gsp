@@ -44,6 +44,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="cartaDeTraslado.comentarios.label" default="Comentarios" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "comentarios")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="cartaDeTraslado.pastorEnFuncion.label" default="Pastor En Funcion" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "pastorEnFuncion")}</td>
@@ -54,13 +61,6 @@
                             <td valign="top" class="name"><g:message code="cartaDeTraslado.iglesiaProcedencia.label" default="Iglesia Procedencia" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "iglesiaProcedencia")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="cartaDeTraslado.trasladadoA.label" default="Trasladado A" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "trasladadoA")}</td>
                             
                         </tr>
                     

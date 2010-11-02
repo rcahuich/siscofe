@@ -10,7 +10,7 @@ class Iglesia {
     static constraints = {
         nombre maxSize:64, blank:false
         tipoIglesia inList:['FILIAL','GRUPO','ORGANIZADA']
-        telefono maxSize:14, blank:true
+        telefono maxSize:32, blank:true
         direccion unique: true
     }
 

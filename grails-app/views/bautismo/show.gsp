@@ -44,6 +44,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="bautismo.comentarios.label" default="Comentarios" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "comentarios")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="bautismo.lugarBautismo.label" default="Lugar Bautismo" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "lugarBautismo")}</td>

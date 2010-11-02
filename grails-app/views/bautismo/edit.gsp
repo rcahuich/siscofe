@@ -27,6 +27,8 @@
             <g:form method="post" >
                 <g:hiddenField name="id" value="${bautismoInstance?.id}" />
                 <g:hiddenField name="version" value="${bautismoInstance?.version}" />
+                <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
+                <g:hiddenField name="persona.id" value="${params.personaId}"/>
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -46,6 +48,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroVotoJuntaDirectiva', 'errors')}">
                                     <g:textField name="numeroVotoJuntaDirectiva" maxlength="10" value="${bautismoInstance?.numeroVotoJuntaDirectiva}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="comentarios"><g:message code="bautismo.comentarios.label" default="Comentarios" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'comentarios', 'errors')}">
+                                    <g:textArea name="comentarios" cols="40" rows="5" value="${bautismoInstance?.comentarios}" />
                                 </td>
                             </tr>
                         

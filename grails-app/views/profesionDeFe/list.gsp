@@ -28,11 +28,11 @@
                         
                             <g:sortableColumn property="numeroVotoJuntaDirectiva" title="${message(code: 'profesionDeFe.numeroVotoJuntaDirectiva.label', default: 'Numero Voto Junta Directiva')}" />
                         
+                            <g:sortableColumn property="comentarios" title="${message(code: 'profesionDeFe.comentarios.label', default: 'Comentarios')}" />
+                        
                             <g:sortableColumn property="pastorEnFuncion" title="${message(code: 'profesionDeFe.pastorEnFuncion.label', default: 'Pastor En Funcion')}" />
                         
                             <g:sortableColumn property="iglesiaProcedencia" title="${message(code: 'profesionDeFe.iglesiaProcedencia.label', default: 'Iglesia Procedencia')}" />
-                        
-                            <g:sortableColumn property="fechaAlta" title="${message(code: 'profesionDeFe.fechaAlta.label', default: 'Fecha Alta')}" />
                         
                         </tr>
                     </thead>
@@ -46,11 +46,11 @@
                         
                             <td>${fieldValue(bean: profesionDeFeInstance, field: "numeroVotoJuntaDirectiva")}</td>
                         
+                            <td>${fieldValue(bean: profesionDeFeInstance, field: "comentarios")}</td>
+                        
                             <td>${fieldValue(bean: profesionDeFeInstance, field: "pastorEnFuncion")}</td>
                         
                             <td>${fieldValue(bean: profesionDeFeInstance, field: "iglesiaProcedencia")}</td>
-                        
-                            <td><g:formatDate date="${profesionDeFeInstance.fechaAlta}" /></td>
                         
                         </tr>
                     </g:each>

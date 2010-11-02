@@ -44,6 +44,13 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="profesionDeFe.comentarios.label" default="Comentarios" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "comentarios")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="profesionDeFe.pastorEnFuncion.label" default="Pastor En Funcion" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "pastorEnFuncion")}</td>

@@ -6,6 +6,7 @@ class TipoDeIngreso {
     Iglesia iglesia
     String numeroVotoJuntaAdministrativa
     String numeroVotoJuntaDirectiva
+    String comentarios
     Date fechaVotoJuntaAdministrativa
     Date fechaVotoJuntaDirectiva
     Date fechaAlta = new Date()

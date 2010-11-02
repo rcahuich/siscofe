@@ -27,6 +27,8 @@
             <g:form method="post" >
                 <g:hiddenField name="id" value="${cartaDeTrasladoInstance?.id}" />
                 <g:hiddenField name="version" value="${cartaDeTrasladoInstance?.version}" />
+                <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
+                <g:hiddenField name="persona.id" value="${params.personaId}"/>
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -51,6 +53,15 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="comentarios"><g:message code="cartaDeTraslado.comentarios.label" default="Comentarios" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'comentarios', 'errors')}">
+                                    <g:textArea name="comentarios" cols="40" rows="5" value="${cartaDeTrasladoInstance?.comentarios}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="pastorEnFuncion"><g:message code="cartaDeTraslado.pastorEnFuncion.label" default="Pastor En Funcion" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'pastorEnFuncion', 'errors')}">
@@ -64,15 +75,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'iglesiaProcedencia', 'errors')}">
                                     <g:textField name="iglesiaProcedencia" maxlength="64" value="${cartaDeTrasladoInstance?.iglesiaProcedencia}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="trasladadoA"><g:message code="cartaDeTraslado.trasladadoA.label" default="Trasladado A" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cartaDeTrasladoInstance, field: 'trasladadoA', 'errors')}">
-                                    <g:textField name="trasladadoA" maxlength="64" value="${cartaDeTrasladoInstance?.trasladadoA}" />
                                 </td>
                             </tr>
                         
