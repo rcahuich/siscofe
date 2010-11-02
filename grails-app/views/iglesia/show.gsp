@@ -37,6 +37,20 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="iglesia.tipoIglesia.label" default="Tipo Iglesia" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "tipoIglesia")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="iglesia.telefono.label" default="Telefono" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "telefono")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="iglesia.direccion.label" default="Direccion" /></td>
                             
                             <td valign="top" class="value"><g:link controller="direccion" action="show" id="${iglesiaInstance?.direccion?.id}">${iglesiaInstance?.direccion?.encodeAsHTML()}</g:link></td>

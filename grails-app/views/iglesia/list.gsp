@@ -18,13 +18,17 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="list">
-                <table id="iglesiaInstanceList">
+                <table>
                     <thead>
                         <tr>
                         
-<!--                            <g:sortableColumn property="id" title="${message(code: 'iglesia.id.label', default: 'Id')}" />-->
+                            <g:sortableColumn property="id" title="${message(code: 'iglesia.id.label', default: 'Id')}" />
                         
                             <g:sortableColumn property="nombre" title="${message(code: 'iglesia.nombre.label', default: 'Nombre')}" />
+                        
+                            <g:sortableColumn property="tipoIglesia" title="${message(code: 'iglesia.tipoIglesia.label', default: 'Tipo Iglesia')}" />
+                        
+                            <g:sortableColumn property="telefono" title="${message(code: 'iglesia.telefono.label', default: 'Telefono')}" />
                         
                             <th><g:message code="iglesia.direccion.label" default="Direccion" /></th>
                         
@@ -34,9 +38,13 @@
                     <g:each in="${iglesiaInstanceList}" status="i" var="iglesiaInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         
-                            <td><g:link action="show" id="${iglesiaInstance.id}">${fieldValue(bean: iglesiaInstance, field: "nombre")}</g:link></td>
+                            <td><g:link action="show" id="${iglesiaInstance.id}">${fieldValue(bean: iglesiaInstance, field: "id")}</g:link></td>
                         
-<!--                            <td>${fieldValue(bean: iglesiaInstance, field: "nombre")}</td>-->
+                            <td>${fieldValue(bean: iglesiaInstance, field: "nombre")}</td>
+                        
+                            <td>${fieldValue(bean: iglesiaInstance, field: "tipoIglesia")}</td>
+                        
+                            <td>${fieldValue(bean: iglesiaInstance, field: "telefono")}</td>
                         
                             <td>${fieldValue(bean: iglesiaInstance, field: "direccion")}</td>
                         
@@ -49,8 +57,5 @@
                 <g:paginate total="${iglesiaInstanceTotal}" />
             </div>
         </div>
-        <g:javascript>
-            highlightTableRows('iglesiaInstanceList')
-        </g:javascript>
     </body>
 </html>

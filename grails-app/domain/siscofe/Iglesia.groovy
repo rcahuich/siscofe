@@ -3,15 +3,15 @@ package siscofe
 
 class Iglesia {
     String nombre
+    String tipoIglesia
+    String telefono
     Direccion direccion
-    
-
-//    static hasOne = [direccion : Direccion ]
-
 
     static constraints = {
-        direccion unique: true
         nombre maxSize:64, blank:false
+        tipoIglesia inList:['FILIAL','GRUPO','ORGANIZADA']
+        telefono maxSize:14, blank:true
+        direccion unique: true
     }
 
     static mapping = {

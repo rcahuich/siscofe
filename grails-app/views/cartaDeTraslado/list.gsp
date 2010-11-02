@@ -24,15 +24,15 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'cartaDeTraslado.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="lugarBautismo" title="${message(code: 'cartaDeTraslado.lugarBautismo.label', default: 'Lugar Bautismo')}" />
-                        
-                            <g:sortableColumn property="ministroOficiante" title="${message(code: 'cartaDeTraslado.ministroOficiante.label', default: 'Ministro Oficiante')}" />
-                        
-                            <g:sortableColumn property="codigo" title="${message(code: 'cartaDeTraslado.codigo.label', default: 'Codigo')}" />
-                        
-                            <g:sortableColumn property="cursoBiblico" title="${message(code: 'cartaDeTraslado.cursoBiblico.label', default: 'Curso Biblico')}" />
-                        
                             <g:sortableColumn property="numeroVotoJuntaAdministrativa" title="${message(code: 'cartaDeTraslado.numeroVotoJuntaAdministrativa.label', default: 'Numero Voto Junta Administrativa')}" />
+                        
+                            <g:sortableColumn property="numeroVotoJuntaDirectiva" title="${message(code: 'cartaDeTraslado.numeroVotoJuntaDirectiva.label', default: 'Numero Voto Junta Directiva')}" />
+                        
+                            <g:sortableColumn property="pastorEnFuncion" title="${message(code: 'cartaDeTraslado.pastorEnFuncion.label', default: 'Pastor En Funcion')}" />
+                        
+                            <g:sortableColumn property="iglesiaProcedencia" title="${message(code: 'cartaDeTraslado.iglesiaProcedencia.label', default: 'Iglesia Procedencia')}" />
+                        
+                            <g:sortableColumn property="trasladadoA" title="${message(code: 'cartaDeTraslado.trasladadoA.label', default: 'Trasladado A')}" />
                         
                         </tr>
                     </thead>
@@ -42,15 +42,15 @@
                         
                             <td><g:link action="show" id="${cartaDeTrasladoInstance.id}">${fieldValue(bean: cartaDeTrasladoInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "lugarBautismo")}</td>
-                        
-                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "ministroOficiante")}</td>
-                        
-                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "codigo")}</td>
-                        
-                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "cursoBiblico")}</td>
-                        
                             <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "numeroVotoJuntaAdministrativa")}</td>
+                        
+                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "numeroVotoJuntaDirectiva")}</td>
+                        
+                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "pastorEnFuncion")}</td>
+                        
+                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "iglesiaProcedencia")}</td>
+                        
+                            <td>${fieldValue(bean: cartaDeTrasladoInstance, field: "trasladadoA")}</td>
                         
                         </tr>
                     </g:each>

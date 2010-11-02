@@ -33,42 +33,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="lugarBautismo"><g:message code="profesionDeFe.lugarBautismo.label" default="Lugar Bautismo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'lugarBautismo', 'errors')}">
-                                    <g:textField name="lugarBautismo" maxlength="64" value="${profesionDeFeInstance?.lugarBautismo}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="ministroOficiante"><g:message code="profesionDeFe.ministroOficiante.label" default="Ministro Oficiante" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'ministroOficiante', 'errors')}">
-                                    <g:textField name="ministroOficiante" maxlength="64" value="${profesionDeFeInstance?.ministroOficiante}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="codigo"><g:message code="profesionDeFe.codigo.label" default="Codigo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'codigo', 'errors')}">
-                                    <g:textField name="codigo" maxlength="6" value="${profesionDeFeInstance?.codigo}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="cursoBiblico"><g:message code="profesionDeFe.cursoBiblico.label" default="Curso Biblico" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'cursoBiblico', 'errors')}">
-                                    <g:textField name="cursoBiblico" maxlength="64" value="${profesionDeFeInstance?.cursoBiblico}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                   <label for="numeroVotoJuntaAdministrativa"><g:message code="profesionDeFe.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'numeroVotoJuntaAdministrativa', 'errors')}">
@@ -87,24 +51,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="numeroBautismo"><g:message code="profesionDeFe.numeroBautismo.label" default="Numero Bautismo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'numeroBautismo', 'errors')}">
-                                    <g:select name="numeroBautismo" from="${profesionDeFeInstance.constraints.numeroBautismo.inList}" value="${profesionDeFeInstance?.numeroBautismo}" valueMessagePrefix="profesionDeFe.numeroBautismo"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="comentarios"><g:message code="profesionDeFe.comentarios.label" default="Comentarios" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'comentarios', 'errors')}">
-                                    <g:textArea name="comentarios" cols="40" rows="5" value="${profesionDeFeInstance?.comentarios}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                   <label for="pastorEnFuncion"><g:message code="profesionDeFe.pastorEnFuncion.label" default="Pastor En Funcion" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'pastorEnFuncion', 'errors')}">
@@ -114,10 +60,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="estudioVeintiochoCreencias"><g:message code="profesionDeFe.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></label>
+                                  <label for="iglesiaProcedencia"><g:message code="profesionDeFe.iglesiaProcedencia.label" default="Iglesia Procedencia" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'estudioVeintiochoCreencias', 'errors')}">
-                                    <g:checkBox name="estudioVeintiochoCreencias" value="${profesionDeFeInstance?.estudioVeintiochoCreencias}" />
+                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'iglesiaProcedencia', 'errors')}">
+                                    <g:textField name="iglesiaProcedencia" maxlength="64" value="${profesionDeFeInstance?.iglesiaProcedencia}" />
                                 </td>
                             </tr>
                         
@@ -127,15 +73,6 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'fechaAlta', 'errors')}">
                                     <g:datePicker name="fechaAlta" precision="day" value="${profesionDeFeInstance?.fechaAlta}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="fechaBautismo"><g:message code="profesionDeFe.fechaBautismo.label" default="Fecha Bautismo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'fechaBautismo', 'errors')}">
-                                    <g:datePicker name="fechaBautismo" precision="day" value="${profesionDeFeInstance?.fechaBautismo}"  />
                                 </td>
                             </tr>
                         

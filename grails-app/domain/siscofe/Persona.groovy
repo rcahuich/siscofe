@@ -10,22 +10,29 @@ class Persona {
     String tipoDeSangre
     String enfermedades
     Date fechaNacimiento
-    Boolean miembro = false
-    Boolean esHombre = true
+    String phoneCasa
+    String phoneTrabajo
+    String phoneCelular
+    String correo   
+    String sexo
     Boolean sabeLeer = true
     Direccion direccion
-    Set bautismos
+    Set ingresos
     
-    static hasMany = [bautismos : Bautismo]
+    static hasMany = [ingresos : TipoDeIngreso]
 
     static constraints = {
         nombre maxSize:64, blank:false
         apellidoPaterno maxSize:64, blank:false
         apellidoMaterno maxSize:64, blank:false
-        estadoCivil maxSize:32, inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO','UNION LIBRE']
+        estadoCivil maxSize:32, inList:['CASADO','SOLTERO','VIUDO','DIVORCIADO']
         nivelEstudio maxSize:32, inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
         religionAnterior maxSize:32, inList:['NINGUNO','ADVENTISTA DEL SEPTIMO DIA','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
-        tipoDeSangre maxSize:4, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-']
+        tipoDeSangre maxSize:12, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-','No sabe']
+        sexo maxSize:12, inList:['Masculino','Femenino']
+        phoneCasa maxSize:14, blank:true
+        phoneTrabajo maxSize:14, blank:true
+        phoneCelular maxSize:14, blank:true
         enfermedades maxSize:128
         fechaNacimiento blank:false
         direccion blank:false, unique:true

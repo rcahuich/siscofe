@@ -23,18 +23,26 @@ class PersonaController {
     }
 
     def save = {
-        def personaInstance = new Persona(params)
-		Persona.withTransaction {
+                def personaInstance = new Persona(params)
+
+
+        try{
+        Persona.withTransaction {
 			def direccion = personaInstance.direccion
 			personaInstance.direccion = direccion.save()
         if (personaInstance.save(flush: true)) {
-            flash.message = "${message(code: 'default.created.message', args: [message(code: 'persona.label', default: 'Persona'), personaInstance.id])}"
+            flash.message = "${message(code: 'persona.crea', args: [personaInstance.nombre])}"
             redirect(action: "show", id: personaInstance.id)
         }
-        else {
-            render(view: "create", model: [personaInstance: personaInstance])
         }
-			}
+    }catch(Exception e) {
+        log.error("No se pudo crear la persona",e)
+        if (personaInstance) {
+                personaInstance.discard()
+            }
+            flash.message = message(code:"persona.noCrea")
+            render(view:"create", model: [personaInstance: personaInstance])
+    }
     }
 
     def show = {
@@ -74,11 +82,11 @@ class PersonaController {
 
     def update = {
         def personaInstance = Persona.get(params.id)
-            Persona.withTransaction {
-		//log.debug"----------------- Direccion: $personaInstance"
+
+        try{
+        Persona.withTransaction {
                 def direccion = personaInstance.direccion
                 personaInstance.direccion = direccion.save()
-                //log.debug"----------------- Direccion: $personaInstance.direccion"
         if (personaInstance) {
             if (params.version) {
                 def version = params.version.toLong()
@@ -88,39 +96,40 @@ class PersonaController {
                     return
                 }
             }
+
             personaInstance.properties = params
             if (!personaInstance.hasErrors() && personaInstance.save(flush: true)) {
-                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'persona.label', default: 'Persona'), personaInstance.id])}"
+                flash.message = "${message(code: 'persona.actualiza', args: [personaInstance.nombre])}"
                 redirect(action: "show", id: personaInstance.id)
             }
-            else {
-                render(view: "edit", model: [personaInstance: personaInstance])
             }
         }
-        else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"
-            redirect(action: "list")
+        }catch(Exception e){
+            log.error("No se pudo actualizar la persona",e)
+            if (personaInstance) {
+                personaInstance.discard()
+            }
+            flash.message = message(code:"persona.noActualiza")
+            render(view:"edit",model:[personaInstance:personaInstance])
         }
-	}
+	
     }
 
     def delete = {
         def personaInstance = Persona.get(params.id)
-        if (personaInstance) {
             try {
+                Persona.withTransaction{
                 personaInstance.delete(flush: true)
-                flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"
+                flash.message = "${message(code: 'persona.baja', args: [personaInstance.nombre])}"
                 redirect(action: "list")
+                }
             }
-            catch (org.springframework.dao.DataIntegrityViolationException e) {
-                flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"
+            catch (Exception e) {
+                log.error("No se pudo dar de baja la persona",e)
+                flash.message = message(code: 'persona.noBaja')
                 redirect(action: "show", id: params.id)
             }
-        }
-        else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"
-            redirect(action: "list")
-        }
+
     }
 
     def elegirTipoDeIngreso= {
