@@ -85,7 +85,7 @@ div#menu a {
 }
 div#menu span {
     margin-top: 5px;
-color: #333;
+    color: black;
 }
 div#menu ul a:hover span {
 color: #333;
