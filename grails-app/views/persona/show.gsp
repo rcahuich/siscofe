@@ -94,19 +94,6 @@
                             
                         </tr>
                     
-<!--                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="persona.bautismos.label" default="Bautismos" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${personaInstance.bautismos}" var="b">
-                                    <li><g:link controller="bautismo" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>-->
-                    
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.correo" /></td>
                             
