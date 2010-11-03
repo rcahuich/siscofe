@@ -10,16 +10,16 @@ class Persona {
     String tipoDeSangre
     String enfermedades
     Date fechaNacimiento
-    Integer phoneCasa
-    Integer phoneTrabajo
-    Integer phoneCelular
+    String phoneCasa
+    String phoneTrabajo
+    String phoneCelular
     String correo   
     String sexo
     Boolean sabeLeer = true
     Direccion direccion
-    Set bautismos
+    Set ingresos
     
-    static hasMany = [bautismos : Bautismo]
+    static hasMany = [ingresos : TipoDeIngreso]
 
     static constraints = {
         nombre maxSize:64, blank:false
@@ -30,7 +30,9 @@ class Persona {
         religionAnterior maxSize:32, inList:['NINGUNO','ADVENTISTA DEL SEPTIMO DIA','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
         tipoDeSangre maxSize:12, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-','No sabe']
         sexo maxSize:12, inList:['Masculino','Femenino']
-        phoneCelular blank:true
+        phoneCasa maxSize:32, blank:true
+        phoneTrabajo maxSize:32, blank:true
+        phoneCelular maxSize:32, blank:true
         enfermedades maxSize:128
         fechaNacimiento blank:false
         direccion blank:false, unique:true

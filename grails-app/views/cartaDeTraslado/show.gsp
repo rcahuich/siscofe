@@ -30,34 +30,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="cartaDeTraslado.lugarBautismo.label" default="Lugar Bautismo" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "lugarBautismo")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="cartaDeTraslado.ministroOficiante.label" default="Ministro Oficiante" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "ministroOficiante")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="cartaDeTraslado.codigo.label" default="Codigo" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "codigo")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="cartaDeTraslado.cursoBiblico.label" default="Curso Biblico" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "cursoBiblico")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="cartaDeTraslado.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "numeroVotoJuntaAdministrativa")}</td>
@@ -68,13 +40,6 @@
                             <td valign="top" class="name"><g:message code="cartaDeTraslado.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "numeroVotoJuntaDirectiva")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="cartaDeTraslado.numeroBautismo.label" default="Numero Bautismo" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "numeroBautismo")}</td>
                             
                         </tr>
                     
@@ -93,9 +58,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="cartaDeTraslado.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></td>
+                            <td valign="top" class="name"><g:message code="cartaDeTraslado.iglesiaProcedencia.label" default="Iglesia Procedencia" /></td>
                             
-                            <td valign="top" class="value"><g:formatBoolean boolean="${cartaDeTrasladoInstance?.estudioVeintiochoCreencias}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: cartaDeTrasladoInstance, field: "iglesiaProcedencia")}</td>
                             
                         </tr>
                     
@@ -103,13 +68,6 @@
                             <td valign="top" class="name"><g:message code="cartaDeTraslado.fechaAlta.label" default="Fecha Alta" /></td>
                             
                             <td valign="top" class="value"><g:formatDate date="${cartaDeTrasladoInstance?.fechaAlta}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="cartaDeTraslado.fechaBautismo.label" default="Fecha Bautismo" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${cartaDeTrasladoInstance?.fechaBautismo}" /></td>
                             
                         </tr>
                     

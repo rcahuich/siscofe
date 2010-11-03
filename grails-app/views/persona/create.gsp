@@ -30,7 +30,7 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <h4><g:message code="direccion" default="Datos Personales" /></h4>
+                                  <h4><g:message code="datosPersonales" default="Datos Personales" /></h4>
                                 </td>
                                 <td
                                 </td>

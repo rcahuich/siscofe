@@ -30,34 +30,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="profesionDeFe.lugarBautismo.label" default="Lugar Bautismo" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "lugarBautismo")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="profesionDeFe.ministroOficiante.label" default="Ministro Oficiante" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "ministroOficiante")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="profesionDeFe.codigo.label" default="Codigo" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "codigo")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="profesionDeFe.cursoBiblico.label" default="Curso Biblico" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "cursoBiblico")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="profesionDeFe.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "numeroVotoJuntaAdministrativa")}</td>
@@ -68,13 +40,6 @@
                             <td valign="top" class="name"><g:message code="profesionDeFe.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "numeroVotoJuntaDirectiva")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="profesionDeFe.numeroBautismo.label" default="Numero Bautismo" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "numeroBautismo")}</td>
                             
                         </tr>
                     
@@ -93,9 +58,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="profesionDeFe.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></td>
+                            <td valign="top" class="name"><g:message code="profesionDeFe.iglesiaProcedencia.label" default="Iglesia Procedencia" /></td>
                             
-                            <td valign="top" class="value"><g:formatBoolean boolean="${profesionDeFeInstance?.estudioVeintiochoCreencias}" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: profesionDeFeInstance, field: "iglesiaProcedencia")}</td>
                             
                         </tr>
                     
@@ -103,13 +68,6 @@
                             <td valign="top" class="name"><g:message code="profesionDeFe.fechaAlta.label" default="Fecha Alta" /></td>
                             
                             <td valign="top" class="value"><g:formatDate date="${profesionDeFeInstance?.fechaAlta}" /></td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="profesionDeFe.fechaBautismo.label" default="Fecha Bautismo" /></td>
-                            
-                            <td valign="top" class="value"><g:formatDate date="${profesionDeFeInstance?.fechaBautismo}" /></td>
                             
                         </tr>
                     

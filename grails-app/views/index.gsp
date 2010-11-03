@@ -11,15 +11,15 @@
 		<ul class="menu">
 			<li><a href="${resource(dir: '')}" class="parent"><span>Inicio</span></a>
 			</li>
-			<li><a href="#"><span>Iglesias</span></a>
+			<li><a href="#"><span>Lista de Iglesias</span></a>
 				<div><ul>
-					<li><a href="#"<span><g:link class="iglesia" controller="iglesia"><g:message code="Iglesias" /></g:link></span></a></li>
+					<li><a href="#"<span><g:link class="iglesia" controller="iglesia"><g:message code="Lista de Iglesias" /></g:link></span></a></li>
 				</ul></div>
 			</li>
                         <li><a href="#"><span>Comunidad</span></a>
 				<div><ul>
 					<li><a href="#"<span><g:link class="persona" controller="persona"><g:message code="Lista de Personas" /></g:link></span></a></li>
-					<li><a href="#"><span>Lista de Bautizados</span></a></li>
+					<li><a href="#"><span>Lista de Miembros</span></a></li>
 				</ul></div>
 			</li>
                         <li><a href=""><span>Administración</span></a>

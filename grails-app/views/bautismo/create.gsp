@@ -24,10 +24,10 @@
             </div>
             </g:hasErrors>
             <g:form action="save" >
-               <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
-              <g:hiddenField name="persona.id" value="${params.personaId}"/>
+            <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
+            <g:hiddenField name="persona.id" value="${params.personaId}"/>
                 <div class="dialog">
-                                        <table>
+                    <table>
                         <tbody>
 
                             <tr class="prop">
@@ -38,52 +38,7 @@
                                     <g:select name="iglesia.id" from="${siscofe.Iglesia.list()}" optionKey="id" value="${bautismoInstance?.iglesia?.id}"  />
                                 </td>
                             </tr>
-
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="ministroOficiante"><g:message code="bautismo.ministroOficiante.label" default="Ministro Oficiante" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'ministroOficiante', 'errors')}">
-                                    <g:textField name="ministroOficiante" maxlength="64" value="${bautismoInstance?.ministroOficiante}" />
-                                </td>
-                            </tr>
-
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="numeroBautismo"><g:message code="bautismo.numeroBautismo.label" default="Numero Bautismo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroBautismo', 'errors')}">
-                                    <g:select name="numeroBautismo" from="${bautismoInstance.constraints.numeroBautismo.inList}" value="${fieldValue(bean: bautismoInstance, field: 'numeroBautismo')}" valueMessagePrefix="bautismo.numeroBautismo"  />
-                                </td>
-                            </tr>
-
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="codigo"><g:message code="bautismo.codigo.label" default="Codigo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'codigo', 'errors')}">
-                                    <g:textField name="codigo" maxlength="6" value="${bautismoInstance?.codigo}" />
-                                </td>
-                            </tr>
-
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="estudioVeintiochoCreencias"><g:message code="bautismo.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'estudioVeintiochoCreencias', 'errors')}">
-                                    <g:checkBox name="estudioVeintiochoCreencias" value="${bautismoInstance?.estudioVeintiochoCreencias}" />
-                                </td>
-                            </tr>
-
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="cursoBiblico"><g:message code="bautismo.cursoBiblico.label" default="Curso Biblico" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'cursoBiblico', 'errors')}">
-                                    <g:textField name="cursoBiblico" maxlength="64" value="${bautismoInstance?.cursoBiblico}" />
-                                </td>
-                            </tr>
-
+                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="lugarBautismo"><g:message code="bautismo.lugarBautismo.label" default="Lugar Bautismo" /></label>
@@ -104,6 +59,50 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="ministroOficiante"><g:message code="bautismo.ministroOficiante.label" default="Ministro Oficiante" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'ministroOficiante', 'errors')}">
+                                    <g:textField name="ministroOficiante" maxlength="64" value="${bautismoInstance?.ministroOficiante}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="codigo"><g:message code="bautismo.codigo.label" default="Codigo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'codigo', 'errors')}">
+                                    <g:textField name="codigo" maxlength="6" value="${bautismoInstance?.codigo}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="cursoBiblico"><g:message code="bautismo.cursoBiblico.label" default="Curso Biblico" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'cursoBiblico', 'errors')}">
+                                    <g:textField name="cursoBiblico" maxlength="64" value="${bautismoInstance?.cursoBiblico}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="estudioVeintiochoCreencias"><g:message code="bautismo.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'estudioVeintiochoCreencias', 'errors')}">
+                                    <g:checkBox name="estudioVeintiochoCreencias" value="${bautismoInstance?.estudioVeintiochoCreencias}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="numeroBautismo"><g:message code="bautismo.numeroBautismo.label" default="Numero Bautismo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroBautismo', 'errors')}">
+                                    <g:select name="numeroBautismo" from="${bautismoInstance.constraints.numeroBautismo.inList}" value="${bautismoInstance?.numeroBautismo}" valueMessagePrefix="bautismo.numeroBautismo"  />
+                                </td>
+                            </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="numeroVotoJuntaAdministrativa"><g:message code="bautismo.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroVotoJuntaAdministrativa', 'errors')}">
@@ -119,7 +118,7 @@
                                     <g:datePicker name="fechaVotoJuntaAdministrativa" precision="day" value="${bautismoInstance?.fechaVotoJuntaAdministrativa}"  />
                                 </td>
                             </tr>
-
+                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="numeroVotoJuntaDirectiva"><g:message code="bautismo.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></label>
@@ -137,9 +136,17 @@
                                     <g:datePicker name="fechaVotoJuntaDirectiva" precision="day" value="${bautismoInstance?.fechaVotoJuntaDirectiva}"  />
                                 </td>
                             </tr>
-
-
-
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="comentarios"><g:message code="bautismo.comentarios.label" default="Comentarios" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'comentarios', 'errors')}">
+                                    <g:textArea name="comentarios" cols="40" rows="5" value="${bautismoInstance?.comentarios}" />
+                                </td>
+                            </tr>
+                        
+                           
                         </tbody>
                     </table>
                 </div>

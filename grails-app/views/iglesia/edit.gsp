@@ -27,8 +27,6 @@
             <g:form method="post" >
                 <g:hiddenField name="id" value="${iglesiaInstance?.id}" />
                 <g:hiddenField name="version" value="${iglesiaInstance?.version}" />
-                <g:hiddenField name="direccion.id" value="${iglesiaInstance?.direccion?.id}" />
-                <g:hiddenField name="direccion.version" value="${iglesiaInstance?.direccion?.version}" />
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -42,7 +40,25 @@
                                 </td>
                             </tr>
                         
-                             <tr class="prop">
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="tipoIglesia"><g:message code="iglesia.tipoIglesia.label" default="Tipo Iglesia" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'tipoIglesia', 'errors')}">
+                                    <g:select name="tipoIglesia" from="${iglesiaInstance.constraints.tipoIglesia.inList}" value="${iglesiaInstance?.tipoIglesia}" valueMessagePrefix="iglesia.tipoIglesia"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="telefono"><g:message code="iglesia.telefono.label" default="Telefono" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'telefono', 'errors')}">
+                                    <g:textField name="telefono" maxlength="14" value="${iglesiaInstance?.telefono}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
                                 <td valign="top" class="name">
                                   <h4><g:message code="direccion" default="Dirección" /></h4>
                                 </td>
@@ -124,7 +140,7 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="direccion.codigoPostal"><g:message code="direccion.codigoPostal.label" default="Codigo Postal" /></label>
+                                    <label for="direccion.codigoPostal"><g:message code="personaInstance.codigoPostal.label" default="Codigo Postal" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.codigoPostal', 'errors')}">
                                     <g:textField name="direccion.codigoPostal" maxlength="16" value="${iglesiaInstance?.direccion?.codigoPostal}" />

@@ -30,6 +30,27 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="bautismo.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaAdministrativa")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="bautismo.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaDirectiva")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="bautismo.comentarios.label" default="Comentarios" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "comentarios")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="bautismo.lugarBautismo.label" default="Lugar Bautismo" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "lugarBautismo")}</td>
@@ -58,20 +79,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="bautismo.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaAdministrativa")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="bautismo.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "numeroVotoJuntaDirectiva")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="bautismo.numeroBautismo.label" default="Numero Bautismo" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: bautismoInstance, field: "numeroBautismo")}</td>
@@ -82,6 +89,13 @@
                             <td valign="top" class="name"><g:message code="bautismo.estudioVeintiochoCreencias.label" default="Estudio Veintiocho Creencias" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${bautismoInstance?.estudioVeintiochoCreencias}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="bautismo.fechaAlta.label" default="Fecha Alta" /></td>
+                            
+                            <td valign="top" class="value"><g:formatDate date="${bautismoInstance?.fechaAlta}" /></td>
                             
                         </tr>
                     

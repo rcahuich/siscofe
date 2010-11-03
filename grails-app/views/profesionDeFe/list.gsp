@@ -24,15 +24,15 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'profesionDeFe.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="lugarBautismo" title="${message(code: 'profesionDeFe.lugarBautismo.label', default: 'Lugar Bautismo')}" />
-                        
-                            <g:sortableColumn property="ministroOficiante" title="${message(code: 'profesionDeFe.ministroOficiante.label', default: 'Ministro Oficiante')}" />
-                        
-                            <g:sortableColumn property="codigo" title="${message(code: 'profesionDeFe.codigo.label', default: 'Codigo')}" />
-                        
-                            <g:sortableColumn property="cursoBiblico" title="${message(code: 'profesionDeFe.cursoBiblico.label', default: 'Curso Biblico')}" />
-                        
                             <g:sortableColumn property="numeroVotoJuntaAdministrativa" title="${message(code: 'profesionDeFe.numeroVotoJuntaAdministrativa.label', default: 'Numero Voto Junta Administrativa')}" />
+                        
+                            <g:sortableColumn property="numeroVotoJuntaDirectiva" title="${message(code: 'profesionDeFe.numeroVotoJuntaDirectiva.label', default: 'Numero Voto Junta Directiva')}" />
+                        
+                            <g:sortableColumn property="comentarios" title="${message(code: 'profesionDeFe.comentarios.label', default: 'Comentarios')}" />
+                        
+                            <g:sortableColumn property="pastorEnFuncion" title="${message(code: 'profesionDeFe.pastorEnFuncion.label', default: 'Pastor En Funcion')}" />
+                        
+                            <g:sortableColumn property="iglesiaProcedencia" title="${message(code: 'profesionDeFe.iglesiaProcedencia.label', default: 'Iglesia Procedencia')}" />
                         
                         </tr>
                     </thead>
@@ -42,15 +42,15 @@
                         
                             <td><g:link action="show" id="${profesionDeFeInstance.id}">${fieldValue(bean: profesionDeFeInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: profesionDeFeInstance, field: "lugarBautismo")}</td>
-                        
-                            <td>${fieldValue(bean: profesionDeFeInstance, field: "ministroOficiante")}</td>
-                        
-                            <td>${fieldValue(bean: profesionDeFeInstance, field: "codigo")}</td>
-                        
-                            <td>${fieldValue(bean: profesionDeFeInstance, field: "cursoBiblico")}</td>
-                        
                             <td>${fieldValue(bean: profesionDeFeInstance, field: "numeroVotoJuntaAdministrativa")}</td>
+                        
+                            <td>${fieldValue(bean: profesionDeFeInstance, field: "numeroVotoJuntaDirectiva")}</td>
+                        
+                            <td>${fieldValue(bean: profesionDeFeInstance, field: "comentarios")}</td>
+                        
+                            <td>${fieldValue(bean: profesionDeFeInstance, field: "pastorEnFuncion")}</td>
+                        
+                            <td>${fieldValue(bean: profesionDeFeInstance, field: "iglesiaProcedencia")}</td>
                         
                         </tr>
                     </g:each>
