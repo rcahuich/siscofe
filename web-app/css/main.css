@@ -143,16 +143,19 @@ td.errors input {
 table {
     
     border: 1px solid #ccc;
-    width: 100%
+    width: 100%;
+    
+    
 }
 tr {
+    
     border: 0;
 }
 td, th {
     font: 11px verdana, arial, helvetica, sans-serif;
     line-height: 12px;
     padding: 5px 6px;
-    text-align: left;
+    text-align: right;
     vertical-align: top;
 }
 th {
@@ -233,13 +236,16 @@ th.desc a {
     padding: 5px;
 }
 .prop .name {
-    text-align: left;
-    width: 15%;
+    font-weight: lighter;
+    text-align: right;
+    width: 38%;
     white-space: nowrap;
+    color: darkslategray;
 }
 .prop .value {
     text-align: left;
     width: 85%;
+
 }
 
 /* ACTION BUTTONS */

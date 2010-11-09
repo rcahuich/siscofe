@@ -1,4 +1,4 @@
-package siscofe
+    package siscofe
 
 class TipoDeIngreso {
 

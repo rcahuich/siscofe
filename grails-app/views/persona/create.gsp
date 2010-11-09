@@ -25,12 +25,12 @@
             </g:hasErrors>
             <g:form action="save" >
                 <div class="dialog">
-                    <table>
+                  <table>
                         <tbody>
 
-                            <tr class="prop">
+                            <tr>
                                 <td valign="top" class="name">
-                                  <h4><g:message code="datosPersonales" default="Datos Personales" /></h4>
+                                  <h3><g:message code="datosPersonales" default="Datos Personales" /></h3>
                                 </td>
                                 <td
                                 </td>
@@ -41,7 +41,7 @@
                                     <label for="nombre"><g:message code="persona.nombre" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'nombre', 'errors')}">
-                                    <g:textField name="nombre" maxlength="64" value="${personaInstance?.nombre}" />
+                                <g:textField name="nombre" maxlength="64" value="${personaInstance?.nombre}" style=""/>
                                 </td>
                             </tr>
                         
@@ -172,9 +172,9 @@
                             </tr>
 
                             
-                            <tr class="prop">
+                            <tr >
                                 <td valign="top" class="name">
-                                  <h4><g:message code="persona.direccion" /></h4>
+                                  <h3><g:message code="persona.direccion" /></h3>
                                 </td>
                                 <td
                                 </td>

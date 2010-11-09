@@ -2,7 +2,6 @@
     <head>
         <title>Siscofe</title>
         <meta name="layout" content="main" />    
-        
     </head>
 
     <body>
@@ -22,7 +21,7 @@
 					<li><a href="#"><span>Lista de Miembros</span></a></li>
 				</ul></div>
 			</li>
-                        <li><a href=""><span>Administración</span></a>
+                        <li><a href="#"><span>Administración</span></a>
 				<div><ul>
 					<li><a href=""<span><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span></a></li>
 				</ul></div>
@@ -30,10 +29,6 @@
 			<li><a href="ayuda.gsp"><span>Ayuda</span></a></li>
 		</ul>
 	</div>
-
-
-
-
         <div id="body">
 <!--          <div class="nav">
 
