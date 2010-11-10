@@ -1,11 +1,11 @@
 
-<%@ page import="siscofe.Iglesia" %>
+<%@ page import="siscofe.Union" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'iglesia.label', default: 'Iglesia')}" />
-        <title><g:message code="iglesia.ver" args="[entityName]" /></title>
+        <g:set var="entityName" value="${message(code: 'union.label', default: 'Union')}" />
+        <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
         <div class="nav">
@@ -23,30 +23,30 @@
                     <tbody>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.nombre" /></td>
+                            <td valign="top" class="name"><g:message code="union.id.label" default="Id" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "nombre")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.tipoIglesia" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "tipoIglesia")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: unionInstance, field: "id")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.telefono" /></td>
+                            <td valign="top" class="name"><g:message code="union.codigo.label" default="Codigo" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "telefono")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: unionInstance, field: "codigo")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.direccion" /></td>
+                            <td valign="top" class="name"><g:message code="union.nombre.label" default="Nombre" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="direccion" action="show" id="${iglesiaInstance?.direccion?.id}">${iglesiaInstance?.direccion?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value">${fieldValue(bean: unionInstance, field: "nombre")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="union.nombreCompleto.label" default="Nombre Completo" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: unionInstance, field: "nombreCompleto")}</td>
                             
                         </tr>
                     
@@ -55,9 +55,9 @@
             </div>
             <div class="buttons">
                 <g:form>
-                    <g:hiddenField name="id" value="${iglesiaInstance?.id}" />
+                    <g:hiddenField name="id" value="${unionInstance?.id}" />
                     <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'iglesia.confirma.baja', args:[iglesiaInstance.nombre])}');" /></span>
+                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
                 </g:form>
             </div>
         </div>

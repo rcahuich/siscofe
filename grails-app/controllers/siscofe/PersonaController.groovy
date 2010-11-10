@@ -6,6 +6,7 @@ import grails.plugins.springsecurity.Secured
 class PersonaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def personaService
 
     def index = {
         redirect(action: "list", params: params)
@@ -16,6 +17,12 @@ class PersonaController {
         [personaInstanceList: Persona.list(params), personaInstanceTotal: Persona.count()]
     }
 
+    def tipoSangre = {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        def resultado = personaService.listadeTipoDeSangre(params)
+        [personaInstanceList : resultado.listas, personaInstanceTotal: Persona.count()]
+    }
+
     def create = {
         def personaInstance = new Persona()
         personaInstance.properties = params
@@ -24,8 +31,6 @@ class PersonaController {
 
     def save = {
                 def personaInstance = new Persona(params)
-
-
         try{
         Persona.withTransaction {
 			def direccion = personaInstance.direccion

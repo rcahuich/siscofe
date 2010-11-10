@@ -8,22 +8,33 @@
 
         <div id="menu">
 		<ul class="menu">
-			<li><a href="${resource(dir: '')}" class="parent"><span>Inicio</span></a>
+			<li>
+                          <a href="${resource(dir: '')}" class="parent"><span>Inicio</span></a>
 			</li>
-			<li><a href="#"><span>Lista de Iglesias</span></a>
+			<li>
+                          <a href="#"><span>Iglesias</span></a>
 				<div><ul>
 					<li><a href="#"<span><g:link class="iglesia" controller="iglesia"><g:message code="Lista de Iglesias" /></g:link></span></a></li>
 				</ul></div>
 			</li>
                         <li><a href="#"><span>Comunidad</span></a>
 				<div><ul>
-					<li><a href="#"<span><g:link class="persona" controller="persona"><g:message code="Lista de Personas" /></g:link></span></a></li>
-					<li><a href="#"><span>Lista de Miembros</span></a></li>
+					<li><a href="#"<span><g:link class="persona" controller="persona"><g:message code="Personas" /></g:link></span></a></li>
+					<li><a href="#"><span>Reportes</span></a>
+                                        <div><ul>
+                                            <li><a href="persona/tipoSangre.gsp"><span>Tipo de Sangre</span></a>
+                                            <li><a href="#"><span>Dirección de Miembros</span></a>
+                                            <li><a href="#"><span>Edades</span></a>
+                                        </ul></div>
+                                        </li>
 				</ul></div>
 			</li>
                         <li><a href="#"><span>Administración</span></a>
 				<div><ul>
 					<li><a href=""<span><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span></a></li>
+					<li><a href=""<span><g:link class="distrito" controller="distrito"><g:message code="Distritos" /></g:link></span></a></li>
+					<li><a href=""<span><g:link class="asociacion" controller="asociacion"><g:message code="Asociaciones" /></g:link></span></a></li>
+					<li><a href=""<span><g:link class="union" controller="union"><g:message code="Uniones" /></g:link></span></a></li>
 				</ul></div>
 			</li>
 			<li><a href="ayuda.gsp"><span>Ayuda</span></a></li>

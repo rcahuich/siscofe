@@ -28,6 +28,8 @@ class BootStrap {
                 UsuarioRol.create(usuario, admin)
                 }
 
+        log.info "Creacion de Union, Asociacion y Distrito"
+
 //        log.info "Creacion de Iglesia"
 //        def iglesia = Iglesia.findByNombre('Universitaria')
 //        def dire = Direccion.findByPais('Peru')

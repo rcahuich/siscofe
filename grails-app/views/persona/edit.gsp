@@ -32,6 +32,14 @@
                 <div class="dialog">
                     <table>
                         <tbody>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <h3><g:message code="datosPersonales" default="Datos Personales" /></h3>
+                                </td>
+                                <td
+                                </td>
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -170,7 +178,7 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <h4><g:message code="direccion" default="Dirección" /></h4>
+                                  <h3><g:message code="persona.direccion" /></h3>
                                 </td>
                                 <td
                                 </td>

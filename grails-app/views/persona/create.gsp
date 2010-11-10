@@ -28,7 +28,7 @@
                   <table>
                         <tbody>
 
-                            <tr>
+                            <tr class="prop">
                                 <td valign="top" class="name">
                                   <h3><g:message code="datosPersonales" default="Datos Personales" /></h3>
                                 </td>
@@ -172,7 +172,7 @@
                             </tr>
 
                             
-                            <tr >
+                            <tr class="prop">
                                 <td valign="top" class="name">
                                   <h3><g:message code="persona.direccion" /></h3>
                                 </td>
