@@ -12,7 +12,7 @@
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         </div>
         <div class="body">
-            <h1><g:message code="persona.buscarTipoDeSangre"/></h1>
+            <h1><g:message code="persona.busquedaDeDireccion"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -23,13 +23,13 @@
                     <tbody>
                       <tr>
                         <td style="vertical-align:middle;width:50px;">
-                          <label for="filtro"><g:message code="entrada.buscar" default="Buscar"/>:</label>
+                          <label for="filtro"><g:message code="entrada.buscar" default="Nombre"/>:</label>
                         </td>
                         <td style="width:50px; vertical-align: middle;">
-                          <g:select id="filtro" name="filtro" from="${['A+','A-','B+','B-','AB+','AB-','O+','O-']}" valueMessagePrefix="persona.tipoDeSangre" value="${params.filtro}" />
+                          <g:select id="filtro" name="filtro" from="${siscofe.Persona.list()}" optionKey="nombreCompleto" valueMessagePrefix="persona.nombreCompleto" value="${params.filtro}"  />
                         </td>
                         <td>
-                          <g:actionSubmit action="tipoSangre" value="Buscar" class="save" style="vertical-align: middle;" />
+                          <g:actionSubmit action="direMiembros" value="Buscar" class="save" style="vertical-align: middle;" />
                         </td>
                       </tr>
                     </tbody>
@@ -37,15 +37,13 @@
                 </div>
               </g:form>
             </div>
-            <div class="list">
+
+          <div class="list">
                 <table id="personaInstanceList">
                     <thead>
                         <tr>
                             <g:sortableColumn property="nombreCompleto" title="${message(code: 'persona.nombreCompleto')}" />
                             <g:sortableColumn property="direccion" title="${message(code: 'persona.direccion')}" />
-                            <g:sortableColumn property="phoneCasa" title="${message(code: 'persona.phoneCasa')}" />
-                            <g:sortableColumn property="phoneTrabajo" title="${message(code: 'persona.phoneTrabajo')}" />
-                            <g:sortableColumn property="phoneCelular" title="${message(code: 'persona.phoneCelular')}" />
                         </tr>
                     </thead>
                     <tbody>
@@ -53,9 +51,6 @@
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                             <td>${fieldValue(bean: personaInstance, field: "nombreCompleto")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "direccion")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "phoneCasa")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "phoneTrabajo")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "phoneCelular")}</td>
                         </tr>
                     </g:each>
                     </tbody>
@@ -64,3 +59,4 @@
         </div>
     </body>
 </html>
+

@@ -14,6 +14,16 @@ class PersonaService {
         return [listas:personas]
     }
 
+    def buscaDireccion(params){
+        def personas
+        if(params?.filtro){
+            log.debug "nombre completo ################## $params.filtro"
+            personas = Persona.findByNombreCompleto(params.filtro)
+            log.debug "nombre completo ################## $personas"
+        }
+        return [listas:personas]
+    }
+
     def serviceMethod() {
 
     }

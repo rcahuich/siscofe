@@ -21,8 +21,6 @@
             <div class="dialog">
                 <table>
                     <tbody>
-
-                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.nombre" /></td>
@@ -131,7 +129,7 @@
 
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="persona.direccion" /></td>
-                            <td valign="top" class="value"><g:link controller="direccion" action="show" id="${personaInstance?.direccion?.id}">${personaInstance?.direccion?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value">${fieldValue(bean: personaInstance, field: "direccion")}</td>
                         </tr>
                     
                     </tbody>

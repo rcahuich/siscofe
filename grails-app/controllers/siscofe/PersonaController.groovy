@@ -23,6 +23,12 @@ class PersonaController {
         [personaInstanceList : resultado.listas, personaInstanceTotal: Persona.count()]
     }
 
+    def direMiembros = {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        def resultado = personaService.buscaDireccion(params)
+        [personaInstanceList : resultado.listas, personaInstanceTotal: Persona.count()]
+    }
+
     def create = {
         def personaInstance = new Persona()
         personaInstance.properties = params

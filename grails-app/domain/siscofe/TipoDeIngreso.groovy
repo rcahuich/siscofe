@@ -11,7 +11,7 @@ class TipoDeIngreso {
     Date fechaVotoJuntaDirectiva
     Date fechaAlta = new Date()
 
-     static belongsTo = Persona//muchos a uno (Una persona tienen muchos Tipos de Ingreso)
+    static belongsTo = Persona//muchos a uno (Una persona tienen muchos Tipos de Ingreso)
 
     static constraints = {
         numeroVotoJuntaAdministrativa maxSize:10, blank:false
