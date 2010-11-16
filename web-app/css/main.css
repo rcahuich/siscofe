@@ -236,11 +236,11 @@ th.desc a {
     padding: 5px;
 }
 .prop .name {
-    font-weight: lighter;
-    text-align: right;
-    width: 38%;
+    font-weight: bolder;
+    text-align: left;
+    width: 20%;
     white-space: nowrap;
-    color: darkslategray;
+    color: black;
 }
 .prop .value {
     text-align: left;

@@ -24,11 +24,11 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'persona.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="nombre" title="${message(code: 'persona.nombre')}" />
+                            <g:sortableColumn property="nombre" title="${message(code: 'persona.nombreCompleto')}" />
                         
-                            <g:sortableColumn property="apellidoPaterno" title="${message(code: 'persona.apellidoPaterno')}" />
+<!--                            <g:sortableColumn property="apellidoPaterno" title="${message(code: 'persona.apellidoPaterno')}" />
                         
-                            <g:sortableColumn property="apellidoMaterno" title="${message(code: 'persona.apellidoMaterno')}" />
+                            <g:sortableColumn property="apellidoMaterno" title="${message(code: 'persona.apellidoMaterno')}" />-->
                         
                             <g:sortableColumn property="estadoCivil" title="${message(code: 'persona.estadoCivil')}" />
                         
@@ -42,11 +42,11 @@
                         
                             <td><g:link action="show" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: personaInstance, field: "nombre")}</td>
+                            <td>${fieldValue(bean: personaInstance, field: "nombreCompleto")}</td>
                         
-                            <td>${fieldValue(bean: personaInstance, field: "apellidoPaterno")}</td>
+<!--                            <td>${fieldValue(bean: personaInstance, field: "apellidoPaterno")}</td>
                         
-                            <td>${fieldValue(bean: personaInstance, field: "apellidoMaterno")}</td>
+                            <td>${fieldValue(bean: personaInstance, field: "apellidoMaterno")}</td>-->
                         
                             <td>${fieldValue(bean: personaInstance, field: "estadoCivil")}</td>
                         

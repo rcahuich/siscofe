@@ -19,17 +19,27 @@
 			</li>
                         <li><a href="#"><span>Comunidad</span></a>
 				<div><ul>
-					<li><a href="persona/create"<span>Nueva Persona</span></a></li>
+					<li><a href="persona/create"<span>Registrar Persona</span></a></li>
 					<li><a href="#"><span>Reportes</span></a>
                                         <div><ul>
                                             <li><a href="persona/tipoSangre.gsp"><span>Tipo de Sangre</span></a>
-                                            <li><a href="persona/direMiembros.gsp"><span>Dirección de Miembros</span></a>
+<!--                                            <li><a href="persona/direMiembros.gsp"><span>Dirección de Miembros</span></a>-->
                                             <li><a href="#"><span>Edades</span></a>
                                         </ul></div>
+                                        <li><a href="persona/list"><span>Lista de Personas</span></a>
                                         </li>
-					<li><a href="baja/create"<span>Bajas</span></a></li>
 				</ul></div>
 			</li>
+                        <li><a href="#"><span>Miembros</span></a>
+                            <div><ul>
+                                <li>
+                                    <a href="persona/buscarMiembro.gsp"<span>Buscar Miembro</span></a>
+                                </li>
+                                <li>
+                                    <a href="baja/create"<span>Dar de Baja</span></a>
+                                </li>
+                            </ul></div>
+                        </li>
                         <li><a href="#"><span>Administración</span></a>
 				<div><ul>
 					<li><a href=""<span><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span></a></li>
