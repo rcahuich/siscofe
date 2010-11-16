@@ -13,7 +13,7 @@ class PersonaController {
 
     def list = {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [personaInstanceList: Persona.list(params), personaInstanceTotal: Persona.count()]
+        return [personaInstanceList: Persona.list(params), personaInstanceTotal: Persona.count()]
     }
 
     def create = {
