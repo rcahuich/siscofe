@@ -2,38 +2,55 @@
     <head>
         <title>Siscofe</title>
         <meta name="layout" content="main" />    
-        
     </head>
 
     <body>
 
         <div id="menu">
 		<ul class="menu">
-			<li><a href="${resource(dir: '')}" class="parent"><span>Inicio</span></a>
+			<li>
+                          <a href="${resource(dir: '')}" class="parent"><span>Inicio</span></a>
 			</li>
-			<li><a href="#"><span>Lista de Iglesias</span></a>
+			<li>
+                          <a href="#"><span>Iglesias</span></a>
 				<div><ul>
 					<li><a href="#"<span><g:link class="iglesia" controller="iglesia"><g:message code="Lista de Iglesias" /></g:link></span></a></li>
 				</ul></div>
 			</li>
                         <li><a href="#"><span>Comunidad</span></a>
 				<div><ul>
-					<li><a href="#"<span><g:link class="persona" controller="persona"><g:message code="Lista de Personas" /></g:link></span></a></li>
-					<li><a href="#"><span>Lista de Miembros</span></a></li>
+					<li><a href="persona/create"<span>Registrar Persona</span></a></li>
+					<li><a href="#"><span>Reportes</span></a>
+                                        <div><ul>
+                                            <li><a href="persona/tipoSangre.gsp"><span>Tipo de Sangre</span></a>
+<!--                                            <li><a href="persona/direMiembros.gsp"><span>Dirección de Miembros</span></a>-->
+                                            <li><a href="#"><span>Edades</span></a>
+                                        </ul></div>
+                                        <li><a href="persona/list"><span>Lista de Personas</span></a>
+                                        </li>
 				</ul></div>
 			</li>
-                        <li><a href=""><span>Administración</span></a>
+                        <li><a href="#"><span>Miembros</span></a>
+                            <div><ul>
+                                <li>
+                                    <a href="persona/buscarMiembro.gsp"<span>Buscar Miembro</span></a>
+                                </li>
+                                <li>
+                                    <a href="baja/create"<span>Dar de Baja</span></a>
+                                </li>
+                            </ul></div>
+                        </li>
+                        <li><a href="#"><span>Administración</span></a>
 				<div><ul>
 					<li><a href=""<span><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span></a></li>
+					<li><a href=""<span><g:link class="distrito" controller="distrito"><g:message code="Distritos" /></g:link></span></a></li>
+					<li><a href=""<span><g:link class="asociacion" controller="asociacion"><g:message code="Asociaciones" /></g:link></span></a></li>
+					<li><a href=""<span><g:link class="union" controller="union"><g:message code="Uniones" /></g:link></span></a></li>
 				</ul></div>
 			</li>
 			<li><a href="ayuda.gsp"><span>Ayuda</span></a></li>
 		</ul>
 	</div>
-
-
-
-
         <div id="body">
 <!--          <div class="nav">
 

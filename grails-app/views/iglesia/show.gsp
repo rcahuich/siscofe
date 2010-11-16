@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'iglesia.label', default: 'Iglesia')}" />
-        <title><g:message code="default.show.label" args="[entityName]" /></title>
+        <title><g:message code="iglesia.ver" args="[entityName]" /></title>
     </head>
     <body>
         <div class="nav">
@@ -23,35 +23,28 @@
                     <tbody>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.id.label" default="Id" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "id")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.nombre.label" default="Nombre" /></td>
+                            <td valign="top" class="name"><g:message code="iglesia.nombre" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "nombre")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.tipoIglesia.label" default="Tipo Iglesia" /></td>
+                            <td valign="top" class="name"><g:message code="iglesia.tipoIglesia" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "tipoIglesia")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.telefono.label" default="Telefono" /></td>
+                            <td valign="top" class="name"><g:message code="iglesia.telefono" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "telefono")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="iglesia.direccion.label" default="Direccion" /></td>
+                            <td valign="top" class="name"><g:message code="iglesia.direccion" /></td>
                             
                             <td valign="top" class="value"><g:link controller="direccion" action="show" id="${iglesiaInstance?.direccion?.id}">${iglesiaInstance?.direccion?.encodeAsHTML()}</g:link></td>
                             
@@ -64,7 +57,7 @@
                 <g:form>
                     <g:hiddenField name="id" value="${iglesiaInstance?.id}" />
                     <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
+                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'iglesia.confirma.baja', args:[iglesiaInstance.nombre])}');" /></span>
                 </g:form>
             </div>
         </div>

@@ -6,15 +6,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'iglesia.label', default: 'Iglesia')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <title><g:message code="iglesia.nuevo" args="[entityName]" /></title>
     </head>
     <body>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><g:link class="list" action="list"><g:message code="iglesia.lista" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+            <h1><g:message code="iglesia.nuevo" args="[entityName]"  /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -30,7 +30,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="nombre"><g:message code="iglesia.nombre.label" default="Nombre" /></label>
+                                    <label for="nombre"><g:message code="iglesia.nombre" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'nombre', 'errors')}">
                                     <g:textField name="nombre" maxlength="64" value="${iglesiaInstance?.nombre}" />
@@ -39,7 +39,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="tipoIglesia"><g:message code="iglesia.tipoIglesia.label" default="Tipo Iglesia" /></label>
+                                    <label for="tipoIglesia"><g:message code="iglesia.tipoIglesia" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'tipoIglesia', 'errors')}">
                                     <g:select name="tipoIglesia" from="${iglesiaInstance.constraints.tipoIglesia.inList}" value="${iglesiaInstance?.tipoIglesia}" valueMessagePrefix="iglesia.tipoIglesia"  />
@@ -48,7 +48,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="telefono"><g:message code="iglesia.telefono.label" default="Telefono" /></label>
+                                    <label for="telefono"><g:message code="iglesia.telefono" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'telefono', 'errors')}">
                                     <g:textField name="telefono" maxlength="14" value="${iglesiaInstance?.telefono}" />

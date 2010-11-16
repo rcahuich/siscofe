@@ -5,15 +5,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'iglesia.label', default: 'Iglesia')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title><g:message code="iglesia.lista" args="[entityName]" /></title>
     </head>
     <body>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
+            <span class="menuButton"><g:link class="create" action="create"><g:message code="iglesia.nuevo" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <h1><g:message code="iglesia.lista" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -24,13 +24,13 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'iglesia.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="nombre" title="${message(code: 'iglesia.nombre.label', default: 'Nombre')}" />
+                            <g:sortableColumn property="nombre" title="${message(code: 'iglesia.nombre')}" />
                         
-                            <g:sortableColumn property="tipoIglesia" title="${message(code: 'iglesia.tipoIglesia.label', default: 'Tipo Iglesia')}" />
+                            <g:sortableColumn property="tipoIglesia" title="${message(code: 'iglesia.tipoIglesia')}" />
                         
-                            <g:sortableColumn property="telefono" title="${message(code: 'iglesia.telefono.label', default: 'Telefono')}" />
+                            <g:sortableColumn property="telefono" title="${message(code: 'iglesia.telefono')}" />
                         
-                            <th><g:message code="iglesia.direccion.label" default="Direccion" /></th>
+                            <th><g:message code="iglesia.direccion" /></th>
                         
                         </tr>
                     </thead>

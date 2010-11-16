@@ -143,9 +143,12 @@ td.errors input {
 table {
     
     border: 1px solid #ccc;
-    width: 100%
+    width: 100%;
+    
+    
 }
 tr {
+    
     border: 0;
 }
 td, th {
@@ -233,13 +236,16 @@ th.desc a {
     padding: 5px;
 }
 .prop .name {
+    font-weight: bolder;
     text-align: left;
-    width: 15%;
+    width: 20%;
     white-space: nowrap;
+    color: black;
 }
 .prop .value {
     text-align: left;
     width: 85%;
+
 }
 
 /* ACTION BUTTONS */

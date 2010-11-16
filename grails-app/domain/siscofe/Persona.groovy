@@ -4,6 +4,7 @@ class Persona {
     String nombre
     String apellidoPaterno
     String apellidoMaterno
+    String nombreCompleto
     String estadoCivil
     String nivelEstudio
     String religionAnterior
@@ -18,8 +19,9 @@ class Persona {
     Boolean sabeLeer = true
     Direccion direccion
     Set ingresos
-    
-    static hasMany = [ingresos : TipoDeIngreso]
+    Set bajas
+
+    static hasMany = [ingresos : TipoDeIngreso, bajas : Baja]
 
     static constraints = {
         nombre maxSize:64, blank:false
@@ -45,6 +47,10 @@ class Persona {
         apellidoMaterno index:'persona_apellido_materno_idx','persona_nombre_completo_idx'
     }
 
+    String getNombreCompleto() {
+        return "$nombre $apellidoPaterno $apellidoMaterno"
+    }
+    
     String toString () {
         "$nombre $apellidoPaterno $apellidoMaterno"
     }

@@ -24,17 +24,24 @@ class IglesiaController {
 
     def save = {
         def iglesiaInstance = new Iglesia(params)
+
+        try{
         Iglesia.withTransaction {
             def direccion = iglesiaInstance.direccion
             iglesiaInstance.direccion = direccion.save()
             if (iglesiaInstance.save(flush: true)) {
-                flash.message = "${message(code: 'default.created.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), iglesiaInstance.id])}"
+                flash.message = "${message(code: 'iglesia.crea', args: [iglesiaInstance.nombre])}"
                 redirect(action: "show", id: iglesiaInstance.id)
             }
-            else {
-                render(view: "create", model: [iglesiaInstance: iglesiaInstance])
-            }
         }
+     }catch(Exception e){
+         log.error("No se pudo crear la iglesia", e)
+         if(iglesiaInstance){
+             iglesiaInstance.discard()
+         }
+         flash.message = message(code:"iglesia.noCrea")
+         render(view:"create", model: [iglesiaInstance: iglesiaInstance])
+     }
     }
 
     def show = {
@@ -61,11 +68,10 @@ class IglesiaController {
 
     def update = {
         def iglesiaInstance = Iglesia.get(params.id)
+        try{
         Iglesia.withTransaction {
-            log.debug"----------------- Iglesia: $iglesiaInstance"
             def direccion = iglesiaInstance.direccion
             iglesiaInstance.direccion = direccion.save()
-            log.debug"----------------- Iglesia: $iglesiaInstance.direccion"
         if (iglesiaInstance) {
             if (params.version) {
                 def version = params.version.toLong()
@@ -78,36 +84,33 @@ class IglesiaController {
             }
             iglesiaInstance.properties = params
             if (!iglesiaInstance.hasErrors() && iglesiaInstance.save(flush: true)) {
-                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), iglesiaInstance.id])}"
+                flash.message = "${message(code: 'iglesia.actualiza', args: [iglesiaInstance.nombre])}"
                 redirect(action: "show", id: iglesiaInstance.id)
             }
-            else {
-                render(view: "edit", model: [iglesiaInstance: iglesiaInstance])
+          }
+        }
+        }catch(Exception e){
+            log.error("No se pudo actualizar la iglesia",e)
+            if (iglesiaInstance) {
+                iglesiaInstance.discard()
             }
-        }
-        else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), params.id])}"
-            redirect(action: "list")
-        }
+            flash.message = message(code:"iglesia.noActualiza")
+            render(view:"edit",model:[iglesiaInstance:iglesiaInstance])
         }
     }
 
     def delete = {
         def iglesiaInstance = Iglesia.get(params.id)
-        if (iglesiaInstance) {
-            try {
-                iglesiaInstance.delete(flush: true)
-                flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), params.id])}"
-                redirect(action: "list")
-            }
-            catch (org.springframework.dao.DataIntegrityViolationException e) {
-                flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), params.id])}"
+        try {
+                Iglesia.withTransaction{
+                    iglesiaInstance.delete(flush: true)
+                    flash.message = "${message(code: 'iglesia.baja', args: [iglesiaInstance.nombre])}"
+                    redirect(action: "list")
+                }
+            }catch (Exception e) {
+                log.error("No se pudo dar de baja a la iglesia",e)
+                flash.message = message(code: 'iglesia.noBaja')
                 redirect(action: "show", id: params.id)
             }
-        }
-        else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'iglesia.label', default: 'Iglesia'), params.id])}"
-            redirect(action: "list")
-        }
     }
 }
