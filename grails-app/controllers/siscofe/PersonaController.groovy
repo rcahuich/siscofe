@@ -154,4 +154,15 @@ class PersonaController {
         }
     }
 
+    def buscarMiembro={
+        log.debug "f_nombre: $params.filtroNombre"
+        log.debug "f_apellidoPaterno: $params.filtroApellidoPaterno"
+        log.debug "f_apellidoMaterno: $params.filtroApellidoMaterno"
+
+        def hoja = personaService.searchMiembroByName(params)
+
+        log.debug "hoja: $hoja"
+
+    }
+
 }
