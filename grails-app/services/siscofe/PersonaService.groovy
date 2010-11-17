@@ -92,6 +92,21 @@ class PersonaService {
         }
     }
 
+    def hojaMiembro(params){
+        log.debug "Entro a hojaMiembro en PersonaService"
+        log.debug "params: $params"
+
+        def personaInstance = Persona.get(params.id)
+        log.debug "personaInstance: $personaInstance"
+
+
+        //Aqui hacer el VO y agregarle a la persona y su ultimo ingreso
+
+
+    }
+
+
+
     def serviceMethod() {
 
     }

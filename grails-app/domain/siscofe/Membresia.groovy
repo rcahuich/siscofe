@@ -10,7 +10,6 @@ class Membresia {
     static constraints = {
         persona blank:false
         iglesia blank:false
-        tipoIngreso maxSize:16, inList:['BAUTISMO','TRALADO','PROFESION DE FE']
     }
 
     static mapping = {

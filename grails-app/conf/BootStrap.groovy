@@ -28,8 +28,6 @@ class BootStrap {
                 UsuarioRol.create(usuario, admin)
                 }
 
-        log.info "Creacion de Union, Asociacion y Distrito"
-
         log.info "Creacion de Iglesia"
         def iglesia = Iglesia.findByNombre('Universitaria')
         def dire = Direccion.findByPais('Peru')
@@ -77,6 +75,7 @@ class BootStrap {
                     ,correo : 'alejandro.f@siscofe.com'
                     ,sexo : 'Masculino'
                     ,sabeLeer : true
+                    ,esMiembro : false
             )
 
             if (!dir){
