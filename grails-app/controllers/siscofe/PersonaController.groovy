@@ -182,4 +182,11 @@ class PersonaController {
         [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
     }
 
+    def hojaMiembro={
+        log.debug "Entro a la Hoja del Miembro"
+        log.debug "params: $params"
+
+        def result = personaService.hojaMiembro(params)
+    }
+
 }
