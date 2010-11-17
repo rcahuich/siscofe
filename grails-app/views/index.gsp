@@ -14,20 +14,21 @@
 			<li>
                           <a href="#"><span>Iglesias</span></a>
 				<div><ul>
-					<li><a href="#"<span><g:link class="iglesia" controller="iglesia"><g:message code="Lista de Iglesias" /></g:link></span></a></li>
-				</ul></div>
+                                      <li><a href="iglesia/create"<span>Registrar Iglesia</span></a></li>
+                                      <li><a href="#"<span><g:link class="iglesia" controller="iglesia"><g:message code="Lista de Iglesias" /></g:link></span></a></li>
+                                  </ul></div>
 			</li>
                         <li><a href="#"><span>Comunidad</span></a>
 				<div><ul>
 					<li><a href="persona/create"<span>Registrar Persona</span></a></li>
+                                        <li><a href="persona/buscarPersona.gsp"<span>Buscar Persona</span></a></li>
+                                        <li><a href="persona/list"><span>Lista de Personas</span></a></li>
 					<li><a href="#"><span>Reportes</span></a>
                                         <div><ul>
                                             <li><a href="persona/tipoSangre.gsp"><span>Tipo de Sangre</span></a>
 <!--                                            <li><a href="persona/direMiembros.gsp"><span>Dirección de Miembros</span></a>-->
                                             <li><a href="#"><span>Edades</span></a>
                                         </ul></div>
-                                        <li><a href="persona/list"><span>Lista de Personas</span></a>
-                                        </li>
 				</ul></div>
 			</li>
                         <li><a href="#"><span>Miembros</span></a>

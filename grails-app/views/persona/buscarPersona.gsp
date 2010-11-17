@@ -2,7 +2,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="layout" content="main" />
-    <title><g:message code="persona.miembro.label" /></title>
+    <title><g:message code="persona.busqueda.persona" /></title>
   </head>
   <body>
 
@@ -11,7 +11,7 @@
     </div>
 
     <div class="body">
-      <h1><g:message code="persona.miembro.label" /></h1>
+      <h1><g:message code="persona.busqueda.persona" /></h1>
 
       <div class="search">
         <g:form method="post">
@@ -28,7 +28,7 @@
                     <input type="text" id="filtroApellidoMaterno" name="filtroApellidoMaterno" value="${params.filtroApellidoMaterno}" style="width:300px;"/>
                   </td>
               <td>
-                <g:actionSubmit controller="persona" action="buscarMiembro" value="Buscar" class="save" style="vertical-align: middle;" />
+                <g:actionSubmit controller="persona" action="buscarPersona" value="Buscar" class="save" style="vertical-align: middle;" />
               </td>
               </tr>
               </tbody>
@@ -51,8 +51,8 @@
                     <tbody>
                     <g:each in="${personaInstanceList}" status="i" var="personaInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                            <td>${fieldValue(bean: personaInstance, field: "id")}</td>
-<!--                            <td><g:link action="show" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "id")}</g:link></td>-->
+<!--                            <td>${fieldValue(bean: personaInstance, field: "id")}</td>-->
+                            <td><g:link action="show" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "id")}</g:link></td>
                             <td>${fieldValue(bean: personaInstance, field: "nombreCompleto")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "direccion")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "phoneCasa")}</td>

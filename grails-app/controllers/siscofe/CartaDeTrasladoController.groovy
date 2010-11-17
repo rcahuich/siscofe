@@ -21,6 +21,9 @@ class CartaDeTrasladoController {
 
     def save = {
         def cartaDeTrasladoInstance = new CartaDeTraslado(params)
+        Persona persona = Persona.get(params.persona.id)
+        persona.esMiembro=true
+        persona.save(flush:true)
         if (cartaDeTrasladoInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'cartaDeTraslado.label', default: 'CartaDeTraslado'), cartaDeTrasladoInstance.id])}"
             redirect(action: "show", id: cartaDeTrasladoInstance.id)
