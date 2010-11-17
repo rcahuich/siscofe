@@ -30,31 +30,31 @@ class BootStrap {
 
         log.info "Creacion de Union, Asociacion y Distrito"
 
-//        log.info "Creacion de Iglesia"
-//        def iglesia = Iglesia.findByNombre('Universitaria')
-//        def dire = Direccion.findByPais('Peru')
-//        if (!iglesia){
-//            iglesia = new Iglesia(
-//                    nombre : 'Iglesia Universitaria'
-//                    ,tipoIglesia : 'ORGANIZADA'
-//                    ,telefono : '849382008'
-//            )
-//            if (!dire){
-//                dire = new Direccion(
-//                    pais : 'Mexico'
-//                    ,estado : 'Nuevo Leon'
-//                    ,municipio : 'Montemorelos'
-//                    ,ciudad : 'Montemorelos'
-//                    ,ejido : 'Montemorelos'
-//                    ,colonia : 'Campus Universitario'
-//                    ,calle : 'Calle a Huachinango'
-//                    ,numero : '298'
-//                    ,codigoPostal : '65500'
-//                )
-//                iglesia.direccion = dire.save(flash:true)
-//            }
-//            iglesia.save(flush:true)
-//        }
+        log.info "Creacion de Iglesia"
+        def iglesia = Iglesia.findByNombre('Universitaria')
+        def dire = Direccion.findByPais('Peru')
+        if (!iglesia){
+            iglesia = new Iglesia(
+                    nombre : 'Iglesia Universitaria'
+                    ,tipoIglesia : 'ORGANIZADA'
+                    ,telefono : '849382008'
+            )
+            if (!dire){
+                dire = new Direccion(
+                    pais : 'Mexico'
+                    ,estado : 'Nuevo Leon'
+                    ,municipio : 'Montemorelos'
+                    ,ciudad : 'Montemorelos'
+                    ,ejido : 'Montemorelos'
+                    ,colonia : 'Campus Universitario'
+                    ,calle : 'Calle a Huachinango'
+                    ,numero : '298'
+                    ,codigoPostal : '65500'
+                )
+                iglesia.direccion = dire.save(flash:true)
+            }
+            iglesia.save(flush:true)
+        }
 
         
         log.info "Creacion de Persona Base"
