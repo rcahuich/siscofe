@@ -77,6 +77,7 @@ class BootStrap {
                     ,correo : 'alejandro.f@siscofe.com'
                     ,sexo : 'Masculino'
                     ,sabeLeer : true
+                    ,esMiembro : false
             )
 
             if (!dir){
