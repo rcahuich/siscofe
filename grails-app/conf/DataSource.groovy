@@ -6,7 +6,7 @@ dataSource {
       driverClassName = "org.postgresql.Driver"
 	username = "tomcat"
 	password = "tomcat00"
-    dbCreate = "create" // create, create-drop, update
+    dbCreate = "update" // create, create-drop, update
     url = 'jdbc:postgresql:siscofe'
 }
 hibernate {

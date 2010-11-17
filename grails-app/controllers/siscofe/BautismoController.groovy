@@ -6,6 +6,7 @@ import grails.plugins.springsecurity.Secured
 class BautismoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    Persona persona
 
     def index = {
         redirect(action: "list", params: params)
@@ -24,6 +25,13 @@ class BautismoController {
 
     def save = {
         def bautismoInstance = new Bautismo(params)
+        Persona persona = Persona.get(params.persona.id)
+        //log.debug "******************************************************************"
+        //log.debug "persona_id $persona.id"
+        //log.debug "esMiembro $persona.esMiembro"
+        persona.esMiembro=true
+       // log.debug "esMiembro $persona.esMiembro"
+        persona.save(flush:true)
         if (bautismoInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), bautismoInstance.id])}"
             redirect(action: "show", id: bautismoInstance.id)

@@ -33,6 +33,8 @@
                             <g:sortableColumn property="estadoCivil" title="${message(code: 'persona.estadoCivil')}" />
                         
                             <g:sortableColumn property="nivelEstudio" title="${message(code: 'persona.nivelEstudio')}" />
+
+                            <g:sortableColumn property="esMiembro" title="${message(code: 'persona.esMiembro')}" />
                         
                         </tr>
                     </thead>
@@ -51,6 +53,8 @@
                             <td>${fieldValue(bean: personaInstance, field: "estadoCivil")}</td>
                         
                             <td>${fieldValue(bean: personaInstance, field: "nivelEstudio")}</td>
+
+                            <td><g:formatBoolean boolean="${personaInstance?.esMiembro}" /></td>
                         
                         </tr>
                     </g:each>

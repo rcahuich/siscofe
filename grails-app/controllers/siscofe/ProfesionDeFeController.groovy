@@ -21,6 +21,10 @@ class ProfesionDeFeController {
 
     def save = {
         def profesionDeFeInstance = new ProfesionDeFe(params)
+        Persona persona = Persona.get(params.persona.id)
+        persona.esMiembro=true
+        persona.save(flush:true)
+
         if (profesionDeFeInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'profesionDeFe.label', default: 'ProfesionDeFe'), profesionDeFeInstance.id])}"
             redirect(action: "show", id: profesionDeFeInstance.id)

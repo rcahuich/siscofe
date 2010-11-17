@@ -17,6 +17,7 @@ class Persona {
     String correo   
     String sexo
     Boolean sabeLeer = true
+    Boolean esMiembro = false
     Direccion direccion
     Set ingresos
     Set bajas
@@ -37,6 +38,7 @@ class Persona {
         phoneCelular maxSize:32, blank:true
         enfermedades maxSize:128
         fechaNacimiento blank:false
+        sabeLeer blank:false
         direccion blank:false, unique:true
     }
 

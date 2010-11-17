@@ -14,7 +14,8 @@ class PersonaController {
 
     def list = {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        return [personaInstanceList: Persona.list(params), personaInstanceTotal: Persona.count()]
+        def resultado = personaService.search(params,false)
+        [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
     }
 
     def tipoSangre = {
@@ -36,11 +37,11 @@ class PersonaController {
     }
 
     def save = {
-                def personaInstance = new Persona(params)
+        def personaInstance = new Persona(params)
         try{
         Persona.withTransaction {
-			def direccion = personaInstance.direccion
-			personaInstance.direccion = direccion.save()
+            def direccion = personaInstance.direccion
+            personaInstance.direccion = direccion.save()
         if (personaInstance.save(flush: true)) {
             flash.message = "${message(code: 'persona.crea', args: [personaInstance.nombre])}"
             redirect(action: "show", id: personaInstance.id)
@@ -130,9 +131,15 @@ class PersonaController {
         def personaInstance = Persona.get(params.id)
             try {
                 Persona.withTransaction{
-                personaInstance.delete(flush: true)
-                flash.message = "${message(code: 'persona.baja', args: [personaInstance.nombre])}"
-                redirect(action: "list")
+                if(!personaInstance.esMiembro){
+                     personaInstance.delete(flush: true)
+                    flash.message = "${message(code: 'persona.baja', args: [personaInstance.nombre])}"
+                    redirect(action: "list")
+                }
+                else{
+                    flash.message = "${message(code: 'persona.falla.noBaja.esMiembro', args: [personaInstance.nombre])}"
+                    redirect(action: "list")
+                }
                 }
             }
             catch (Exception e) {
@@ -159,10 +166,20 @@ class PersonaController {
         log.debug "f_apellidoPaterno: $params.filtroApellidoPaterno"
         log.debug "f_apellidoMaterno: $params.filtroApellidoMaterno"
 
-        def hoja = personaService.searchMiembroByName(params)
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        def resultado = personaService.searchMiembroByName(params)
+        [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
 
-        log.debug "hoja: $hoja"
+    }
 
+    def buscarPersona = {
+        log.debug "f_nombre: $params.filtroNombre"
+        log.debug "f_apellidoPaterno: $params.filtroApellidoPaterno"
+        log.debug "f_apellidoMaterno: $params.filtroApellidoMaterno"
+
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        def resultado = personaService.searchPersonaByName(params)
+        [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
     }
 
 }
