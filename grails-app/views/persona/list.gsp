@@ -25,6 +25,8 @@
                             <g:sortableColumn property="id" title="${message(code: 'persona.id.label', default: 'Id')}" />
                         
                             <g:sortableColumn property="nombre" title="${message(code: 'persona.nombreCompleto')}" />
+
+                            <g:sortableColumn property="direccion" title="${message(code: 'persona.direccion')}" />
                         
 <!--                            <g:sortableColumn property="apellidoPaterno" title="${message(code: 'persona.apellidoPaterno')}" />
                         
@@ -45,6 +47,8 @@
                             <td><g:link action="show" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "id")}</g:link></td>
                         
                             <td>${fieldValue(bean: personaInstance, field: "nombreCompleto")}</td>
+
+                            <td>${fieldValue(bean: personaInstance, field: "direccion")}</td>
                         
 <!--                            <td>${fieldValue(bean: personaInstance, field: "apellidoPaterno")}</td>
                         
