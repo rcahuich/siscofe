@@ -27,7 +27,7 @@
                                         <div><ul>
                                             <li><a href="persona/tipoSangre.gsp"><span>Tipo de Sangre</span></a>
 <!--                                            <li><a href="persona/direMiembros.gsp"><span>Dirección de Miembros</span></a>-->
-                                            <li><a href="#"><span>Edades</span></a>
+                                            <li><a href="persona/buscarEdad.gsp"><span>Edades</span></a>
                                         </ul></div>
 				</ul></div>
 			</li>

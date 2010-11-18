@@ -9,8 +9,7 @@ class Bautismo extends TipoDeIngreso{
     String numeroBautismo
     Date fechaBautismo
     Boolean estudioVeintiochoCreencias = true
-    Persona persona
-   
+       
     static constraints = {
         lugarBautismo maxSize:64, blank:false
         ministroOficiante maxSize:64, blank:false
