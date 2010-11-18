@@ -126,13 +126,17 @@ class PersonaService {
 
             and {
                     if(eMinima != null && eMaxima != null){
-                    between("fechaNacimiento", eMinima, eMaxima)
+                    le("fechaNacimiento", eMinima)
+                    ge("fechaNacimiento", eMaxima)
                 }
             }
             order("fechaNacimiento")
         }
 
         log.debug "+++++++++++++ $persona.size";
+        log.debug "+++++++++++++ $persona"
+
+        return persona
 
     }
 
@@ -169,9 +173,11 @@ class PersonaService {
 
     	log.debug "eMaxima: $eMaxima < fecha de nacimiento < eMinima: $eMinima"
 
-
+        def persona = buscaEdad(eMinima, eMaxima)
     	
-    	return buscaEdad(eMinima, eMaxima);
+        log.debug "Convierte edad lo que devuelve despues de pasar por BD :::::::::::::: $persona"
+
+    	return persona
     }
 
     def serviceMethod() {
