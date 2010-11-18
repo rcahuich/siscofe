@@ -189,4 +189,14 @@ class PersonaController {
         def result = personaService.hojaMiembro(params)
     }
 
+    def buscarEdad = {
+        log.debug "Entro a buscar por edad"
+        log.debug "Buscar edad entre --- $params.filtroEdadInicio y $params.filtroEdadFin ---"
+
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        def resultado = personaService.searchByEdad(params)
+        [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
+
+    }
+
 }

@@ -86,7 +86,7 @@ class PersonaService {
                     if(params.filtroApellidoMaterno != null && !params.filtroApellidoMaterno.equals("")){
                         like("apellidoMaterno", params.filtroApellidoMaterno + "%")
                     }
-                    eq("esMiembro", esMiembro)
+                        eq("esMiembro", esMiembro)
             }
             order("apellidoPaterno")
         }
@@ -105,7 +105,74 @@ class PersonaService {
 
     }
 
+    def searchByEdad(params){
+        log.debug "#################### params: $params"
 
+        def personas = convierteEdad(params)
+
+        
+        log.debug "########################### personas $personas"
+
+        return personas
+
+    }
+    def buscaEdad(Date eMinima, Date eMaxima){
+
+    	def cri = Persona.createCriteria();
+        log.debug "eMinima+++++++++++++ $eMinima";
+        log.debug "eMaxima+++++++++++++ $eMaxima";
+
+    	def persona = cri.list{
+
+            and {
+                    if(eMinima != null && eMaxima != null){
+                    between("fechaNacimiento", eMinima, eMaxima)
+                }
+            }
+            order("fechaNacimiento")
+        }
+
+        log.debug "+++++++++++++ $persona.size";
+
+    }
+
+    def convierteEdad(params){
+
+    	Date eMinima = null;
+    	Date eMaxima = null;
+
+    	if(params.filtroEdadInicio != null && !params.filtroEdadInicio.equals("")){
+    		eMinima = new Date();
+    		log.debug "fecha Actual: $eMinima"
+    		Calendar calendar = Calendar.getInstance()
+    		calendar.setTime(eMinima)
+
+    		calendar.add(Calendar.YEAR, (Integer.valueOf(params.filtroEdadInicio))*-1)//modificando el año del Calendar-->Año actual - edadMaxima
+
+    		eMinima = calendar.getTime();
+
+			log.debug "fecha Modificada: $eMinima"
+
+    	}
+    	if(params.filtroEdadFin != null && !params.filtroEdadFin.equals("")){
+    		eMaxima = new Date();
+			log.debug "fecha Actual: $eMaxima"
+    		Calendar calendar = Calendar.getInstance()
+    		calendar.setTime(eMaxima)
+
+    		calendar.add(Calendar.YEAR, (Integer.valueOf(params.filtroEdadFin))*-1)//modificando el año del Calendar-->Año actual - edadMaxima
+
+    		eMaxima = calendar.getTime();
+
+			log.debug "fecha Modificada: $eMaxima"
+    	}
+
+    	log.debug "eMaxima: $eMaxima < fecha de nacimiento < eMinima: $eMinima"
+
+
+    	
+    	return buscaEdad(eMinima, eMaxima);
+    }
 
     def serviceMethod() {
 

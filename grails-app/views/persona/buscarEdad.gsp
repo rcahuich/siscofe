@@ -11,44 +11,44 @@
     </div>
 
     <div class="body">
-      <h1><g:message code="persona.miembro.label" /></h1>
+      <h1><g:message code="persona.busqueda.porEdad" /></h1>
 
       <div class="search">
         <g:form method="post">
           <div>
             <table>
-              <tbody>
-                <tr>
+        <tbody>
+              <tr>
                   <td style="vertical-align:middle;width:50px;">
-                
+                    <p>
                     <label for="filtro"><g:message code="entrada.buscar" default="Seleccione Iglesia"/>:</label>
                     <g:select id="filtroIglesia" name="filtroIglesia" from="${siscofe.Iglesia.list()}" optionKey="id" value="${params.filtroIglesia}"  />
-                
-                    <label for="filtro"><g:message code="entrada.buscar" default="Fecha de Inicio"/>:</label>
+                    </p>
+<!--                <p>
+                    <label for="filtro"><g:message code="entrada.buscar" default="Los que nacieron entre la fecha de: "/></label>
                     <g:datePicker id="filtroFechaInicio" name="filtroFechaInicio" precision="day" value="${params.filtroFechaInicio}"  />
-
-                    <label for="filtro"><g:message code="entrada.buscar" default="Fecha de Fin"/>:</label>
+                                        
+                    <label for="filtro"><g:message code="entrada.buscar" default=" y "/></label>
                     <g:datePicker id="filtroFechaFin" name="filtroFechaFin" precision="day" value="${params.filtroFechaFin}"  />
-
-                    <label for="filtro"><g:message code="entrada.buscar" default="Edad de Inicio"/>:</label>
-                    <input type="text" id="filtroEdadInicio" name="filtroEdadInicio" value="${params.filtroEdadInicio}" style="width:400px;"/>
-
-                    <label for="filtro"><g:message code="entrada.buscar" default="Edad de Fin"/>:</label>
-                    <input type="text" id="filtroEdadFin" name="filtroEdadFin" value="${params.filtroEdadFin}" style="width:400px;"/>
-
+                    </p>-->
+                    <p>
+                    <label for="filtro"><g:message code="entrada.buscar" default="Entre la edad de: "/></label>
+                    <input type="text" id="filtroEdadInicio" name="filtroEdadInicio" value="${params.filtroEdadInicio}" style="width:30px;"/>                     
+                    <label for="filtro"><g:message code="entrada.buscar" default=" y "/></label>
+                    <input type="text" id="filtroEdadFin" name="filtroEdadFin" value="${params.filtroEdadFin}" style="width:30px;"/>  años.
+                    </p>
                   </td>
+
               </tr>
               <tr>
-
-              <td>
-                <g:actionSubmit controller="persona" action="buscarMiembro" value="Buscar" class="save" style="vertical-align: middle;" />
-              </td>
-
+                    <td>
+			<g:actionSubmit controller="persona" action="buscarEdad" value="Buscar" class="save" style="vertical-align: middle;" />
+                    </td>
               </tr>
-              </tbody>
-            </table>
-          </div>
-        </g:form>
+        </tbody>
+</table>
+</div>
+</g:form>
       </div>
 
             <div class="list">
@@ -57,36 +57,23 @@
                         <tr>
                             <g:sortableColumn property="id" title="${message(code: 'persona.id')}" />
                             <g:sortableColumn property="nombreCompleto" title="${message(code: 'persona.nombreCompleto')}" />
-                            <g:sortableColumn property="direccion" title="${message(code: 'persona.direccion')}" />
-                            <g:sortableColumn property="phoneCasa" title="${message(code: 'persona.phoneCasa')}" />
-                            <g:sortableColumn property="fechaNacimiento" title="${message(code: 'persona.fechaNacimiento')}" />
+                            <g:sortableColumn property="sexo" title="${message(code: 'persona.sexo')}" />
+                            <g:sortableColumn property="nivelEstudio" title="${message(code: 'persona.nivelEstudio')}" />
                         </tr>
                     </thead>
                     <tbody>
                     <g:each in="${personaInstanceList}" status="i" var="personaInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                             <td>${fieldValue(bean: personaInstance, field: "id")}</td>
-<!--                            <td><g:link action="show" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "id")}</g:link></td>-->
                             <td>${fieldValue(bean: personaInstance, field: "nombreCompleto")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "direccion")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "phoneCasa")}</td>
-                            <td><g:formatDate date="${personaInstance?.fechaNacimiento}" /></td>
+                            <td>${fieldValue(bean: personaInstance, field: "sexo")}</td>
+                            <td>${fieldValue(bean: personaInstance, field: "nivelEstudio")}</td>
                         </tr>
                     </g:each>
                     </tbody>
                 </table>
             </div>
 
-
-      <div class="dialog">
-      </div>
-
-      <div class="buttons">
-        <g:form>
-          <g:hiddenField name="id" value="${personaInstance?.id}" />
-          <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
-        </g:form>
-      </div>
     </div>
   </body>
 </html>
