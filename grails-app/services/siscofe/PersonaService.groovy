@@ -30,24 +30,12 @@ class PersonaService {
     def searchMiembroByName(params){
         log.debug "params: $params"
 
-//        List<HojaVO> hojas = new ArrayList<HojaVO>()
-
         def miembros = search(params, true)
-        log.debug "************************************************************************************************************************"
+        log.debug "**************************"
         log.debug "miembros $miembros"
 
         log.debug "personas_size: $miembros.size"
-//        personasList = personas
-//        log.debug "personasList_size: $personasList.size"
-//        log.debug personasList
 
-        //BUSQUEDA DE TIPO DE INGRESOS DE LOS MIEMBROS
-//        for(Persona m : miembros){
-//            log.debug "-------"
-//            log.debug m.ingresos
-//            log.debug "-------"
-//        }
-//        return hoja
         return miembros
     }
 
@@ -59,7 +47,7 @@ class PersonaService {
 
         def personas = search(params, false)
 
-        log.debug "************************************************************************************************************************"
+        log.debug "**************************"
         log.debug "personas $personas"
 
         return personas
@@ -92,20 +80,35 @@ class PersonaService {
         }
     }
 
+    /*
+     * Devuelve un VO (Hoja) que contiene todos los datos relacionados con el Miembro, que se mostraran en la Hoja del Miembro
+     * Lo que devuelve es:
+     * -Persona
+     * -Ultimo Ingreso de la Persona
+     */
     def hojaMiembro(params){
         log.debug "Entro a hojaMiembro en PersonaService"
         log.debug "params: $params"
 
-        def personaInstance = Persona.get(params.id)
-        log.debug "personaInstance: $personaInstance"
+        def persona = Persona.get(params.id)
+        log.debug "persona: $persona"
 
+        HojaVO hoja = new HojaVO()
+                
+        //Agregando Persona al VO
+        hoja.setPersona(persona)
 
-        //Aqui hacer el VO y agregarle a la persona y su ultimo ingreso
+        //Logica para traer el ultimo ingreso de la persona
+        def ultimoIngreso = TipoDeIngreso.executeQuery("select ti from TipoDeIngreso ti where ti.persona=:p order by fecha_alta desc",[p:persona],[max:1])
+        log.debug "ultimoIngreso: $ultimoIngreso"
+        log.debug "ultimoIngreso_size: $ultimoIngreso.size"
 
+        //Agregando Ultimo Ingreso al VO
+        hoja.setTipoIngreso(ultimoIngreso.get(0))//Obteniendo el unico valor de la lista devuelta por el query
+        log.debug "hoja: $hoja"
 
+        return hoja
     }
-
-
 
     def serviceMethod() {
 

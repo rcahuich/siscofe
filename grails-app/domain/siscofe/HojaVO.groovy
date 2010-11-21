@@ -9,6 +9,6 @@ class HojaVO {
     }
 
     String toString () {
-        "$persona $tipoIngreso"
+        "persona: $persona, ingreso: $tipoIngreso"
     }
 }

@@ -186,7 +186,7 @@ class PersonaController {
         log.debug "Entro a la Hoja del Miembro"
         log.debug "params: $params"
 
-        def result = personaService.hojaMiembro(params)
+        render(view:'hojaMiembro',model:[hoja:personaService.hojaMiembro(params)])
     }
 
 }

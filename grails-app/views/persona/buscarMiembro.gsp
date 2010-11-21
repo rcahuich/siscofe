@@ -68,12 +68,12 @@
       <div class="dialog">
       </div>
 
-      <div class="buttons">
+<!--      <div class="buttons">
         <g:form>
           <g:hiddenField name="id" value="${personaInstance?.id}" />
           <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
         </g:form>
-      </div>
+      </div>-->
     </div>
   </body>
 </html>
