@@ -46,6 +46,7 @@
                             <g:sortableColumn property="phoneCasa" title="${message(code: 'persona.phoneCasa')}" />
                             <g:sortableColumn property="phoneTrabajo" title="${message(code: 'persona.phoneTrabajo')}" />
                             <g:sortableColumn property="phoneCelular" title="${message(code: 'persona.phoneCelular')}" />
+                            <g:sortableColumn property="phoneCelular" title="${message(code: 'persona.tipoDeSangre')}" />
                         </tr>
                     </thead>
                     <tbody>
@@ -56,6 +57,7 @@
                             <td>${fieldValue(bean: personaInstance, field: "phoneCasa")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "phoneTrabajo")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "phoneCelular")}</td>
+                            <td>${fieldValue(bean: personaInstance, field: "tipoDeSangre")}</td>
                         </tr>
                     </g:each>
                     </tbody>

@@ -53,6 +53,7 @@
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
                             <td><g:link controller="persona" action="hojaMiembro" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "id")}</g:link></td>
+
                             <td>${fieldValue(bean: personaInstance, field: "nombreCompleto")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "direccion")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "phoneCasa")}</td>
@@ -67,12 +68,12 @@
       <div class="dialog">
       </div>
 
-      <div class="buttons">
+<!--      <div class="buttons">
         <g:form>
           <g:hiddenField name="id" value="${personaInstance?.id}" />
           <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
         </g:form>
-      </div>
+      </div>-->
     </div>
   </body>
 </html>
