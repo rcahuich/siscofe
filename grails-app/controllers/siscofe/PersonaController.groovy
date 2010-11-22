@@ -94,7 +94,6 @@ class PersonaController {
 
     def update = {
         def personaInstance = Persona.get(params.id)
-
         try{
         Persona.withTransaction {
                 def direccion = personaInstance.direccion
@@ -147,7 +146,6 @@ class PersonaController {
                 flash.message = message(code: 'persona.noBaja')
                 redirect(action: "show", id: params.id)
             }
-
     }
 
     def elegirTipoDeIngreso= {
