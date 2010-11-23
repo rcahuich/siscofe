@@ -58,6 +58,9 @@ class BautismoController {
 
     def edit = {
         def bautismoInstance = Bautismo.get(params.id)
+        log.debug "----------------------------------------------------------------------"
+        log.debug "bautismo: $bautismoInstance"
+        log.debug "id persona dentro de bautismo: $bautismoInstance.persona.id"
         if (!bautismoInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), params.id])}"
             redirect(action: "list")
@@ -68,6 +71,7 @@ class BautismoController {
     }
 
     def update = {
+        log.debug "params: $params"
         def bautismoInstance = Bautismo.get(params.id)
         try{
         if (bautismoInstance) {
