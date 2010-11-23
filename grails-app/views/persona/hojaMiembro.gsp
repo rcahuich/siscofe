@@ -105,7 +105,7 @@
               <td colspan="3">
               <div class="buttons">
                   <g:form>
-                    <span style="font-size: 10px;" class="menuButton"><g:link controller="bautismo" id="${fieldValue(bean: hoja, field: 'tipoIngreso.id')}" class="edit" action="edit" > <g:message code="Editar Informacion de Bautismo" /></g:link></span>
+                    <span style="font-size: 10px;" class="menuButton"><g:link controller="bautismo" id="${fieldValue(bean: hoja, field: 'persona.id')}" params="personaId:${fieldValue(bean: hoja, field: 'persona.id')}" class="edit" action="edit" > <g:message code="Editar Informacion de Bautismo" /></g:link></span>
                   </g:form>
               </div>
               </td>

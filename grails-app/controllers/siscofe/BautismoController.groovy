@@ -57,10 +57,15 @@ class BautismoController {
     }
 
     def edit = {
+        log.debug "############ $params"
         def bautismoInstance = Bautismo.get(params.id)
         log.debug "----------------------------------------------------------------------"
         log.debug "bautismo: $bautismoInstance"
         log.debug "id persona dentro de bautismo: $bautismoInstance.persona.id"
+        log.debug "id_Persona_Bautismo: $bautismoInstance.persona.id"
+        def persona = Persona.get(bautismoInstance.persona.id)
+        log.debug "id_Persona: $persona"
+
         if (!bautismoInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), params.id])}"
             redirect(action: "list")
@@ -74,8 +79,10 @@ class BautismoController {
         log.debug "params: $params"
         def bautismoInstance = Bautismo.get(params.id)
         try{
-        if (bautismoInstance) {
+        Bautismo.withTransaction{
             log.debug "############ $params"
+            
+        if (bautismoInstance) {
             if (params.version) {
                 def version = params.version.toLong()
                 if (bautismoInstance.version > version) {
@@ -90,6 +97,7 @@ class BautismoController {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), bautismoInstance.id])}"
                 redirect(action: "show", id: bautismoInstance.id)
             }
+        }
         }
        }catch(Exception e){
             log.error("No se pudo actualizar el bautismo",e)
