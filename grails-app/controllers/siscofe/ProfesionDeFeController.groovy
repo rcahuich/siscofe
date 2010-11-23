@@ -46,7 +46,11 @@ class ProfesionDeFeController {
     }
 
     def edit = {
+        log.debug "############ $params"
         def profesionDeFeInstance = ProfesionDeFe.get(params.id)
+        log.debug "id_Persona_Bautismo: $profesionDeFeInstance.persona.id"
+        def persona = Persona.get(profesionDeFeInstance.persona.id)
+        log.debug "id_Persona: $persona"
         if (!profesionDeFeInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'profesionDeFe.label', default: 'ProfesionDeFe'), params.id])}"
             redirect(action: "list")
@@ -58,6 +62,7 @@ class ProfesionDeFeController {
 
     def update = {
         def profesionDeFeInstance = ProfesionDeFe.get(params.id)
+
         if (profesionDeFeInstance) {
             if (params.version) {
                 def version = params.version.toLong()

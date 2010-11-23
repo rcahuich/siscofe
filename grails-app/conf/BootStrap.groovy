@@ -11,7 +11,42 @@ class BootStrap {
         def user = Rol.findByAuthority('ROLE_USER') ?: new Rol(authority: 'ROLE_USER').save(flush: true)
         
         
-        
+//        log.info "Creacion de Union"
+//        def union = Union.findByNombre('UMN')
+//        if(!union){
+//            union = new Union(
+//                codigo : 'UMN'
+//                ,nombre : 'UMN'
+//                ,nombreCompleto : 'Union Mexicana del Norte'
+//            )
+//            union.save(flash:true)
+//        }
+//
+//        log.info "Creacion de Asociacion"
+//        def asoc = Asociacion.findByNombre('AN')
+//            if(!asoc){
+//                asoc = new Asociacion(
+//                    codigo : 'AN'
+//                    ,nombre : 'AN'
+//                    ,nombreCompleto : 'Asociación del Noreste'
+//                    ,union : 'UMN'
+//                )
+//                union.asociacion = asoc.save(flash:true)
+//            }
+//
+//        log.info "Creacion de Distrito"
+//        def dist = Distrito.findByNombre('DMont')
+//                if(!dist){
+//                    dist = new Distrito(
+//                        codigo : 'UMN'
+//                        ,nombre : 'UMN'
+//                        ,nombreCompleto : 'Union Mexicana del Norte'
+//                        ,asociacion : 'AN'
+//                    )
+//                    asoc.distrito = dist.save(flash:true)
+//                }
+
+
         log.info "Creacion de Usuario"
         def usuario = Usuario.findByUsername('admin')
                 if (!usuario){

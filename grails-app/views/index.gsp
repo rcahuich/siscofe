@@ -62,8 +62,9 @@
           </div>-->
 
 
-          <h1>Bienvenido</h1>
-            
+          <h1>Sistema de Control de Feligresia de la IASD</h1>
+
+          <h3>Bienvenido</h3>
             <p>Aqui usted podra administrar los datos de los miembros de su Distrito, con las siguientes opciones:</p>
 
             <br/>
