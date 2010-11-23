@@ -15,7 +15,7 @@
             <span class="menuButton"><g:link class="create" action="create"><g:message code="persona.nuevo" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="persona.edita" />${personaInstance.nombre}</h1>
+            <h1><g:message code="persona.edita" /> ${personaInstance.nombre}</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>

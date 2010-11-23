@@ -1,5 +1,7 @@
 html{
-    background:none repeat scroll 0 0 #FFFCFB;
+/*    background:none repeat scroll 0 0 #FFFCFB;*/
+    background: url(../images/asd.png) no-repeat fixed 0 100 whitesmoke;
+
     margin: 0;
     /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
 }
@@ -86,7 +88,7 @@ input:focus, select:focus, textarea:focus {
 .menuButton a {
     background: url(../images/skin/database_table.png) center left no-repeat;
     color: #333;
-    padding: 4px 6px;
+    padding: 5px 25px;
 }
 .menuButton a.home {
     background: url(../images/skin/house.png) center left no-repeat;
@@ -100,6 +102,18 @@ input:focus, select:focus, textarea:focus {
 }
 .menuButton a.create {
     background: url(../images/skin/database_add.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.edit {
+    background: url(../images/skin/database_edit.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.delete {
+    background: url(../images/skin/database_delete.png) center left no-repeat;
     color: #333;
     padding-left: 25px;
 }
@@ -325,7 +339,6 @@ th.desc a {
 }
 
 body {
-   
     margin: 0px;
     padding: 0px;
     text-align:center;

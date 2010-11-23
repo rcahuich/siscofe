@@ -14,7 +14,7 @@
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+            <h1><g:message code="default.create.label"/> </h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -33,7 +33,7 @@
                                     <label for="persona"><g:message code="baja.persona.label" default="Persona" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bajaInstance, field: 'persona', 'errors')}">
-                                    <g:select name="persona.id" from="${siscofe.Persona.list()}" optionKey="id" value="${bajaInstance?.persona?.id}"  />
+                                    <g:link controller="persona" action="show" id="${persona?.id}">${persona?.encodeAsHTML()}</g:link>
                                 </td>
                             </tr>
                             

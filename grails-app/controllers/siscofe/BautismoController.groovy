@@ -25,19 +25,23 @@ class BautismoController {
 
     def save = {
         def bautismoInstance = new Bautismo(params)
+        try{
+        Bautismo.withTransaction{
         Persona persona = Persona.get(params.persona.id)
-        //log.debug "******************************************************************"
-        //log.debug "persona_id $persona.id"
-        //log.debug "esMiembro $persona.esMiembro"
         persona.esMiembro=true
-       // log.debug "esMiembro $persona.esMiembro"
         persona.save(flush:true)
         if (bautismoInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), bautismoInstance.id])}"
             redirect(action: "show", id: bautismoInstance.id)
         }
-        else {
-            render(view: "create", model: [bautismoInstance: bautismoInstance])
+        }
+    }catch(Exception e){
+            log.error("No se pudo crear la persona",e)
+            if (bautismoInstance) {
+                bautismoInstance.discard()
+            }
+            flash.message = message(code:"bautismo.noCrea")
+            render(view:"create", model: [bautismoInstance: bautismoInstance])
         }
     }
 
@@ -53,7 +57,11 @@ class BautismoController {
     }
 
     def edit = {
+        log.debug "############ $params"
         def bautismoInstance = Bautismo.get(params.id)
+        log.debug "id_Persona_Bautismo: $bautismoInstance.persona.id"
+        def persona = Persona.get(bautismoInstance.persona.id)
+        log.debug "id_Persona: $persona"
         if (!bautismoInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), params.id])}"
             redirect(action: "list")
@@ -65,6 +73,10 @@ class BautismoController {
 
     def update = {
         def bautismoInstance = Bautismo.get(params.id)
+        try{
+        Bautismo.withTransaction{
+            log.debug "############ $params"
+            
         if (bautismoInstance) {
             if (params.version) {
                 def version = params.version.toLong()
@@ -80,13 +92,15 @@ class BautismoController {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), bautismoInstance.id])}"
                 redirect(action: "show", id: bautismoInstance.id)
             }
-            else {
-                render(view: "edit", model: [bautismoInstance: bautismoInstance])
-            }
         }
-        else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), params.id])}"
-            redirect(action: "list")
+        }
+       }catch(Exception e){
+            log.error("No se pudo actualizar el bautismo",e)
+            if (bautismoInstance) {
+                bautismoInstance.discard()
+            }
+            flash.message = message(code:"bautismo.noActualiza")
+            render(view:"edit",model:[bautismoInstance:bautismoInstance])
         }
     }
 
