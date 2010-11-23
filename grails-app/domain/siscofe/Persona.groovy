@@ -49,7 +49,7 @@ class Persona {
         nombre index:'persona_nombre_idx','persona_nombre_completo_idx','persona_nombre_apellido_paterno_idx'
         apellidoPaterno index:'persona_apellido_paterno_idx','persona_nombre_completo_idx','persona_nombre_apellido_paterno_idx'
         apellidoMaterno index:'persona_apellido_materno_idx','persona_nombre_completo_idx'
-        colums{
+        columns{
             ingresos lazy:false
         }
     }
