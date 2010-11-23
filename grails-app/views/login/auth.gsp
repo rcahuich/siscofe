@@ -55,11 +55,11 @@
                   <div class='fheader' align="center">Inicie sesión</div>
 			<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
 				<p>
-					<label for='username'>username</label>
+					<label for='Usuario'>username</label>
 					<input type='text' class='text_' name='j_username' id='username' />
 				</p>
 				<p>
-					<label for='password'>contraseña</label>
+					<label for='Contraeña'>contraseña</label>
 					<input type='password' class='text_' name='j_password' id='password' />
 				</p>
 				<p>

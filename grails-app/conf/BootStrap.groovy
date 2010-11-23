@@ -65,15 +65,15 @@ class BootStrap {
 
 //        log.info "Creacion de Iglesia"
 //        def iglesia = Iglesia.findByNombre('Universitaria')
-//        def direccion = Direccion.findByPais('Peru')
+//        def dir = Direccion.findByPais('Peru')
 //        if (!iglesia){
 //            iglesia = new Iglesia(
 //                    nombre : 'Iglesia Universitaria'
 //                    ,tipoIglesia : 'ORGANIZADA'
 //                    ,telefono : '849382008'
 //            )
-//            if (!direccion){
-//                direccion = new Direccion(
+//            if (!dir){
+//                dir = new Direccion(
 //                    pais : 'Mexico'
 //                    ,estado : 'Nuevo Leon'
 //                    ,municipio : 'Montemorelos'
@@ -84,7 +84,7 @@ class BootStrap {
 //                    ,numero : '298'
 //                    ,codigoPostal : '65500'
 //                )
-//                iglesia.direccion = direccion.save(flash:true)
+//                iglesia.direrccion = dir.save(flash:true)
 //            }
 //            iglesia.save(flush:true)
 //        }
