@@ -30,15 +30,15 @@ class BootStrap {
 
 //        log.info "Creacion de Iglesia"
 //        def iglesia = Iglesia.findByNombre('Universitaria')
-//        def dire = Direccion.findByPais('Peru')
+//        def direccion = Direccion.findByPais('Peru')
 //        if (!iglesia){
 //            iglesia = new Iglesia(
 //                    nombre : 'Iglesia Universitaria'
 //                    ,tipoIglesia : 'ORGANIZADA'
 //                    ,telefono : '849382008'
 //            )
-//            if (!dire){
-//                dire = new Direccion(
+//            if (!direccion){
+//                direccion = new Direccion(
 //                    pais : 'Mexico'
 //                    ,estado : 'Nuevo Leon'
 //                    ,municipio : 'Montemorelos'
@@ -49,15 +49,16 @@ class BootStrap {
 //                    ,numero : '298'
 //                    ,codigoPostal : '65500'
 //                )
-//                iglesia.direccion = dire.save(flash:true)
+//                iglesia.direccion = direccion.save(flash:true)
 //            }
 //            iglesia.save(flush:true)
 //        }
-
+        
         
         log.info "Creacion de Persona Base"
         def persona = Persona.findByNombre('Alejandro Felipe')
-        def dir = Direccion.findByPais('Mexico')
+        def direccion = Direccion.findByPais('Mexico')
+        
         if (!persona){
             persona = new Persona(
                     nombre : 'Alejandro Felipe'
@@ -77,9 +78,9 @@ class BootStrap {
                     ,sabeLeer : true
                     ,esMiembro : false
             )
-
-            if (!dir){
-                dir = new Direccion(
+    
+            if (!direccion){
+                direccion = new Direccion(
                     pais : 'Mexico'
                     ,estado : 'Nuevo Leon'
                     ,municipio : 'Montemorelos'
@@ -90,14 +91,13 @@ class BootStrap {
                     ,numero : '289-C'
                     ,codigoPostal : '65900'
                 )
-                persona.direccion = dir.save(flash:true)
+                persona.direccion = direccion.save(flash:true)
             }
+            
             persona.save(flush:true)
         }
 
-        
-
-           log.info("¡La aplicacion ha sido cargada exitosamente!")
+        log.info("¡La aplicacion ha sido cargada exitosamente!")
     }
 
     def destroy = {
