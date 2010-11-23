@@ -24,20 +24,28 @@
                                         <li><a href="persona/buscarPersona.gsp"<span>Buscar Persona</span></a></li>
                                         <li><a href="persona/list"><span>Lista de Personas</span></a></li>
 					<li><a href="#"><span>Reportes</span></a>
-                                        <div><ul>
+                                        <div>
+                                          <ul>
                                             <li><a href="persona/tipoSangre.gsp"><span>Tipo de Sangre</span></a>
 <!--                                            <li><a href="persona/direMiembros.gsp"><span>Dirección de Miembros</span></a>-->
                                             <li><a href="persona/buscarEdad.gsp"><span>Edades</span></a>
-                                        </ul></div>
+                                          </ul>
+                                        </div>
+                                        </li>
 				</ul></div>
 			</li>
                         <li><a href="#"><span>Miembros</span></a>
                             <div><ul>
-                                <li>
-                                    <a href="persona/buscarMiembro.gsp"<span>Buscar Miembro</span></a>
-                                </li>
-                                <li>
-                                    <a href="baja/create"<span>Dar de Baja</span></a>
+                                <li><a href="persona/buscarMiembro.gsp"<span>Buscar Miembro</span></a></li>
+                                <li><a href="baja/create"<span>Dar de Baja</span></a></li>
+                                <li><a href="#"><span>Reportes</span></a>
+                                <div>
+                                    <ul>
+                                        <li><a href="#"<span><g:link class="persona" controller="persona" action="buscarMiembrosActivos"><g:message code="Miembros Activos" /></g:link></span></a></li>
+                                        <li><a href="persona/reportes/buscarIngresos.gsp"<span>Buscar Ingresos</span></a></li>
+                                        <li><a href="#"><span>Libro de Iglesia</span></a>
+                                    </ul>
+                                </div>
                                 </li>
                             </ul></div>
                         </li>

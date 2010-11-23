@@ -1,4 +1,4 @@
-package siscofe
+package general
 
 /**
  *Archivo para constantes del Sistema

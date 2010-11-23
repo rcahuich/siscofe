@@ -4,7 +4,7 @@ class Persona {
     String nombre
     String apellidoPaterno
     String apellidoMaterno
-    String nombreCompleto
+    //String nombreCompleto
     String estadoCivil
     String nivelEstudio
     String religionAnterior
@@ -22,7 +22,7 @@ class Persona {
     Set ingresos
     Set bajas
 
-    //static transients = ['nombreCompleto']
+    static transients = ['nombreCompleto']
 
     static hasMany = [ingresos : TipoDeIngreso, bajas : Baja]
 
