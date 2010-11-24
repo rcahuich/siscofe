@@ -1,9 +1,6 @@
 html{
 /*    background:none repeat scroll 0 0 #FFFCFB;*/
 /*    background: url(../images/asd.png) no-repeat fixed 0 100 whitesmoke;*/
-
-
-    margin: 0;
     /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
 }
 
@@ -16,8 +13,6 @@ html{
 }
 
 /*body {
-    background: #fff;
-    color: #333;
     font: 11px verdana, arial, helvetica, sans-serif;
 }*/
 
@@ -356,7 +351,6 @@ body {
 }
 
 #page {
-    
     width: 1000px;
     margin: 0px auto;
     padding: 4px 0;

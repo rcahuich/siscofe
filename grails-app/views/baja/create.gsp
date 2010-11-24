@@ -14,7 +14,7 @@
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.create.label"/> </h1>
+            <h1><g:message code="Baja de Miembro: "/> ${params.personaNombre}</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -24,19 +24,12 @@
             </div>
             </g:hasErrors>
             <g:form action="save" >
+              <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
+              <g:hiddenField name="personaId" value="${persona.id}"/>
                 <div class="dialog">
                     <table>
                         <tbody>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="persona"><g:message code="baja.persona.label" default="Persona" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: bajaInstance, field: 'persona', 'errors')}">
-                                    <g:link controller="persona" action="show" id="${persona?.id}">${persona?.encodeAsHTML()}</g:link>
-                                </td>
-                            </tr>
-                            
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="pastorEnFuncion"><g:message code="baja.pastorEnFuncion.label" default="Pastor En Funcion" /></label>

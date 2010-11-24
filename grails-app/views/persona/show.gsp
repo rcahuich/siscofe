@@ -140,7 +140,7 @@
                 <g:form>
                     <g:hiddenField name="id" value="${personaInstance?.id}" />
                     <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span> |
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'persona.confirma.baja', args:[personaInstance.nombre])}');" /></span>
+                    <span class="menuButton"><g:link controller="baja" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="delete" action="create" > <g:message code="Dar de Baja" /></g:link></span> |
                     <span class="menuButton"><g:link controller="bautismo" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Agregar Bautismo" /></g:link></span> |
                     <span class="menuButton"><g:link controller="cartaDeTraslado" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Agregar Carta de Traslado" /></g:link></span> |
                     <span class="menuButton"><g:link controller="profesionDeFe" params="[personaId:personaInstance.id, personaNombre:personaInstance.nombre]" class="create" action="create" > <g:message code="Agregar Profesión de Fe" /></g:link></span>
