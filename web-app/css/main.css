@@ -1,6 +1,6 @@
 html{
-    background: url(../images/asd.png) no-repeat fixed 0 100 whitesmoke;
-    margin: 0;
+/*    background:none repeat scroll 0 0 #FFFCFB;*/
+/*    background: url(../images/asd.png) no-repeat fixed 0 100 whitesmoke;*/
     /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
 }
 
@@ -21,6 +21,7 @@ html{
 }
 
 #iasdLogo {
+        float: right;
 	padding:5px;
 }
 
@@ -324,7 +325,7 @@ th.desc a {
     -moz-box-shadow:0 1px 3px #444444;
     background: #556270;
     height:70px;
-    margin:25px 0 5px;
+    margin:20px 0 5px;
 }
 
 #header h1 {

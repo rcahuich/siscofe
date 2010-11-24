@@ -5,9 +5,9 @@ package general
 **/
 class Constants {
 
-        public static final String UNION = "Union del Norte"
-        public static final String ASOCIACION_MISION = "Asociacion de Montemorelos"
-        public static final String DISTRITO = "Central"
+        public static final String UNION = "UMN"
+        public static final String ASOCIACION_MISION = "Asociacion Del Noreste"
+        public static final String DISTRITO = "MOntemorelos"
 
 
     static constraints = {

@@ -27,8 +27,8 @@
             <g:form method="post" >
                 <g:hiddenField name="id" value="${bautismoInstance?.id}" />
                 <g:hiddenField name="version" value="${bautismoInstance?.version}" />
-                <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
-                <g:hiddenField name="persona.id" value="${params.personaId}"/>
+                <g:hiddenField name="persona.nombre" value="${bautismoInstance.persona.nombre}"/>
+                <g:hiddenField name="persona.id" value="${bautismoInstance.persona.id}"/>
                 <div class="dialog">
                     <table>
                         <tbody>
