@@ -55,7 +55,7 @@
                   <div class='fheader' align="center">Inicie sesión</div>
 			<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
 				<p>
-					<label for='Usuario'>username</label>
+					<label for='Usuario'>usuario</label>
 					<input type='text' class='text_' name='j_username' id='username' />
 				</p>
 				<p>
@@ -68,7 +68,7 @@
 					<g:if test='${hasCookie}'>checked='checked'</g:if> />
 				</p>
 				<p>
-					<input type='submit' value='Login' />
+					<input type='submit' value='Entrar' />
 				</p>
 			</form>
 		</div>

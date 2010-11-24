@@ -21,12 +21,20 @@ class BajaController {
 
     def save = {
         def bajaInstance = new Baja(params)
+        try{
+        Baja.withTransaction{
+
+        Persona persona = Persona.get(params.persona.id)
+        log.debug "################## $persona"
+        persona.esMiembro=false
+        persona.save(flush:true)
         if (bajaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'baja.label', default: 'Baja'), bajaInstance.id])}"
             redirect(action: "show", id: bajaInstance.id)
+            }
         }
-        else {
-            render(view: "create", model: [bajaInstance: bajaInstance])
+    }catch(Exception e){
+
         }
     }
 

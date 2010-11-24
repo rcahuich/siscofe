@@ -182,7 +182,7 @@
         </table>
         <div class="buttons">
                 <g:form>
-                  <span style="font-size: 12px;" class="menuButton"><g:link controller="baja" class="delete" name="persona.id" id="${fieldValue(bean: hoja, field: 'persona.id')}" action="create" > <g:message code="Dar de Baja" /></g:link></span>
+                  <span style="font-size: 12px;" class="menuButton"><g:link controller="baja" class="delete" name="persona.id" id="${fieldValue(bean: hoja, field: 'persona.id')}" params="personaId:${fieldValue(bean: hoja, field: 'persona.id')}, personaNombre:${fieldValue(bean: hoja, field: 'persona.nombre')}" action="create" > <g:message code="Dar de Baja" /></g:link></span>
                 </g:form>
             </div>
       </div>
