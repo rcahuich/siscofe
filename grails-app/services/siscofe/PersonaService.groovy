@@ -202,23 +202,115 @@ class PersonaService {
         log.debug "allMiembros: $miembros"
 
         //FILTRADO DE LOS MIEMBROS POR SU IGLESIA
-        def hojasListAntesDeFiltroDeFecha = []
+        def hojasFiltradasByIdAndIglesia = []
 
         miembros.each(){
             log.debug "dentro del each: ***********************************************************************************************"
             log.debug "it: $it"
             HojaVO hoja = hojaMiembroByIdAndIglesia(it.id, params.tipo_iglesia)
             if(hoja != null){
-               hojasListAntesDeFiltroDeFecha.add(hoja)
+               hojasFiltradasByIdAndIglesia.add(hoja)
             }
             
         }
 
-        log.debug "miembros filtrados por iglesia (si habia): $hojasListAntesDeFiltroDeFecha"
-        log.debug "size: $hojasListAntesDeFiltroDeFecha.size"
+        log.debug "hojas filtrados por iglesia (si habia): $hojasFiltradasByIdAndIglesia"
+        log.debug "size: $hojasFiltradasByIdAndIglesia.size"
 
-        //AHORA, LO QUE RESTA, YA QUE TENEMOS UNA LISTA DE HOJAS, ES FILTRAR LAS HOJAS POR SU INGRESO, EN BASE AL TIPO DE INGRESO Y LAS FECHAS
+        //FILTRADO POR TIPO DE INGRESO
+        hojasFiltradasByTipoIngreso = []
 
+        hojasFiltradasByIdAndIglesia.each(){
+            if(params.tipo_ingreso != null && !params.tipo_ingreso.equals("")){
+                if(params.tipo_ingres.equals("BAUTISMO")){
+                    if(it instanceof Bautismo){
+                        hojasFiltradasByTipoIngreso.add(it)
+                    }
+                }
+                if(params.tipo_ingres.equals("CARTA DE TRASLADO")){
+                    if(it instanceof CartaDeTraslado){
+                        hojasFiltradasByTipoIngreso.add(it)
+                    }
+                }
+                if(params.tipo_ingres.equals("PROFESION DE FE")){
+                    if(it instanceof ProfesionDeFe){
+                        hojasFiltradasByTipoIngreso.add(it)
+                    }
+                }
+            }
+        }
+
+        log.debug "hojas filtradas por tipo de ingreso (si habia): $hojasFiltradasByTipoIngreso"
+        log.debug "hsize: $hojasFiltradasByTipoIngreso"
+
+        //FILTRADO POR MES Y AÑO
+        hojasFiltradasByMesAndAnio = []
+        Calendar calendar = Calendar.getInstance()
+
+        if(params.mes_ingreso != null && params.mes_ingreso.equals("TODOS")){
+            hojasFiltradasByMesAndAnio = hojasFiltradasByTipoIngreso
+        }
+        else{
+            hojasFiltradasByTipoIngreso.each(){
+                log.debug "fecha: $it.tipoIngreso.fechaAlta"
+                calendar.setTime(it.tipoIngreso.fechaAlta)
+                log.debug "mes: $calendar.MONTH"
+                if(calendar.MONTH == mesEnteroFromString(params.mes_ingreso) && calendar.YEAR == params.anio_ingreso.toLong()){
+                    hojasFiltradasByMesAndAnio.add(it)
+                }
+            }
+        }
+ 
+        log.debug "hojas filtradas por mes: $hojasFiltradasByMesAndAnio"
+        log.debug "hsize: $hojasFiltradasByMesAndAnio"
+
+        return hojasFiltradasByMesAndAnio
+    }
+
+    /*
+     *Recibe como parametro un mes en letra (ENERO, FEBRERO...) y devuelve el equivalente en entero de un Calendar
+     */
+    def mesEnteroFromString(String mes){
+        def mesEntero
+
+        if(mes.equals("ENERO")){
+            mesEntero = 0
+        }
+        else if(mes.equals("FEBRERO")){
+            mesEntero = 1
+        }
+        else if(mes.equals("MARZO")){
+            mesEntero = 2
+        }
+        else if(mes.equals("ABRIL")){
+            mesEntero = 3
+        }
+        else if(mes.equals("MAYO")){
+            mesEntero = 4
+        }
+        else if(mes.equals("JUNIO")){
+            mesEntero = 5
+        }
+        else if(mes.equals("JULIO")){
+            mesEntero = 6
+        }
+        else if(mes.equals("AGOSTO")){
+            mesEntero = 7
+        }
+        else if(mes.equals("SEPTIEMBRE")){
+            mesEntero = 8
+        }
+        else if(mes.equals("OCTUBRE")){
+            mesEntero = 9
+        }
+        else if(mes.equals("NOVIEMBRE")){
+            mesEntero = 10
+        }
+        else if(mes.equals("DICIEMBRE")){
+            mesEntero = 11
+        }
+
+        return mesEntero
     }
 
      /*
