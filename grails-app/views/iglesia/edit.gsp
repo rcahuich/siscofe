@@ -15,7 +15,7 @@
             <span class="menuButton"><g:link class="create" action="create"><g:message code="iglesia.nuevo" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="iglesia.edita" />${iglesiaInstance.nombre}</h1>
+            <h1><g:message code="iglesia.edita" /> ${iglesiaInstance.nombre}</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -30,6 +30,14 @@
                 <div class="dialog">
                     <table>
                         <tbody>
+
+                          <tr class="prop">
+                                <td valign="top" class="name">
+                                  <h3><g:message code="iglesia.datos" /></h3>
+                                </td>
+                                <td
+                                </td>
+                            </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -60,7 +68,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <h4><g:message code="iglesia.direccion" /></h4>
+                                  <h3><g:message code="iglesia.direccion" /></h3>
                                 </td>
                                 <td
                                 </td>

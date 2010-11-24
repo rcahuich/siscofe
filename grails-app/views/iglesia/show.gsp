@@ -14,7 +14,7 @@
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+            <h1><g:message code="iglesia.ver"/></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -45,9 +45,7 @@
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="iglesia.direccion" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="direccion" action="show" id="${iglesiaInstance?.direccion?.id}">${iglesiaInstance?.direccion?.encodeAsHTML()}</g:link></td>
-                            
+                            <td valign="top" class="value">${fieldValue(bean: iglesiaInstance, field: "direccion")}</td>                            
                         </tr>
                     
                     </tbody>

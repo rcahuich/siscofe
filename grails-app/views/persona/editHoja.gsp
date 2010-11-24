@@ -40,7 +40,7 @@
                                 <td
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="nombre"><g:message code="persona.nombre.label" default="Nombre" /></label>
@@ -49,7 +49,7 @@
                                     <g:textField name="nombre" maxlength="64" value="${personaInstance?.nombre}" />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="apellidoPaterno"><g:message code="persona.apellidoPaterno.label" default="Apellido Paterno" /></label>
@@ -58,7 +58,7 @@
                                     <g:textField name="apellidoPaterno" maxlength="64" value="${personaInstance?.apellidoPaterno}" />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="apellidoMaterno"><g:message code="persona.apellidoMaterno.label" default="Apellido Materno" /></label>
@@ -67,7 +67,7 @@
                                     <g:textField name="apellidoMaterno" maxlength="64" value="${personaInstance?.apellidoMaterno}" />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="estadoCivil"><g:message code="persona.estadoCivil.label" default="Estado Civil" /></label>
@@ -76,7 +76,7 @@
                                     <g:select name="estadoCivil" from="${personaInstance.constraints.estadoCivil.inList}" value="${personaInstance?.estadoCivil}" valueMessagePrefix="persona.estadoCivil"  />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="nivelEstudio"><g:message code="persona.nivelEstudio.label" default="Nivel Estudio" /></label>
@@ -85,7 +85,7 @@
                                     <g:select name="nivelEstudio" from="${personaInstance.constraints.nivelEstudio.inList}" value="${personaInstance?.nivelEstudio}" valueMessagePrefix="persona.nivelEstudio"  />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="religionAnterior"><g:message code="persona.religionAnterior.label" default="Religion Anterior" /></label>
@@ -94,7 +94,7 @@
                                     <g:select name="religionAnterior" from="${personaInstance.constraints.religionAnterior.inList}" value="${personaInstance?.religionAnterior}" valueMessagePrefix="persona.religionAnterior"  />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="tipoDeSangre"><g:message code="persona.tipoDeSangre.label" default="Tipo De Sangre" /></label>
@@ -103,7 +103,7 @@
                                     <g:select name="tipoDeSangre" from="${personaInstance.constraints.tipoDeSangre.inList}" value="${personaInstance?.tipoDeSangre}" valueMessagePrefix="persona.tipoDeSangre"  />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="sexo"><g:message code="persona.sexo.label" default="Sexo" /></label>
@@ -112,7 +112,7 @@
                                     <g:select name="sexo" from="${personaInstance.constraints.sexo.inList}" value="${personaInstance?.sexo}" valueMessagePrefix="persona.sexo"  />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="enfermedades"><g:message code="persona.enfermedades.label" default="Enfermedades" /></label>
@@ -121,7 +121,7 @@
                                     <g:textField name="enfermedades" maxlength="128" value="${personaInstance?.enfermedades}" style="width:300px;"/>
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="fechaNacimiento"><g:message code="persona.fechaNacimiento.label" default="Fecha Nacimiento" /></label>
@@ -130,7 +130,7 @@
                                     <g:datePicker name="fechaNacimiento" precision="day" value="${personaInstance?.fechaNacimiento}"  />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="correo"><g:message code="persona.correo.label" default="Correo" /></label>
@@ -139,7 +139,7 @@
                                     <g:textField name="correo" value="${personaInstance?.correo}" />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="phoneCasa"><g:message code="persona.phoneCasa.label" default="Phone Casa" /></label>
@@ -148,7 +148,7 @@
                                     <g:textField name="phoneCasa" value="${fieldValue(bean: personaInstance, field: 'phoneCasa')}" />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="phoneCelular"><g:message code="persona.phoneCelular.label" default="Phone Celular" /></label>
@@ -157,7 +157,7 @@
                                     <g:textField name="phoneCelular" value="${fieldValue(bean: personaInstance, field: 'phoneCelular')}" />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="phoneTrabajo"><g:message code="persona.phoneTrabajo.label" default="Phone Trabajo" /></label>
@@ -166,7 +166,7 @@
                                     <g:textField name="phoneTrabajo" value="${fieldValue(bean: personaInstance, field: 'phoneTrabajo')}" />
                                 </td>
                             </tr>
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="sabeLeer"><g:message code="persona.sabeLeer.label" default="Sabe Leer" /></label>
@@ -264,12 +264,12 @@
                                     <g:textField name="direccion.codigoPostal" maxlength="16" value="${personaInstance?.direccion?.codigoPostal}" />
                                 </td>
                             </tr>
-                        
+
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
+                    <span class="button"><g:actionSubmit class="save" action="updateHoja" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
                 </div>
             </g:form>
         </div>

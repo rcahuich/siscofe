@@ -27,7 +27,15 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
+
+                          <tr class="prop">
+                                <td valign="top" class="name">
+                                  <h3><g:message code="iglesia.datos" /></h3>
+                                </td>
+                                <td
+                                </td>
+                            </tr>
+                            
                             <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="nombre"><g:message code="iglesia.nombre" /></label>
@@ -57,7 +65,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <h4><g:message code="iglesia.direccion" /></h4>
+                                  <h3><g:message code="iglesia.direccion" /></h3>
                                 </td>
                                 <td
                                 </td>

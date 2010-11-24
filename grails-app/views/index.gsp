@@ -37,7 +37,6 @@
                         <li><a href="#"><span>Miembros</span></a>
                             <div><ul>
                                 <li><a href="persona/buscarMiembro.gsp"<span>Buscar Miembro</span></a></li>
-                                <li><a href="baja/create"<span>Dar de Baja</span></a></li>
                                 <li><a href="#"><span>Reportes</span></a>
                                 <div>
                                     <ul>

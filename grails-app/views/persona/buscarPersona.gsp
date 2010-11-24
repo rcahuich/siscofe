@@ -20,17 +20,21 @@
               <tbody>
                 <tr>
                   <td style="vertical-align:middle;width:50px;">
-                    <label for="filtro"><g:message code="entrada.buscar" default="Nombre"/>:</label>
-                    <input type="text" id="filtroNombre" name="filtroNombre" value="${params.filtroNombre}" style="width:300px;"/>
-                    <label for="filtro"><g:message code="entrada.buscar" default="Apellido Paterno"/>:</label>
-                    <input type="text" id="filtroApellidoPaterno" name="filtroApellidoPaterno" value="${params.filtroApellidoPaterno}" style="width:300px;"/>
-                    <label for="filtro"><g:message code="entrada.buscar" default="Apellido Materno"/>:</label>
-                    <input type="text" id="filtroApellidoMaterno" name="filtroApellidoMaterno" value="${params.filtroApellidoMaterno}" style="width:300px;"/>
+                    <p>
+                      <label for="filtro"><g:message code="entrada.buscar" default="Nombre"/>:</label>
+                      <input type="text" id="filtroNombre" name="filtroNombre" value="${params.filtroNombre}" style="width:130px;"/>
+                      <label for="filtro"><g:message code="entrada.buscar" default="Ape. Paterno"/>:</label>
+                      <input type="text" id="filtroApellidoPaterno" name="filtroApellidoPaterno" value="${params.filtroApellidoPaterno}" style="width:180px;"/>
+                      <label for="filtro"><g:message code="entrada.buscar" default="Ape. Materno"/>:</label>
+                      <input type="text" id="filtroApellidoMaterno" name="filtroApellidoMaterno" value="${params.filtroApellidoMaterno}" style="width:180px;"/>
+                    </p>
                   </td>
-              <td>
-                <g:actionSubmit controller="persona" action="buscarPersona" value="Buscar" class="save" style="vertical-align: middle;" />
-              </td>
-              </tr>
+                </tr>
+                <tr>
+                  <td>
+                    <g:actionSubmit controller="persona" action="buscarPersona" value="Buscar" class="save" style="vertical-align: middle;" />
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -65,13 +69,6 @@
 
 
       <div class="dialog">
-      </div>
-
-      <div class="buttons">
-        <g:form>
-          <g:hiddenField name="id" value="${personaInstance?.id}" />
-          <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
-        </g:form>
       </div>
     </div>
   </body>
