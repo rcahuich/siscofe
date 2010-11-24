@@ -25,7 +25,7 @@
             </g:hasErrors>
             <g:form action="save" >
               <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
-              <g:hiddenField name="personaId" value="${persona.id}"/>
+              <g:hiddenField name="persona.id" value="${bajaInstance.personaId}"/>
                 <div class="dialog">
                     <table>
                         <tbody>
@@ -89,7 +89,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
+                    <span class="button"><g:submitButton name="create" class="save" action="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>
                 </div>
             </g:form>
         </div>

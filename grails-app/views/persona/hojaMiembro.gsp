@@ -12,17 +12,11 @@
     </div>
 
     <div class="body">
-
+      <h1><g:message code="hoja.title" /></h1>
       <div class="dialog">
         <table>
           <tr>
-            <td style="font-size: 20px; color: #48802c;"><g:message code="hoja.title"/></td>
-          </tr>
-          <tr>
-            <td><h1><g:message code="default.blank"/></h1></td>
-          </tr>
-          <tr>
-            <td style="font-size: 12px;"><u><b><g:message code="hoja.datosPersonales"/></b></u></td>
+            <td style="font-size: 12px;"><h3><u><g:message code="hoja.datosPersonales"/></u></h3></td>
           </tr>
           <tr>
              <td><b><g:message code="hoja.persona.nombre"/></b>${fieldValue(bean: hoja, field: 'persona.nombreCompleto')}</td>
@@ -56,7 +50,7 @@
             <div class="buttons">
                 <g:form>
                     <g:hiddenField name="id" value="${fieldValue(bean: hoja, field: 'persona.id')}" />
-                    <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'hoja.persona.botonEdita')}" /></span>
+                    <span class="button"><g:actionSubmit class="edit" action="editHoja" value="${message(code: 'hoja.persona.botonEdita')}" /></span>
                 </g:form>
             </div>
             </td>
@@ -66,7 +60,7 @@
             <td><h1><g:message code="default.blank"/></h1></td>
           </tr>
           <tr>
-            <td style="font-size: 12px;"><u><b><g:message code="hoja.datosEclesiasticos"/></b></u></td>
+            <td style="font-size: 12px;"><h3><u><g:message code="hoja.datosEclesiasticos"/></u></h3></td>
           </tr>
 
           <g:if test="${hoja.tipoIngreso.class.is (siscofe.Bautismo)}">
@@ -105,7 +99,7 @@
               <td colspan="3">
               <div class="buttons">
                   <g:form>
-                    <span style="font-size: 10px;" class="menuButton"><g:link controller="bautismo" id="${fieldValue(bean: hoja, field: 'persona.id')}" params="personaId:${fieldValue(bean: hoja, field: 'persona.id')}" class="edit" action="edit" > <g:message code="Editar Informacion de Bautismo" /></g:link></span>
+                    <span style="font-size: 10px;" class="menuButton"><g:link controller="bautismo" id="${fieldValue(bean: hoja, field: 'tipoIngreso.id')}" params="personaId:${fieldValue(bean: hoja, field: 'persona.id')}" class="edit" action="edit" > <g:message code="Editar Informacion de Bautismo" /></g:link></span>
                   </g:form>
               </div>
               </td>

@@ -113,7 +113,7 @@
                                     <label for="enfermedades"><g:message code="persona.emfermedades" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'enfermedades', 'errors')}">
-                                    <g:textField name="enfermedades" maxlength="128" value="${personaInstance?.enfermedades}" />
+                            <g:textField name="enfermedades" maxlength="128" value="${personaInstance?.enfermedades}" style="width:300px;"/>
                                 </td>
                             </tr>
                         

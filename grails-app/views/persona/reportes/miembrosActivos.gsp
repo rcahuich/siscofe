@@ -17,19 +17,19 @@
                 <table id="personaInstanceList">
                     <thead>
                         <tr>
-                            <g:sortableColumn property="id" title="${message(code: 'persona.id')}" />
                             <g:sortableColumn property="nombreCompleto" title="${message(code: 'persona.nombreCompleto')}" />
-                            <g:sortableColumn property="sexo" title="${message(code: 'persona.sexo')}" />
-                            <g:sortableColumn property="nivelEstudio" title="${message(code: 'persona.nivelEstudio')}" />
+                            <g:sortableColumn property="sexo" title="${message(code: 'persona.fechaNacimiento')}" />
+                            <g:sortableColumn property="nivelEstudio" title="${message(code: 'persona.phoneCasa')}" />
+                            <g:sortableColumn property="nivelEstudio" title="${message(code: 'persona.direccion')}" />
                         </tr>
                     </thead>
                     <tbody>
                     <g:each in="${personaInstanceList}" status="i" var="personaInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                            <td>${fieldValue(bean: personaInstance, field: "id")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "nombreCompleto")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "sexo")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "nivelEstudio")}</td>
+                            <td>${fieldValue(bean: personaInstance, field: "fechaNacimiento")}</td>
+                            <td>${fieldValue(bean: personaInstance, field: "phoneCasa")}</td>
+                            <td>${fieldValue(bean: personaInstance, field: "direccion")}</td>
                         </tr>
                     </g:each>
                     </tbody>

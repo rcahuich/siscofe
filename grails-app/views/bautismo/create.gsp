@@ -11,7 +11,6 @@
     <body>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
             <h1><g:message code="Agregando Bautismo para: "/> ${params.personaNombre}</h1>
@@ -71,7 +70,7 @@
                                     <label for="codigo"><g:message code="bautismo.codigo.label" default="Codigo" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'codigo', 'errors')}">
-                                    <g:textField name="codigo" maxlength="6" value="${bautismoInstance?.codigo}" />
+                                    <g:textField name="codigo" maxlength="6" value="${bautismoInstance?.codigo}" style="width:65px;"/>
                                 </td>
                             </tr>
 
@@ -106,7 +105,7 @@
                                     <label for="numeroVotoJuntaAdministrativa"><g:message code="bautismo.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroVotoJuntaAdministrativa', 'errors')}">
-                                    <g:textField name="numeroVotoJuntaAdministrativa" maxlength="10" value="${bautismoInstance?.numeroVotoJuntaAdministrativa}" />
+                                    <g:textField name="numeroVotoJuntaAdministrativa" maxlength="10" value="${bautismoInstance?.numeroVotoJuntaAdministrativa}" style="width:65px;"/>
                                 </td>
                             </tr>
 
@@ -124,7 +123,7 @@
                                     <label for="numeroVotoJuntaDirectiva"><g:message code="bautismo.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bautismoInstance, field: 'numeroVotoJuntaDirectiva', 'errors')}">
-                                    <g:textField name="numeroVotoJuntaDirectiva" maxlength="10" value="${bautismoInstance?.numeroVotoJuntaDirectiva}" />
+                                    <g:textField name="numeroVotoJuntaDirectiva" maxlength="10" value="${bautismoInstance?.numeroVotoJuntaDirectiva}" style="width:65px;"/>
                                 </td>
                             </tr>
 
