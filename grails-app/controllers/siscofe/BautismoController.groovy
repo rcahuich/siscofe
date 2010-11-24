@@ -25,6 +25,7 @@ class BautismoController {
 
     def save = {
         def bautismoInstance = new Bautismo(params)
+        log.debug "params: $params"
         try{
         Bautismo.withTransaction{
         Persona persona = Persona.get(params.persona.id)

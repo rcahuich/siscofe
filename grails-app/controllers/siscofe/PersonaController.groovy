@@ -251,8 +251,10 @@ class PersonaController {
     def buscarIngresos = {
         log.debug "Entro a Buscar Ingresos"
         log.debug "params: $params"
-        //Pasar en el params una variable de control (B=Bautismo, C=Carta de Traslado, P=Profesion de Fe)
-        //def resultado = personaService.buscarIngresos(params, )
+        
+        def resultado = personaService.buscarIngresos(params)
+        log.debug "resultado: $resultado"
+        render(view: "reportes/buscarIngresos", model:[personaInstanceList: resultado])
 
     }
 
