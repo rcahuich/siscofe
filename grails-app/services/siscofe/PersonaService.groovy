@@ -65,6 +65,7 @@ class PersonaService {
 
         def personas = criteria.list{
             and{
+                if(params != null){
                     if(params.filtroNombre != null && !params.filtroNombre.equals("")){
                         like("nombre", "%" + params.filtroNombre + "%")
                     }
@@ -74,7 +75,8 @@ class PersonaService {
                     if(params.filtroApellidoMaterno != null && !params.filtroApellidoMaterno.equals("")){
                         like("apellidoMaterno", params.filtroApellidoMaterno + "%")
                     }
-                        eq("esMiembro", esMiembro)
+                }
+                eq("esMiembro", esMiembro)
             }
             order("apellidoPaterno")
         }
@@ -183,6 +185,88 @@ class PersonaService {
         log.debug "Convierte edad lo que devuelve despues de pasar por BD :::::::::::::: $persona"
 
     	return persona
+    }
+
+    /*
+     * Regresa una lista de las Personas que ingresaron al sistema, filtradas por todo o algunos de los siguientes parametros:
+     * -Iglesia
+     * -Mes
+     * -Anio
+     */
+
+    def buscarIngresos(params) {
+        log.debug "params: $params"
+        
+        //BUSQUEDA DE TODOS LOS MIEMBROS
+        def miembros = search(null,true)
+        log.debug "allMiembros: $miembros"
+
+        //FILTRADO DE LOS MIEMBROS POR SU IGLESIA
+        def hojasListAntesDeFiltroDeFecha = []
+
+        miembros.each(){
+            log.debug "dentro del each: ***********************************************************************************************"
+            log.debug "it: $it"
+            HojaVO hoja = hojaMiembroByIdAndIglesia(it.id, params.tipo_iglesia)
+            if(hoja != null){
+               hojasListAntesDeFiltroDeFecha.add(hoja)
+            }
+            
+        }
+
+        log.debug "miembros filtrados por iglesia (si habia): $hojasListAntesDeFiltroDeFecha"
+        log.debug "size: $hojasListAntesDeFiltroDeFecha.size"
+
+        //AHORA, LO QUE RESTA, YA QUE TENEMOS UNA LISTA DE HOJAS, ES FILTRAR LAS HOJAS POR SU INGRESO, EN BASE AL TIPO DE INGRESO Y LAS FECHAS
+
+    }
+
+     /*
+     * Devuelve un VO (Hoja) que contiene todos los datos relacionados con el Miembro, que se mostraran en la Hoja del Miembro, segun el id
+     * del parametro
+     * Lo que devuelve es:
+     * -Persona
+     * -Ultimo Ingreso de la Persona
+     */
+    def hojaMiembroByIdAndIglesia(Long idPersona, String idIglesia){
+        log.debug "Entro a hojaMiembroById en PersonaService"
+        log.debug "idPersona: $idPersona ,idIglesia: $idIglesia"
+
+        def persona = Persona.get(idPersona)
+        log.debug "persona: $persona"
+
+        def iglesia
+
+        if(idIglesia != null && !idIglesia.equals("")){
+            iglesia = Iglesia.get(idIglesia.toLong())
+        }
+
+        def ultimoIngreso
+
+        //Logica para traer el ultimo ingreso de la persona
+        if(iglesia != null){
+            ultimoIngreso = TipoDeIngreso.executeQuery("select ti from TipoDeIngreso ti where ti.persona=:p and ti.iglesia=:i order by fecha_alta desc",[p:persona, i:iglesia],[max:1])
+        }
+        else{
+            ultimoIngreso = TipoDeIngreso.executeQuery("select ti from TipoDeIngreso ti where ti.persona=:p order by fecha_alta desc",[p:persona],[max:1])
+        }
+        
+        log.debug "ultimoIngreso: $ultimoIngreso"
+        log.debug "ultimoIngreso_size: $ultimoIngreso.size"
+
+        HojaVO hoja
+
+        if(ultimoIngreso != null && ultimoIngreso.size != 0){
+            hoja = new HojaVO()
+            //Agregando Persona al VO
+            hoja.setPersona(persona)
+
+            //Agregando Ultimo Ingreso al VO
+            hoja.setTipoIngreso(ultimoIngreso.get(0))//Obteniendo el unico valor de la lista devuelta por el query
+            log.debug "hoja: $hoja"
+        }
+
+        return hoja
     }
 
     def serviceMethod() {
