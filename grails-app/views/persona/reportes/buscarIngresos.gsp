@@ -57,7 +57,6 @@
                             <g:sortableColumn property="persona.nombreCompleto" title="${message(code: 'persona.nombreCompleto')}" />
                             <g:sortableColumn property="persona.sexo" title="${message(code: 'persona.sexo')}" />
                             <g:sortableColumn property="tipoIngreso.fechaAlta" title="${message(code: 'hoja.ingreso.fechaAlta')}" />
-<!--                            <g:sortableColumn property="tipoIngreso.tipoIngreso" title="${message(code: 'hoja.ingreso.tipoIngreso')}" />-->
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +66,6 @@
                             <td>${fieldValue(bean: resultado, field: "persona.nombreCompleto")}</td>
                             <td>${fieldValue(bean: resultado, field: "persona.sexo")}</td>
                             <td>${fieldValue(bean: resultado, field: "tipoIngreso.fechaAlta")}</td>
-<!--                        <td>${fieldValue(bean: resultado, field: "tipoIngreso.tipoIngreso")}</td>-->
                         </tr>
                     </g:each>
                     </tbody>
