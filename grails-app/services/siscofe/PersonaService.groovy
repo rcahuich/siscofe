@@ -217,52 +217,68 @@ class PersonaService {
         log.debug "hojas filtrados por iglesia (si habia): $hojasFiltradasByIdAndIglesia"
         log.debug "size: $hojasFiltradasByIdAndIglesia.size"
 
-        //FILTRADO POR TIPO DE INGRESO
-        hojasFiltradasByTipoIngreso = []
+        //FILTRADO POR TIPO DE INGRESO -- AQUI SE PIERDE!!!
+        def hojasFiltradasByTipoIngreso = []
 
         hojasFiltradasByIdAndIglesia.each(){
             if(params.tipo_ingreso != null && !params.tipo_ingreso.equals("")){
-                if(params.tipo_ingres.equals("BAUTISMO")){
-                    if(it instanceof Bautismo){
+//                log.debug "it --> $it"
+                if(params.tipo_ingreso.equals("BAUTISMO")){
+                    log.debug "it == bautismo? ${it.tipoIngreso instanceof Bautismo}"
+                    if(it.tipoIngreso instanceof Bautismo){
                         hojasFiltradasByTipoIngreso.add(it)
+//                        log.debug "agrego Bautismo"
                     }
                 }
-                if(params.tipo_ingres.equals("CARTA DE TRASLADO")){
-                    if(it instanceof CartaDeTraslado){
+                if(params.tipo_ingreso.equals("CARTA DE TRASLADO")){
+                    log.debug "it == carta de traslado? ${it instanceof CartaDeTraslado}"
+                    if(it.tipoIngreso instanceof CartaDeTraslado){
                         hojasFiltradasByTipoIngreso.add(it)
+//                        log.debug "agrego CartaDeTraslado"
                     }
                 }
-                if(params.tipo_ingres.equals("PROFESION DE FE")){
-                    if(it instanceof ProfesionDeFe){
+                if(params.tipo_ingreso.equals("PROFESION DE FE")){
+                    log.debug "it == profesion de fe? ${it instanceof ProfesionDeFe}"
+                    if(it.tipoIngreso instanceof ProfesionDeFe){
                         hojasFiltradasByTipoIngreso.add(it)
+//                        log.debug "agrego ProfesionDeFe"
                     }
                 }
             }
         }
 
         log.debug "hojas filtradas por tipo de ingreso (si habia): $hojasFiltradasByTipoIngreso"
-        log.debug "hsize: $hojasFiltradasByTipoIngreso"
+        log.debug "hsize: $hojasFiltradasByTipoIngreso.size"
 
         //FILTRADO POR MES Y AÑO
-        hojasFiltradasByMesAndAnio = []
+        def hojasFiltradasByMesAndAnio = []
         Calendar calendar = Calendar.getInstance()
-
-        if(params.mes_ingreso != null && params.mes_ingreso.equals("TODOS")){
-            hojasFiltradasByMesAndAnio = hojasFiltradasByTipoIngreso
+        log.debug "anio_ingreso $params.anio_ingreso"
+        if(params.mes_ingreso != null && params.mes_ingreso.equals("TODOS")){ //SI NO HAY FILTRO POR MES
+            log.debug "filtro sin mes"
+             hojasFiltradasByTipoIngreso.each(){
+                log.debug "fecha: $it.tipoIngreso.fechaAlta"
+                calendar.setTime(it.tipoIngreso.fechaAlta)
+                log.debug "calendar.YEAR: ${calendar.get(Calendar.YEAR)}"
+                if(calendar.get(Calendar.YEAR) == params.anio_ingreso.toLong()){
+                    hojasFiltradasByMesAndAnio.add(it)
+                }
+            }
         }
-        else{
+        else{ //SI HAY FILTRO POR MES
+            log.debug "filtro con mes"
             hojasFiltradasByTipoIngreso.each(){
                 log.debug "fecha: $it.tipoIngreso.fechaAlta"
                 calendar.setTime(it.tipoIngreso.fechaAlta)
                 log.debug "mes: $calendar.MONTH"
-                if(calendar.MONTH == mesEnteroFromString(params.mes_ingreso) && calendar.YEAR == params.anio_ingreso.toLong()){
+                if(celendar.get(Calendar.MONTH) == mesEnteroFromString(params.mes_ingreso) && calendar.get(Calendar.YEAR) == params.anio_ingreso.toLong()){
                     hojasFiltradasByMesAndAnio.add(it)
                 }
             }
         }
  
-        log.debug "hojas filtradas por mes: $hojasFiltradasByMesAndAnio"
-        log.debug "hsize: $hojasFiltradasByMesAndAnio"
+        log.debug "hojas filtradas por mes y anio: $hojasFiltradasByMesAndAnio"
+        log.debug "hsize: $hojasFiltradasByMesAndAnio.size"
 
         return hojasFiltradasByMesAndAnio
     }
