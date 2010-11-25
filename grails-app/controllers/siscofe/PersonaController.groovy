@@ -258,7 +258,7 @@ class PersonaController {
         def resultado = personaService.buscarIngresos(params)
         log.debug "resultado: $resultado"
         audita(personaInstance,'BUSQUEDA | Realizo Busqueda por Ingresos')
-        render(view: "reportes/buscarIngresos", model:[personaInstanceList: resultado])
+        render(view: "reportes/buscarIngresos", model:[hojasIngresosList: resultado])
 
     }
 

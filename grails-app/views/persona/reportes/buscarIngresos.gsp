@@ -50,7 +50,7 @@
       </div>
 
             <div class="list">
-                <table id="personaInstanceList">
+                <table id="hojasIngresosList">
                     <thead>
                         <tr>
                             <g:sortableColumn property="persona.id" title="${message(code: 'persona.id')}" />
@@ -61,13 +61,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <g:each in="${personaInstanceList}" status="i" var="personaInstance">
+                    <g:each in="${hojasIngresosList}" status="i" var="resultado">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                            <td>${fieldValue(bean: personaInstance, field: "persona.id")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "persona.nombreCompleto")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "persona.sexo")}</td>
-                            <td>${fieldValue(bean: personaInstance, field: "tipoIngreso.fechaAlta")}</td>
-<!--                            <td>${fieldValue(bean: personaInstance, field: "tipoIngreso.tipoIngreso")}</td>-->
+                            <td>${fieldValue(bean: resultado, field: "persona.id")}</td>
+                            <td>${fieldValue(bean: resultado, field: "persona.nombreCompleto")}</td>
+                            <td>${fieldValue(bean: resultado, field: "persona.sexo")}</td>
+                            <td>${fieldValue(bean: resultado, field: "tipoIngreso.fechaAlta")}</td>
+<!--                        <td>${fieldValue(bean: resultado, field: "tipoIngreso.tipoIngreso")}</td>-->
                         </tr>
                     </g:each>
                     </tbody>
