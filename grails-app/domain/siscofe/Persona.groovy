@@ -34,7 +34,7 @@ class Persona {
         nivelEstudio maxSize:32, inList:['NINGUNO','PRIMARIA','SECUNDARIA','BACHILLERATO','TECNICO','LICENCIATURA','DIPLOMADO','MAESTRIA','DOCTORADO']
         religionAnterior maxSize:32, inList:['NINGUNO','ADVENTISTA DEL SEPTIMO DIA','CATOLICO','PENTECOSTES','TESTIGO DE JEHOVA','MORMON','BAUTISTA','OTRO']
         tipoDeSangre maxSize:12, blank:false, inList:['A+','A-','B+','B-','AB+','AB-','O+','O-','No sabe']
-        sexo maxSize:12, inList:['Masculino','Femenino']
+        sexo maxSize:12, inList:['MASCULINO','FEMENINO']
         phoneCasa maxSize:32, blank:true
         phoneTrabajo maxSize:32, blank:true
         phoneCelular maxSize:32, blank:true

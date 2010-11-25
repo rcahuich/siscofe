@@ -1,0 +1,93 @@
+--INSERCION DE 5 IGLESIAS
+--Direccion Iglesia TEST1
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Iglesia TEST1
+insert into iglesias (id, version, direccion_id, nombre, telefono, tipo_iglesia) values(((select count(*) from iglesias) + 1), 0, (select count(*) from direcciones), 'TEST1', '123', 'ORGANIZADA');
+--Direccion Iglesia TEST2
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Iglesia TEST2
+insert into iglesias (id, version, direccion_id, nombre, telefono, tipo_iglesia) values(((select count(*) from iglesias) + 1), 0, (select count(*) from direcciones), 'TEST2', '123', 'ORGANIZADA');
+--Direccion Iglesia TEST3
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Iglesia TEST3
+insert into iglesias (id, version, direccion_id, nombre, telefono, tipo_iglesia) values(((select count(*) from iglesias) + 1), 0, (select count(*) from direcciones), 'TEST3', '123', 'ORGANIZADA');
+--Direccion Iglesia TEST4
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Iglesia TEST4
+insert into iglesias (id, version, direccion_id, nombre, telefono, tipo_iglesia) values(((select count(*) from iglesias) + 1), 0, (select count(*) from direcciones), 'TEST4', '123', 'FILIAL');
+--Direccion Iglesia TEST4
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Iglesia TEST5
+insert into iglesias (id, version, direccion_id, nombre, telefono, tipo_iglesia) values(((select count(*) from iglesias) + 1), 0, (select count(*) from direcciones), 'TEST5', '123', 'GRUPO');
+
+--INSERCION DE 10 PERSONAS
+--Direccion Persona ALEJANDRO PERES REYES
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona ALEJANDRO PERES REYES
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'REYES', 'PEREZ', 'TEST', (select count(*) from direcciones), 'TEST', false, 'SOLTERO', '2010-01-01', 'PRIMARIA', 'ALEJANDRO', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'O+') ;
+--Direccion Persona ALEJANDRO GARCIA MARTINEZ
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona ALEJANDRO GARCIA MARTINEZ
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'MARTINEZ', 'GARCIA', 'TEST', (select count(*) from direcciones), 'TEST', false, 'SOLTERO', '2010-01-01', 'PRIMARIA', 'ALEJANDRO', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'O+') ;
+--Direccion SETH KARIM LUIS MARTINEZ
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona SETH KARIM LUIS MARTINEZ
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'MARTINEZ', 'LUIS', 'TEST', (select count(*) from direcciones), 'TEST', true, 'SOLTERO', '2010-01-01', 'LICENCIATURA', 'SETH KARIM', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'O+') ;
+-- Direccion CARLOS TREJO MONTOYA
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona CARLOS TREJO MONTOYA
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'MONTOYA', 'TREJO', 'TEST', (select count(*) from direcciones), 'TEST', true, 'CASADO', '2010-01-01', 'LICENCIATURA', 'CARLOS', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'O+');
+--Direccion RUBEN ANGEL CAHUICH CAHUICH
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona RUBEN ANGEL CAHUICH CAHUICH
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'CAHUICH', 'CAHUICH', 'TEST', (select count(*) from direcciones), 'TEST', true, 'SOLTERO', '2010-01-01', 'LICENCIATURA', 'RUBEN ANGEL', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'O-');
+--Direccion CARLOS MARIO VELAZQUEZ MONDRAGON
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona CARLOS MARIO VELAZQUEZ MONDRAGON
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'MONDRAGON', 'VELAZQUEZ', 'TEST', (select count(*) from direcciones), 'TEST', true, 'SOLTERO', '2010-01-01', 'PRIMARIA', 'CARLOS MARIO', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'AB+'); 
+--Direccion KARLA VIRIDIANA MIJANGOS VAZQUEZ
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona KARLA VIRIDIANA MIJANGOS VAZQUEZ
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'MIJANGOS', 'VAZQUEZ', 'TEST', (select count(*) from direcciones), 'TEST', false, 'CASADO', '2010-01-01', 'BACHILLERATO', 'KARLA VIRIDIANA', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'B+'); 
+--Direcion GABRIELA MARTINEZ URBANO
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona GABRIELA MARTINEZ URBANO
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'URBANO', 'MARTINEZ', 'TEST', (select count(*) from direcciones), 'TEST', false, 'VIUDO', '2010-01-01', 'MAESTRIA', 'GABRIELA', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'O-'); 
+--Direccion MARIA ISABEL SOTELO ANGEL
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona MARIA ISABEL SOTELO ANGEL
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'ANGEL', 'SOTELO', 'TEST', (select count(*) from direcciones), 'TEST', true, 'SOLTERO', '2010-01-01', 'PRIMARIA', 'MARIA ISABEL', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'O+'); 
+--Direccion JENNIFER RAMIREZ SALINAS
+insert into direcciones (id, version, calle, ciudad, codigo_postal, colonia, ejido, estado, municipio, numero, pais) values(((select count(*) from direcciones) + 1), 0, 'TEST', 'TEST', '123', 'TEST', 'TEST', 'TEST', 'TEST', '123', 'TEST');
+--Persona JENNIFER RAMIREZ SALINAS
+insert into personas (id, version, apellido_materno, apellido_paterno, correo, direccion_id, enfermedades, es_miembro, estado_civil, fecha_nacimiento, nivel_estudio, nombre, phone_casa, phone_celular, phone_trabajo, religion_anterior, sabe_leer, sexo, tipo_de_sangre)
+values (((select count(*) from personas) + 1), 0, 'SALINAS', 'RAMIREZ', 'TEST', (select count(*) from direcciones), 'TEST', false, 'CASADO', '2010-01-01', 'BACHILLERATO', 'JENNIFER', '123', '123', '123', 'NINGUNO', true, 'MASCULINO', 'O+'); 
+
+--INSERCION DE INGRESOS
+--CartaDeTraslado para SETH KARIM LUIS MARTINEZ
+insert into tipo_ingreso (id, version, comentarios, fecha_alta, fecha_voto_junta_administrativa, fecha_voto_junta_directiva, iglesia_id, numero_voto_junta_administrativa, numero_voto_junta_directiva, persona_id, class, codigo, curso_biblico, estudio_veintiocho_creencias, fecha_bautismo, lugar_bautismo, ministro_oficiante, numero_bautismo, iglesia_procedencia, pastor_en_funcion)
+values(((select count(*) from tipo_ingreso) + 1),0,'NINGUNO','2009-08-01','2010-08-10','2010-08-05',2, 3, 4,3,'siscofe.CartaDeTraslado', null, null, null, null, null, null, null, 'TEST', 'TEST');
+--Bautismo para CARLOS TREJO MONTOYA
+insert into tipo_ingreso (id, version, comentarios, fecha_alta, fecha_voto_junta_administrativa, fecha_voto_junta_directiva, iglesia_id, numero_voto_junta_administrativa, numero_voto_junta_directiva, persona_id, class, codigo, curso_biblico, estudio_veintiocho_creencias, fecha_bautismo, lugar_bautismo, ministro_oficiante, numero_bautismo, iglesia_procedencia, pastor_en_funcion)
+values(((select count(*) from tipo_ingreso) + 1),0,'NINGUNO','2009-08-01','2010-08-10','2010-08-05',2, 3, 4,4,'siscofe.Bautismo', '123', 'NINGUNO', true, '2010-01-01', 'TEST', 'TEST', 1, 'TEST', 'TEST');
+--Bautismo para RUBEN ANGEL CAHUICH CAHUICH
+insert into tipo_ingreso (id, version, comentarios, fecha_alta, fecha_voto_junta_administrativa, fecha_voto_junta_directiva, iglesia_id, numero_voto_junta_administrativa, numero_voto_junta_directiva, persona_id, class, codigo, curso_biblico, estudio_veintiocho_creencias, fecha_bautismo, lugar_bautismo, ministro_oficiante, numero_bautismo, iglesia_procedencia, pastor_en_funcion)
+values(((select count(*) from tipo_ingreso) + 1),0,'NINGUNO','2010-09-01','2010-08-10','2010-08-05',2, 3, 4,5,'siscofe.Bautismo', '123', 'NINGUNO', true, '2010-01-01', 'TEST', 'TEST', 1, 'TEST', 'TEST');
+--Bautismo para CARLOS MARIO VELAZQUEZ MONDRAGON
+insert into tipo_ingreso (id, version, comentarios, fecha_alta, fecha_voto_junta_administrativa, fecha_voto_junta_directiva, iglesia_id, numero_voto_junta_administrativa, numero_voto_junta_directiva, persona_id, class, codigo, curso_biblico, estudio_veintiocho_creencias, fecha_bautismo, lugar_bautismo, ministro_oficiante, numero_bautismo, iglesia_procedencia, pastor_en_funcion)
+values(((select count(*) from tipo_ingreso) + 1),0,'NINGUNO','2010-09-01','2010-08-10','2010-08-05',2, 3, 4,6,'siscofe.Bautismo', '123', 'NINGUNO', true, '2010-01-01', 'TEST', 'TEST', 1, 'TEST', 'TEST');
+--ProfesionDeFe para MARIA ISABLE SOTELO ANGEL
+insert into tipo_ingreso (id, version, comentarios, fecha_alta, fecha_voto_junta_administrativa, fecha_voto_junta_directiva, iglesia_id, numero_voto_junta_administrativa, numero_voto_junta_directiva, persona_id, class, codigo, curso_biblico, estudio_veintiocho_creencias, fecha_bautismo, lugar_bautismo, ministro_oficiante, numero_bautismo, iglesia_procedencia, pastor_en_funcion)
+values(((select count(*) from tipo_ingreso) + 1),0,'NINGUNO','2010-08-01','2010-08-10','2010-08-05',3, 3, 4,9,'siscofe.ProfesionDeFe', null, null, null, null, null, null, null, 'TEST', 'TEST');
+
+
+
