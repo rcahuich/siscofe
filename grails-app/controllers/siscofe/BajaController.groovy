@@ -3,9 +3,15 @@ package siscofe
 class BajaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def springSecurityService
+    def sessionFactory
 
     def index = {
         redirect(action: "list", params: params)
+    }
+
+    def fin = {
+        render(view: "fin",  params: params)
     }
 
     def list = {
@@ -35,7 +41,8 @@ class BajaController {
                 persona.esMiembro=false
                 persona.save(flush:true)
                 if (bajaInstance.save(flush: true)) {
-                    flash.message = "${message(code: 'default.created.message', args: [message(code: 'baja.label', default: 'Baja'), bajaInstance.id])}"
+                    flash.message = "${message(code: 'baja.crea', args: [bajaInstance.persona.nombre])}"
+                    audita(bajaInstance,'BAJA | Se dio de baja a un miembro')
                     redirect(action: "show", id: bajaInstance.id)
                 }
             }
@@ -78,7 +85,6 @@ class BajaController {
             if (params.version) {
                 def version = params.version.toLong()
                 if (bajaInstance.version > version) {
-                    
                     bajaInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'baja.label', default: 'Baja')] as Object[], "Another user has updated this Baja while you were editing")
                     render(view: "edit", model: [bajaInstance: bajaInstance])
                     return
@@ -116,5 +122,16 @@ class BajaController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'baja.label', default: 'Baja'), params.id])}"
             redirect(action: "list")
         }
+    }
+
+    def audita(Baja baja, String actividad) {
+        log.debug "[AUDITA] $actividad persona $baja"
+        def creador = springSecurityService.authentication.name
+        def bitacora = new Bitacora()
+        bitacora.tabla= "Baja"
+        bitacora.usuario = creador
+        bitacora.actividad = actividad
+        bitacora.campo = baja
+        bitacora.save()
     }
 }

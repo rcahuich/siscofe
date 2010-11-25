@@ -39,7 +39,7 @@ class BautismoController {
         }
         }
     }catch(Exception e){
-            log.error("No se pudo crear la persona",e)
+            log.error("No se pudo crear el Bautismo",e)
             if (bautismoInstance) {
                 bautismoInstance.discard()
             }
@@ -88,7 +88,7 @@ class BautismoController {
             }
             bautismoInstance.properties = params
             if (!bautismoInstance.hasErrors() && bautismoInstance.save(flush: true)) {
-                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), bautismoInstance.id])}"
+                flash.message = "${message(code: 'persona.crea', args: [message(code: 'bautismo.label', default: 'Bautismo'), bautismoInstance.persona.nombre])}"
                 audita(bautismoInstance,'ACTUALIZO | Bautismo')
                 redirect(action: "show", id: bautismoInstance.id)
             }

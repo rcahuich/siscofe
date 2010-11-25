@@ -20,11 +20,11 @@
         <tbody>
               <tr>
                   <td style="vertical-align:middle;width:50px;">
-                    <p>
+     <!--               <p>
                     <label for="filtro"><g:message code="entrada.buscar" default="Seleccione Iglesia"/>:</label>
                     <g:select id="filtroIglesia" name="filtroIglesia" from="${siscofe.Iglesia.list()}" optionKey="id" value="${params.filtroIglesia}"  />
                     </p>
-<!--                <p>
+                <p>
                     <label for="filtro"><g:message code="entrada.buscar" default="Los que nacieron entre la fecha de: "/></label>
                     <g:datePicker id="filtroFechaInicio" name="filtroFechaInicio" precision="day" value="${params.filtroFechaInicio}"  />
                                         

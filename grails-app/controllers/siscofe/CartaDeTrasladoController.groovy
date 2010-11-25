@@ -23,16 +23,26 @@ class CartaDeTrasladoController {
 
     def save = {
         def cartaDeTrasladoInstance = new CartaDeTraslado(params)
+        log.debug "params: $params"
+        try{
+        CartaDeTraslado.withTransaction{
         Persona persona = Persona.get(params.persona.id)
         persona.esMiembro=true
         persona.save(flush:true)
         if (cartaDeTrasladoInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'cartaDeTraslado.label', default: 'CartaDeTraslado'), cartaDeTrasladoInstance.id])}"
             redirect(action: "show", id: cartaDeTrasladoInstance.id)
-        }
-        else {
+                }
+             }
+        }catch(Exception e){
+            log.error("No se pudo crear la Carta de Traslado",e)
+            if (cartaDeTrasladoInstance) {
+                cartaDeTrasladoInstance.discard()
+            }
+            flash.message = message(code:"cartaDeTraslado.noCrea")
             render(view: "create", model: [cartaDeTrasladoInstance: cartaDeTrasladoInstance])
         }
+       
     }
 
     def show = {
@@ -59,6 +69,8 @@ class CartaDeTrasladoController {
 
     def update = {
         def cartaDeTrasladoInstance = CartaDeTraslado.get(params.id)
+        try{
+        CartaDeTraslado.withTransaction{
         if (cartaDeTrasladoInstance) {
             if (params.version) {
                 def version = params.version.toLong()
@@ -74,14 +86,17 @@ class CartaDeTrasladoController {
                 audita(cartaDeTrasladoInstance,'ACTUALIZO | Carta de Traslado')
                 redirect(action: "show", id: cartaDeTrasladoInstance.id)
             }
-            else {
-                render(view: "edit", model: [cartaDeTrasladoInstance: cartaDeTrasladoInstance])
+        }
+    }
+        }catch(Exception e){
+            log.error("No se pudo actualizar la Carta de Traslado",e)
+            if (cartaDeTrasladoInstance) {
+                cartaDeTrasladoInstance.discard()
             }
+            flash.message = message(code:"cartaDeTraslado.noActualiza")
+            render(view:"edit",model:[cartaDeTrasladoInstance:cartaDeTrasladoInstance])
         }
-        else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'cartaDeTraslado.label', default: 'CartaDeTraslado'), params.id])}"
-            redirect(action: "list")
-        }
+        
     }
 
     def delete = {

@@ -23,6 +23,9 @@ class ProfesionDeFeController {
 
     def save = {
         def profesionDeFeInstance = new ProfesionDeFe(params)
+        log.debug "params: $params"
+        try{
+        ProfesionDeFe.withTransaction{
         Persona persona = Persona.get(params.persona.id)
         persona.esMiembro=true
         persona.save(flush:true)
@@ -31,9 +34,16 @@ class ProfesionDeFeController {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'profesionDeFe.label', default: 'ProfesionDeFe'), profesionDeFeInstance.id])}"
             redirect(action: "show", id: profesionDeFeInstance.id)
         }
-        else {
+    }
+        }catch(Exception e){
+            log.error("No se pudo crear la Profesión de Fe",e)
+            if (profesionDeFeInstance) {
+                profesionDeFeInstance.discard()
+            }
+            flash.message = message(code:"profesionDeFe.noCrea")
             render(view: "create", model: [profesionDeFeInstance: profesionDeFeInstance])
         }
+       
     }
 
     def show = {
@@ -64,7 +74,8 @@ class ProfesionDeFeController {
 
     def update = {
         def profesionDeFeInstance = ProfesionDeFe.get(params.id)
-
+        try{
+        ProfesionDeFe.withTransaction{
         if (profesionDeFeInstance) {
             if (params.version) {
                 def version = params.version.toLong()
@@ -81,13 +92,15 @@ class ProfesionDeFeController {
                 audita(profesionDeFeInstance,'ACTUALIZO | Profesion de Fe')
                 redirect(action: "show", id: profesionDeFeInstance.id)
             }
-            else {
-                render(view: "edit", model: [profesionDeFeInstance: profesionDeFeInstance])
             }
-        }
-        else {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'profesionDeFe.label', default: 'ProfesionDeFe'), params.id])}"
-            redirect(action: "list")
+            }
+        }catch(Exception e){
+            log.error("No se pudo actualizar la Profesion de Fe",e)
+            if (profesionDeFeInstance) {
+                profesionDeFeInstance.discard()
+            }
+            flash.message = message(code:"profesionDeFe.noActualiza")
+            render(view:"edit",model:[profesionDeFeInstance:profesionDeFeInstance])
         }
     }
 
