@@ -4,7 +4,7 @@ class Persona {
     String nombre
     String apellidoPaterno
     String apellidoMaterno
-    //String nombreCompleto
+    String nombreCompleto
     String estadoCivil
     String nivelEstudio
     String religionAnterior

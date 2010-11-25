@@ -3,6 +3,8 @@ package siscofe
 class ProfesionDeFeController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def springSecurityService
+    def sessionFactory
 
     def index = {
         redirect(action: "list", params: params)
@@ -76,6 +78,7 @@ class ProfesionDeFeController {
             profesionDeFeInstance.properties = params
             if (!profesionDeFeInstance.hasErrors() && profesionDeFeInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'profesionDeFe.label', default: 'ProfesionDeFe'), profesionDeFeInstance.id])}"
+                audita(profesionDeFeInstance,'ACTUALIZO | Profesion de Fe')
                 redirect(action: "show", id: profesionDeFeInstance.id)
             }
             else {
@@ -105,5 +108,16 @@ class ProfesionDeFeController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'profesionDeFe.label', default: 'ProfesionDeFe'), params.id])}"
             redirect(action: "list")
         }
+    }
+
+        def audita(ProfesionDeFe profesionDeFe, String actividad) {
+        log.debug "[AUDITA] $actividad Profesion DeFe $profesionDeFe"
+        def creador = springSecurityService.authentication.name
+        def bitacora = new Bitacora()
+        bitacora.tabla= "ProfesionDeFe"
+        bitacora.usuario = creador
+        bitacora.actividad = actividad
+        bitacora.campo = profesionDeFe
+        bitacora.save()
     }
 }

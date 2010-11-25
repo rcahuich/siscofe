@@ -27,8 +27,8 @@
             <g:form method="post" >
                 <g:hiddenField name="id" value="${cartaDeTrasladoInstance?.id}" />
                 <g:hiddenField name="version" value="${cartaDeTrasladoInstance?.version}" />
-                <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
-                <g:hiddenField name="persona.id" value="${params.personaId}"/>
+                <g:hiddenField name="persona.nombre" value="${cartaDeTrasladoInstance.persona.nombre}"/>
+                <g:hiddenField name="persona.id" value="${cartaDeTrasladoInstance.persona.id}"/>
                 <div class="dialog">
                     <table>
                         <tbody>

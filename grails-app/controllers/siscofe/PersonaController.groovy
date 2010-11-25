@@ -7,6 +7,8 @@ class PersonaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     def personaService
+    def springSecurityService
+    def sessionFactory
 
     def index = {
         redirect(action: "list", params: params)
@@ -19,8 +21,10 @@ class PersonaController {
     }
 
     def tipoSangre = {
+        def personaInstance = Persona.get(params.id)
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         def resultado = personaService.listadeTipoDeSangre(params)
+        audita(personaInstance,'BUSQUEDA | Realizo Busqueda por Tipo de Sangre')
         [personaInstanceList : resultado.listas, personaInstanceTotal: Persona.count()]
     }
 
@@ -67,19 +71,6 @@ class PersonaController {
             [personaInstance: personaInstance]
         }
     }
-
-
-    def personaCompleta = {
-        def personaInstance = Persona.get(params.id)
-        if (!personaInstance) {
-            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'persona.label', default: 'Persona'), params.id])}"
-            redirect(action: "personaCompleta")
-        }
-        else {
-            [personaInstance: personaInstance]
-        }
-    }
-	
 	
     def edit = {
         def personaInstance = Persona.get(params.id)
@@ -122,6 +113,7 @@ class PersonaController {
             personaInstance.properties = params
             if (!personaInstance.hasErrors() && personaInstance.save(flush: true)) {
                 flash.message = "${message(code: 'persona.actualiza', args: [personaInstance.nombre])}"
+                audita(personaInstance,'ACTUALIZO')
                 redirect(action: "show", id: personaInstance.id)
             }
             }
@@ -156,6 +148,7 @@ class PersonaController {
             personaInstance.properties = params
             if (!personaInstance.hasErrors() && personaInstance.save(flush: true)) {
                 flash.message = "${message(code: 'persona.actualiza', args: [personaInstance.nombre])}"
+                audita(personaInstance,'ACTUALIZO | Hoja Completa de Miembro')
                 redirect(action: "hojaMiembro", id: personaInstance.id)
             }
             }
@@ -178,6 +171,7 @@ class PersonaController {
                 if(!personaInstance.esMiembro){
                      personaInstance.delete(flush: true)
                     flash.message = "${message(code: 'persona.baja', args: [personaInstance.nombre])}"
+                    audita(personaInstance,'ELIMINO')
                     redirect(action: "list")
                 }
                 else{
@@ -205,23 +199,27 @@ class PersonaController {
     }
 
     def buscarMiembro={
+        def personaInstance = Persona.get(params.id)
         log.debug "f_nombre: $params.filtroNombre"
         log.debug "f_apellidoPaterno: $params.filtroApellidoPaterno"
         log.debug "f_apellidoMaterno: $params.filtroApellidoMaterno"
 
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         def resultado = personaService.searchMiembroByName(params)
+        audita(personaInstance,'BUSQUEDA | Realizo Busqueda de Miembro')
         [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
 
     }
 
     def buscarPersona = {
+        def personaInstance = Persona.get(params.id)
         log.debug "f_nombre: $params.filtroNombre"
         log.debug "f_apellidoPaterno: $params.filtroApellidoPaterno"
         log.debug "f_apellidoMaterno: $params.filtroApellidoMaterno"
 
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         def resultado = personaService.searchPersonaByName(params)
+        audita(personaInstance,'BUSQUEDA | Realizo Busqueda de Persona')
         [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
     }
 
@@ -233,29 +231,46 @@ class PersonaController {
     }
 
     def buscarEdad = {
+        def personaInstance = Persona.get(params.id)
         log.debug "Entro a buscar por edad"
         log.debug "Buscar edad entre --- $params.filtroEdadInicio y $params.filtroEdadFin ---"
 
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         def resultado = personaService.searchByEdad(params)
+        audita(personaInstance,'BUSQUEDA | Realizo Busqueda por Edad')
         [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
 
     }
 
     def buscarMiembrosActivos = {
+        def personaInstance = Persona.get(params.id)
         log. debug "Entro a buscar Miembros Activos"
         def resultado = personaService.search(params, true)
+        audita(personaInstance,'BUSQUEDA | Realizo Busqueda de Miembro Activos')
         render(view:"reportes/miembrosActivos",model:[personaInstanceList: resultado, personaInstanceotal: Persona.count()])
     }
 
     def buscarIngresos = {
+        def personaInstance = Persona.get(params.id)
         log.debug "Entro a Buscar Ingresos"
         log.debug "params: $params"
         
         def resultado = personaService.buscarIngresos(params)
         log.debug "resultado: $resultado"
+        audita(personaInstance,'BUSQUEDA | Realizo Busqueda por Ingresos')
         render(view: "reportes/buscarIngresos", model:[personaInstanceList: resultado])
 
+    }
+
+    def audita(Persona persona, String actividad) {
+        log.debug "[AUDITA] $actividad persona $persona"
+        def creador = springSecurityService.authentication.name
+        def bitacora = new Bitacora()
+        bitacora.tabla= "Persona"
+        bitacora.usuario = creador
+        bitacora.actividad = actividad
+        bitacora.campo = persona
+        bitacora.save()
     }
 
 }

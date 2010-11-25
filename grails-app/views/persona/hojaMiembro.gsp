@@ -21,7 +21,7 @@
           <tr>
              <td><b><g:message code="hoja.persona.nombre"/></b>${fieldValue(bean: hoja, field: 'persona.nombreCompleto')}</td>
              <td><b><g:message code="hoja.persona.esMiembro"/> </b><g:checkBox name="esMiembro" value="${fieldValue(bean: hoja, field: 'persona.esMiembro')}" disabled="true" /></td>
-             <td><b><g:message code="hoja.persona.id"/> </b>${fieldValue(bean: hoja, field: 'persona.id')}</td>
+             
           </tr>
           <tr>
             <td><b><g:message code="hoja.persona.fechaNacimiento"/> </b>${fieldValue(bean: hoja, field: 'persona.fechaNacimiento')}</td>
@@ -133,7 +133,7 @@
               <td colspan="3">
               <div class="buttons">
                   <g:form>
-                      <span class="menuButton"><g:link controller="cartaDeTraslado" id="${fieldValue(bean: hoja, field: 'tipoIngreso.id')}" class="edit" action="edit" > <g:message code="Editar Informacion de Carta de Traslado" /></g:link></span>
+                      <span class="menuButton"><g:link controller="cartaDeTraslado" id="${fieldValue(bean: hoja, field: 'tipoIngreso.id')}" params="personaId:${fieldValue(bean: hoja, field: 'persona.id')}" class="edit" action="edit" > <g:message code="Editar Informacion de Carta de Traslado" /></g:link></span>
                   </g:form>
               </div>
               </td>
@@ -167,7 +167,7 @@
               <td colspan="3">
               <div class="buttons">
                   <g:form>
-                      <span class="menuButton"><g:link controller="profesionDeFe" id="${fieldValue(bean: hoja, field: 'tipoIngreso.id')}" class="edit" action="edit" > <g:message code="Editar Informacion de Profesion de Fe" /></g:link></span>
+                      <span class="menuButton"><g:link controller="profesionDeFe" id="${fieldValue(bean: hoja, field: 'tipoIngreso.id')}" params="personaId:${fieldValue(bean: hoja, field: 'persona.id')}" class="edit" action="edit" > <g:message code="Editar Informacion de Profesion de Fe" /></g:link></span>
                   </g:form>
               </div>
               </td>
@@ -176,7 +176,7 @@
         </table>
         <div class="buttons">
                 <g:form>
-                  <span style="font-size: 12px;" class="menuButton"><g:link controller="baja" class="delete" name="persona.id" id="${fieldValue(bean: hoja, field: 'persona.id')}" params="personaId:${fieldValue(bean: hoja, field: 'persona.id')}, personaNombre:${fieldValue(bean: hoja, field: 'persona.nombre')}" action="create" > <g:message code="Dar de Baja" /></g:link></span>
+                  <span style="font-size: 12px;" class="menuButton"><g:link controller="baja" class="delete" id="${fieldValue(bean: hoja, field: 'persona.id')}" params="personaId:${fieldValue(bean: hoja, field: 'persona.id')}" action="create" > <g:message code="Dar de Baja" /></g:link></span>
                 </g:form>
             </div>
       </div>

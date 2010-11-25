@@ -17,4 +17,8 @@ class Bautismo extends TipoDeIngreso{
         cursoBiblico maxSize:64, blank:false
         numeroBautismo maxSize:5, inList:['1','2','3']
     }
+
+    String toString () {
+        "ID DE BAUTISMO: $id"
+    }
 }

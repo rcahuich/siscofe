@@ -7,6 +7,8 @@ class BautismoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     Persona persona
+    def springSecurityService
+    def sessionFactory
 
     def index = {
         redirect(action: "list", params: params)
@@ -58,14 +60,8 @@ class BautismoController {
     }
 
     def edit = {
-        log.debug "############ $params"
         def bautismoInstance = Bautismo.get(params.id)
-        log.debug "----------------------------------------------------------------------"
-        log.debug "bautismo: $bautismoInstance"
-        log.debug "id persona dentro de bautismo: $bautismoInstance.persona.id"
-        log.debug "id_Persona_Bautismo: $bautismoInstance.persona.id"
         def persona = Persona.get(bautismoInstance.persona.id)
-        log.debug "id_Persona: $persona"
 
         if (!bautismoInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), params.id])}"
@@ -77,12 +73,9 @@ class BautismoController {
     }
 
     def update = {
-        log.debug "params: $params"
         def bautismoInstance = Bautismo.get(params.id)
         try{
         Bautismo.withTransaction{
-            log.debug "############ $params"
-            
         if (bautismoInstance) {
             if (params.version) {
                 def version = params.version.toLong()
@@ -96,6 +89,7 @@ class BautismoController {
             bautismoInstance.properties = params
             if (!bautismoInstance.hasErrors() && bautismoInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), bautismoInstance.id])}"
+                audita(bautismoInstance,'ACTUALIZO | Bautismo')
                 redirect(action: "show", id: bautismoInstance.id)
             }
         }
@@ -127,5 +121,16 @@ class BautismoController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'bautismo.label', default: 'Bautismo'), params.id])}"
             redirect(action: "list")
         }
+    }
+
+    def audita(Bautismo bautismo, String actividad) {
+        log.debug "[AUDITA] $actividad persona $bautismo"
+        def creador = springSecurityService.authentication.name
+        def bitacora = new Bitacora()
+        bitacora.tabla= "Bautismo"
+        bitacora.usuario = creador
+        bitacora.actividad = actividad
+        bitacora.campo = bautismo
+        bitacora.save()
     }
 }
