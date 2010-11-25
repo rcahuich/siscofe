@@ -11,11 +11,9 @@
     <body>
         <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
-            <h1><g:message code="persona.edita" /> ${bautismoInstance?.persona}</h1>
+            <h1><g:message code="bautismo.actualiza" /> ${profesionDeFeInstance?.persona}</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -27,15 +25,15 @@
             <g:form method="post" >
                 <g:hiddenField name="id" value="${profesionDeFeInstance?.id}" />
                 <g:hiddenField name="version" value="${profesionDeFeInstance?.version}" />
-                <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
-                <g:hiddenField name="persona.id" value="${params.personaId}"/>
+                <g:hiddenField name="persona.nombre" value="${profesionDeFeInstance.persona.nombre}"/>
+                <g:hiddenField name="persona.id" value="${profesionDeFeInstance.persona.id}"/>
                 <div class="dialog">
                     <table>
                         <tbody>
                         
                              <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="iglesiaProcedencia"><g:message code="profesionDeFe.iglesiaProcedencia.label" default="Iglesia Procedencia" /></label>
+                                    <label for="iglesiaProcedencia"><g:message code="profesionDeFe.iglesiaProcedencia.label" default="Iglesia de Procedencia" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'iglesiaProcedencia', 'errors')}">
                                     <g:textField name="iglesiaProcedencia" maxlength="64" value="${profesionDeFeInstance?.iglesiaProcedencia}" />
@@ -62,7 +60,7 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="numeroVotoJuntaAdministrativa"><g:message code="profesionDeFe.numeroVotoJuntaAdministrativa.label" default="Numero Voto Junta Administrativa" /></label>
+                                    <label for="numeroVotoJuntaAdministrativa"><g:message code="profesionDeFe.numeroVotoJuntaAdministrativa.label" default="Numero de Voto Junta Administrativa" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'numeroVotoJuntaAdministrativa', 'errors')}">
                                     <g:textField name="numeroVotoJuntaAdministrativa" maxlength="10" value="${profesionDeFeInstance?.numeroVotoJuntaAdministrativa}" />
@@ -71,7 +69,7 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="fechaVotoJuntaDirectiva"><g:message code="profesionDeFe.fechaVotoJuntaDirectiva.label" default="Fecha Voto Junta Directiva" /></label>
+                                    <label for="fechaVotoJuntaDirectiva"><g:message code="profesionDeFe.fechaVotoJuntaDirectiva.label" default="Fecha de Voto Junta Directiva" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'fechaVotoJuntaDirectiva', 'errors')}">
                                     <g:datePicker name="fechaVotoJuntaDirectiva" precision="day" value="${profesionDeFeInstance?.fechaVotoJuntaDirectiva}"  />
@@ -80,7 +78,7 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="numeroVotoJuntaDirectiva"><g:message code="profesionDeFe.numeroVotoJuntaDirectiva.label" default="Numero Voto Junta Directiva" /></label>
+                                    <label for="numeroVotoJuntaDirectiva"><g:message code="profesionDeFe.numeroVotoJuntaDirectiva.label" default="Numero de Voto Junta Directiva" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'numeroVotoJuntaDirectiva', 'errors')}">
                                     <g:textField name="numeroVotoJuntaDirectiva" maxlength="10" value="${profesionDeFeInstance?.numeroVotoJuntaDirectiva}" />
@@ -89,7 +87,7 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="fechaVotoJuntaAdministrativa"><g:message code="profesionDeFe.fechaVotoJuntaAdministrativa.label" default="Fecha Voto Junta Administrativa" /></label>
+                                    <label for="fechaVotoJuntaAdministrativa"><g:message code="profesionDeFe.fechaVotoJuntaAdministrativa.label" default="Fecha de Voto Junta Administrativa" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: profesionDeFeInstance, field: 'fechaVotoJuntaAdministrativa', 'errors')}">
                                     <g:datePicker name="fechaVotoJuntaAdministrativa" precision="day" value="${profesionDeFeInstance?.fechaVotoJuntaAdministrativa}"  />
@@ -110,7 +108,6 @@
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
                 </div>
             </g:form>
         </div>

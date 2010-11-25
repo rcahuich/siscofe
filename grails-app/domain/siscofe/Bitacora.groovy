@@ -2,9 +2,11 @@ package siscofe
 
 class Bitacora {
 
+    String tabla
     Date fecha = new Date()
     String usuario
-    String comentario
+    String actividad
+    String campo
 
     static mapping = {
         table 'bitacoras'
@@ -12,6 +14,8 @@ class Bitacora {
 
     static constraints = {
         usuario maxSize:64, blank:false
-        comentario blank: false, maxSize: 500
+        actividad blank: false, maxSize: 500
+        campo nullable:true
+
     }
 }

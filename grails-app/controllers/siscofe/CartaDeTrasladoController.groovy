@@ -3,7 +3,9 @@ package siscofe
 class CartaDeTrasladoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+    def springSecurityService
+    def sessionFactory
+    
     def index = {
         redirect(action: "list", params: params)
     }
@@ -60,8 +62,7 @@ class CartaDeTrasladoController {
         if (cartaDeTrasladoInstance) {
             if (params.version) {
                 def version = params.version.toLong()
-                if (cartaDeTrasladoInstance.version > version) {
-                    
+                if (cartaDeTrasladoInstance.version > version) {                
                     cartaDeTrasladoInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'cartaDeTraslado.label', default: 'CartaDeTraslado')] as Object[], "Another user has updated this CartaDeTraslado while you were editing")
                     render(view: "edit", model: [cartaDeTrasladoInstance: cartaDeTrasladoInstance])
                     return
@@ -70,6 +71,7 @@ class CartaDeTrasladoController {
             cartaDeTrasladoInstance.properties = params
             if (!cartaDeTrasladoInstance.hasErrors() && cartaDeTrasladoInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.updated.message', args: [message(code: 'cartaDeTraslado.label', default: 'CartaDeTraslado'), cartaDeTrasladoInstance.id])}"
+                audita(cartaDeTrasladoInstance,'ACTUALIZO | Carta de Traslado')
                 redirect(action: "show", id: cartaDeTrasladoInstance.id)
             }
             else {
@@ -99,5 +101,16 @@ class CartaDeTrasladoController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'cartaDeTraslado.label', default: 'CartaDeTraslado'), params.id])}"
             redirect(action: "list")
         }
+    }
+
+    def audita(CartaDeTraslado cartaDeTraslado, String actividad) {
+        log.debug "[AUDITA] $actividad Carta de Traslado $cartaDeTraslado"
+        def creador = springSecurityService.authentication.name
+        def bitacora = new Bitacora()
+        bitacora.tabla= "Carta De Traslado"
+        bitacora.usuario = creador
+        bitacora.actividad = actividad
+        bitacora.campo = cartaDeTraslado
+        bitacora.save()
     }
 }

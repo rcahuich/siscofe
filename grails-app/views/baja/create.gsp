@@ -24,7 +24,6 @@
             </div>
             </g:hasErrors>
             <g:form action="save" >
-              <g:hiddenField name="persona.nombre" value="${params.personaNombre}"/>
               <g:hiddenField name="persona.id" value="${bajaInstance.personaId}"/>
                 <div class="dialog">
                     <table>

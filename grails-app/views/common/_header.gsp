@@ -4,12 +4,12 @@
 </head>
 
 <div id="iasdLogo" style="margin-right: 150px;">
-  <a href="${createLinkTo(dir:'')}">
+  <a href="http://www.adventist.org/">
     <img src="${resource(dir:'images',file:'iasd2.png')}" alt="Grails" border="0" align="rigth" style=""/>
   </a>
 </div>
 
-<div id="header" style="margin-left: 180px;margin-right: 160px;">
+<div id="header" style="margin-left: 140px;margin-right: 160px;">
 
   <div id="grailsLogo">
     <a href="${createLinkTo(dir:'')}">

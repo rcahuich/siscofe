@@ -55,14 +55,14 @@
                   <div class='fheader' align="center">Inicie sesión</div>
 			<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
 				<p>
-					<label for='Usuario'>usuario</label>
+					<label for='Usuario' style="text-align: right">usuario</label>
 					<input type='text' class='text_' name='j_username' id='username' />
 				</p>
 				<p>
-					<label for='Contraeña'>contraseña</label>
+                                  <label for='Contraseña' style="text-align: right">contraseña</label>
 					<input type='password' class='text_' name='j_password' id='password' />
 				</p>
-				<p>
+                                <p>
 					<label for='remember_me'>Recordarme</label>
 					<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me'
 					<g:if test='${hasCookie}'>checked='checked'</g:if> />

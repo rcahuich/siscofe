@@ -14,16 +14,20 @@ class BajaController {
     }
 
     def create = {
-        def bajaInstance = new Baja()
-        log.debug "################## $params"
-
-        bajaInstance.properties = params
+        def bajaInstance = new Baja(params)
+        log.debug "########### params $params"
+        log.debug "########### params $params.id"
+        Persona persona = Persona.get(params.id)
+        bajaInstance.persona = persona
+        //bajaInstance.properties = params
+        log.debug "########### params $bajaInstance"
         return [bajaInstance: bajaInstance]
     }
 
     def save = {
         def bajaInstance = new Baja(params)
         log.debug "################## $params"
+        log.debug "################## $params.persona.id"
         try{
             Baja.withTransaction{
                 Persona persona = Persona.get(params.persona.id)
@@ -37,11 +41,11 @@ class BajaController {
             }
 
         }catch(Exception e){
-            log.error("No se pudo crear la persona",e)
+            log.error("No se pudo dar de Baja",e)
             if (bajaInstance) {
                 bajaInstance.discard()
             }
-            flash.message = message(code:"persona.noCrea")
+            flash.message = message(code:"baja.noCrea")
             render(view:"create", model: [bajaInstance: bajaInstance])
         }
     }
