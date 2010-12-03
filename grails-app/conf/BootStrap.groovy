@@ -10,7 +10,6 @@ class BootStrap {
         def admin = Rol.findByAuthority('ROLE_ADMIN') ?: new Rol(authority: 'ROLE_ADMIN').save(failOnError: true)
         def user = Rol.findByAuthority('ROLE_USER') ?: new Rol(authority: 'ROLE_USER').save(flush: true)
         
-        
 //        log.info "Creacion de Union"
 //        def union = Union.findByNombre('UMN')
 //        if(!union){
@@ -47,16 +46,48 @@ class BootStrap {
 //                }
 
 
-        log.info "Creacion de Usuario"
+        log.info "Creacion de Administrador 1"
         def usuario = Usuario.findByUsername('admin')
                 if (!usuario){
                         usuario = new Usuario(
                         username : 'admin'
-                        ,password : springSecurityService.encodePassword('admin')
+                        ,password : springSecurityService.encodePassword('rcc')
                         ,enabled : true
                         ,nombre:'R. Angel'
                         ,apellido:'Cahuich'
                         ,correo:'rcc@um.edu.mx'
+                    ).save(flush: true)
+                }
+                if (!usuario.authorities.contains(admin)){
+                UsuarioRol.create(usuario, admin)
+                }
+
+        log.info "Creacion de Administrador 2"
+        usuario = Usuario.findByUsername('blackdeath')
+                if (!usuario){
+                        usuario = new Usuario(
+                        username : 'blackdeath'
+                        ,password : springSecurityService.encodePassword('campanita')
+                        ,enabled : true
+                        ,nombre:'SETH KARIM'
+                        ,apellido:'LUIS MARTINEZ'
+                        ,correo:'guepardo190889@gmail.com'
+                    ).save(flush: true)
+                }
+                if (!usuario.authorities.contains(admin)){
+                UsuarioRol.create(usuario, admin)
+                }
+
+        log.info "Creacion de Administrador 3"
+        usuario = Usuario.findByUsername('pastor')
+                if (!usuario){
+                        usuario = new Usuario(
+                        username : 'pastor'
+                        ,password : springSecurityService.encodePassword('pastor')
+                        ,enabled : true
+                        ,nombre:'JESUS'
+                        ,apellido:'FERNANDEZ'
+                        ,correo:'jf@gmail.com'
                     ).save(flush: true)
                 }
                 if (!usuario.authorities.contains(admin)){
