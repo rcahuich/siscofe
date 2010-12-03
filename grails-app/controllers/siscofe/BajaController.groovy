@@ -20,17 +20,19 @@ class BajaController {
     }
 
     def create = {
+        log.debug "entro a create de Baja"
         def bajaInstance = new Baja(params)
         log.debug "########### params $params"
         log.debug "########### params $params.id"
         Persona persona = Persona.get(params.id)
         bajaInstance.persona = persona
-        //bajaInstance.properties = params
+//        bajaInstance.properties = params
         log.debug "########### params $bajaInstance"
         return [bajaInstance: bajaInstance]
     }
 
     def save = {
+        log.debug "entro a save de Baja"
         def bajaInstance = new Baja(params)
         log.debug "################## $params"
         log.debug "################## $params.persona.id"

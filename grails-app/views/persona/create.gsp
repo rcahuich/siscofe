@@ -7,6 +7,13 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'persona.label', default: 'Persona')}" />
         <title><g:message code="persona.nuevo" args="[entityName]" /></title>
+
+        <script language=""="JavaScript">
+          function conMayusculas(field) {
+            fieldfield.value = field.value.toUpperCase()
+          }
+        </script>
+
     </head>
     <body>
         <div class="nav">
@@ -41,7 +48,7 @@
                                     <label for="nombre"><g:message code="persona.nombre" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'nombre', 'errors')}">
-                                <g:textField name="nombre" maxlength="64" value="${personaInstance?.nombre}" style=""/>
+                                <g:textField name="nombre" maxlength="64" value="${personaInstance?.nombre}" style="" onChange="conMayusculas(this)"/>
                                 </td>
                             </tr>
                         
@@ -50,7 +57,7 @@
                                     <label for="apellidoPaterno"><g:message code="persona.apellidoPaterno" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'apellidoPaterno', 'errors')}">
-                                    <g:textField name="apellidoPaterno" maxlength="64" value="${personaInstance?.apellidoPaterno}" />
+                                    <g:textField name="apellidoPaterno" maxlength="64" value="${personaInstance?.apellidoPaterno}" onChange="conMayusculas(this)"/>
                                 </td>
                             </tr>
                         
@@ -59,7 +66,7 @@
                                     <label for="apellidoMaterno"><g:message code="persona.apellidoMaterno" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'apellidoMaterno', 'errors')}">
-                                    <g:textField name="apellidoMaterno" maxlength="64" value="${personaInstance?.apellidoMaterno}" />
+                                    <g:textField name="apellidoMaterno" maxlength="64" value="${personaInstance?.apellidoMaterno}" onChange="conMayusculas(this)"/>
                                 </td>
                             </tr>
                         

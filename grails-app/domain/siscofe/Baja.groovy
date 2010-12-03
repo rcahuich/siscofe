@@ -3,18 +3,19 @@ package siscofe
 class Baja {
 
     Persona persona
-    Date fechaActual = new Date()
+    Date fechaBaja = new Date()
     String tipoDeBaja
-    Date fecha
+//    Date fechaBaja
     String pastorEnFuncion
     String iglesia
     String comentarios
+//    TipoDeIngreso ingresoDadoDeBaja
 
-    static belongsTo = Persona//muchos a uno (Una persona tienen muchos Tipos de Ingreso)
+    static belongsTo = Persona//muchos a uno (Una persona tienen muchas Bajas)
     
     static constraints = {
         pastorEnFuncion maxSize:64, blank:false
-        tipoDeBaja maxSize:12, inList:['Muerte','Traslado','Apostasia','Panadero Desconocido']
+        tipoDeBaja maxSize:12, inList:['MUERTE','TRASLADO','APOSTASIA','PARADERO DESCONOCIDO']
         comentarios maxSize:512
     }
 

@@ -40,15 +40,6 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="fecha"><g:message code="baja.fecha.label" default="Fecha" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: bajaInstance, field: 'fecha', 'errors')}">
-                                    <g:datePicker name="fecha" precision="day" value="${bajaInstance?.fecha}"  />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="tipoDeBaja"><g:message code="baja.tipoDeBaja.label" default="Tipo De Baja" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: bajaInstance, field: 'tipoDeBaja', 'errors')}">
