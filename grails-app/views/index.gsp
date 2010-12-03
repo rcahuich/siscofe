@@ -5,7 +5,7 @@
     </head>
 
     <body>
-
+<!--MENU START-->
         <div id="menu">
 		<ul class="menu">
 			<li>
@@ -50,37 +50,27 @@
                         <li><a href="#"><span>Administración</span></a>
 				<div><ul>
 					<li><a href=""<span><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span></a></li>
-					<li><a href=""<span><g:link class="distrito" controller="distrito"><g:message code="Distritos" /></g:link></span></a></li>
-					<li><a href=""<span><g:link class="asociacion" controller="asociacion"><g:message code="Asociaciones" /></g:link></span></a></li>
-					<li><a href=""<span><g:link class="union" controller="union"><g:message code="Uniones" /></g:link></span></a></li>
+					
 				</ul></div>
 			</li>
 			<li><a href="ayuda.gsp"><span>Ayuda</span></a></li>
 		</ul>
-	</div>
-        <div id="body">
-<!--          <div class="nav">
-
-                    <span class="menuButton"><a class="home" href="${resource(dir: '')}"><g:message code="Inicio" /></a></span> |
-                    <span class="menuButton"><g:link class="iglesia" controller="iglesia"><g:message code="Iglesias" /></g:link></span> |
-                    <span class="menuButton"><g:link class="persona" controller="persona"><g:message code="Comunidad" /></g:link></span> |
-                    <span class="menuButton"><g:link class="usuario" controller="usuario"><g:message code="Usuarios" /></g:link></span> |
-          </div>-->
-
-
+        </div>
+<!--MENU END-->
+<div style="float: left">
           <h1>Sistema de Control de Feligresia de la IASD</h1>
+          <h3>¡Bienvenido!</h3>
+          <p><strong>
+            Jes&uacute;s nos conoce individualmente, <br>y se conmueve por el sentimiento <br>de nuestras flaquezas.<br>
+            Nos conoce a todos por nombre.<br>
+          </strong>
+            <i>White, DTG 445</i>
+          </p>
+            
+</div>
+<div id="inicio">
 
-          <h3>Bienvenido</h3>
-            <p>Aqui usted podra administrar los datos de los miembros de su Distrito, con las siguientes opciones:</p>
 
-            <br/>
-            <div class="dialog">
-                <ul >
-
-
-
-                </ul>
-            </div>
         </div>
     </body>
 </html>
