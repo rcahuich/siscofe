@@ -62,7 +62,7 @@
                     <tbody>
                     <g:each in="${hojasIngresosList}" status="i" var="resultado">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                            <td>${fieldValue(bean: resultado, field: "persona.id")}</td>
+                            <td><g:link controller="persona" action="hojaMiembro" id="${resultado.persona.id}">${fieldValue(bean: resultado.persona, field: "id")}</g:link></td>
                             <td>${fieldValue(bean: resultado, field: "persona.nombreCompleto")}</td>
                             <td>${fieldValue(bean: resultado, field: "persona.sexo")}</td>
                             <td>${fieldValue(bean: resultado, field: "tipoIngreso.fechaAlta")}</td>

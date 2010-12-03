@@ -3,6 +3,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="layout" content="main" />
     <title><g:message code="persona.busqueda.persona" /></title>
+    <script language=""="JavaScript">
+      function conMayusculas(field) {
+        field.value = field.value.toUpperCase()
+      }
+    </script>
   </head>
   <body>
 
@@ -22,11 +27,11 @@
                   <td style="vertical-align:middle;width:50px;">
                     <p>
                       <label for="filtro"><g:message code="entrada.buscar" default="Nombre"/>:</label>
-                      <input type="text" id="filtroNombre" name="filtroNombre" value="${params.filtroNombre}" style="width:130px;"/>
+                      <input type="text" id="filtroNombre" name="filtroNombre" value="${params.filtroNombre}" style="width:130px;" onChange="conMayusculas(this)" />
                       <label for="filtro"><g:message code="entrada.buscar" default="Ape. Paterno"/>:</label>
-                      <input type="text" id="filtroApellidoPaterno" name="filtroApellidoPaterno" value="${params.filtroApellidoPaterno}" style="width:180px;"/>
+                      <input type="text" id="filtroApellidoPaterno" name="filtroApellidoPaterno" value="${params.filtroApellidoPaterno}" style="width:180px;" onChange="conMayusculas(this)" />
                       <label for="filtro"><g:message code="entrada.buscar" default="Ape. Materno"/>:</label>
-                      <input type="text" id="filtroApellidoMaterno" name="filtroApellidoMaterno" value="${params.filtroApellidoMaterno}" style="width:180px;"/>
+                      <input type="text" id="filtroApellidoMaterno" name="filtroApellidoMaterno" value="${params.filtroApellidoMaterno}" style="width:180px;" onChange="conMayusculas(this)" />
                     </p>
                   </td>
                 </tr>

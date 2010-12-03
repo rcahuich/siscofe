@@ -26,6 +26,7 @@
                     <tbody>
                     <g:each in="${personaInstanceList}" status="i" var="personaInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+                            <td><g:link controller="persona" action="hojaMiembro" id="${personaInstance.id}">${fieldValue(bean: personaInstance, field: "id")}</g:link></td>
                             <td>${fieldValue(bean: personaInstance, field: "nombreCompleto")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "fechaNacimiento")}</td>
                             <td>${fieldValue(bean: personaInstance, field: "phoneCasa")}</td>

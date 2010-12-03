@@ -7,6 +7,11 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'iglesia.label', default: 'Iglesia')}" />
         <title><g:message code="iglesia.nuevo" args="[entityName]" /></title>
+        <script language=""="JavaScript">
+          function conMayusculas(field) {
+            field.value = field.value.toUpperCase()
+          }
+        </script>
     </head>
     <body>
         <div class="nav">
@@ -41,7 +46,7 @@
                                     <label for="nombre"><g:message code="iglesia.nombre" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'nombre', 'errors')}">
-                                    <g:textField name="nombre" maxlength="64" value="${iglesiaInstance?.nombre}" />
+                                    <g:textField name="nombre" maxlength="64" value="${iglesiaInstance?.nombre}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
                         
@@ -76,7 +81,7 @@
                                     <label for="direccion.pais"><g:message code="iglesia.direccion.pais" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.pais', 'errors')}">
-                                    <g:textField name="direccion.pais" maxlength="16" value="${iglesiaInstance?.direccion?.pais}" />
+                                    <g:textField name="direccion.pais" maxlength="16" value="${iglesiaInstance?.direccion?.pais}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -85,7 +90,7 @@
                                     <label for="direccion.estado"><g:message code="iglesia.direccion.estado" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.estado', 'errors')}">
-                                    <g:textField name="direccion.estado" maxlength="16" value="${iglesiaInstance?.direccion?.estado}" />
+                                    <g:textField name="direccion.estado" maxlength="16" value="${iglesiaInstance?.direccion?.estado}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -94,7 +99,7 @@
                                     <label for="direccion.municipio"><g:message code="iglesia.direccion.municipio" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.municipio', 'errors')}">
-                                    <g:textField name="direccion.municipio" maxlength="32" value="${iglesiaInstance?.direccion?.municipio}" />
+                                    <g:textField name="direccion.municipio" maxlength="32" value="${iglesiaInstance?.direccion?.municipio}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -103,7 +108,7 @@
                                     <label for="direccion.ciudad"><g:message code="iglesia.direccion.ciudad" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.ciudad', 'errors')}">
-                                    <g:textField name="direccion.ciudad" maxlength="32" value="${iglesiaInstance?.direccion?.ciudad}" />
+                                    <g:textField name="direccion.ciudad" maxlength="32" value="${iglesiaInstance?.direccion?.ciudad}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -112,7 +117,7 @@
                                     <label for="direccion.ejido"><g:message code="iglesia.direccion.ejido" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.ejido', 'errors')}">
-                                    <g:textField name="direccion.ejido" maxlength="32" value="${iglesiaInstance?.direccion?.ejido}" />
+                                    <g:textField name="direccion.ejido" maxlength="32" value="${iglesiaInstance?.direccion?.ejido}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -121,7 +126,7 @@
                                     <label for="direccion.colonia"><g:message code="iglesia.direccion.colonia" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.colonia', 'errors')}">
-                                    <g:textField name="direccion.colonia" maxlength="32" value="${iglesiaInstance?.direccion?.colonia}" />
+                                    <g:textField name="direccion.colonia" maxlength="32" value="${iglesiaInstance?.direccion?.colonia}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -130,7 +135,7 @@
                                     <label for="direccion.calle"><g:message code="iglesia.direccion.calle" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: iglesiaInstance, field: 'direccion.calle', 'errors')}">
-                                    <g:textField name="direccion.calle" maxlength="32" value="${iglesiaInstance?.direccion?.calle}" />
+                                    <g:textField name="direccion.calle" maxlength="32" value="${iglesiaInstance?.direccion?.calle}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 

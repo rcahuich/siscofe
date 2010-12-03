@@ -10,7 +10,7 @@
 
         <script language=""="JavaScript">
           function conMayusculas(field) {
-            fieldfield.value = field.value.toUpperCase()
+            field.value = field.value.toUpperCase()
           }
         </script>
 
@@ -120,7 +120,7 @@
                                     <label for="enfermedades"><g:message code="persona.emfermedades" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'enfermedades', 'errors')}">
-                            <g:textField name="enfermedades" maxlength="128" value="${personaInstance?.enfermedades}" style="width:300px;"/>
+                            <g:textField name="enfermedades" maxlength="128" value="${personaInstance?.enfermedades}" style="width:300px;" onChange="conMayusculas(this)"/>
                                 </td>
                             </tr>
                         
@@ -192,7 +192,7 @@
                                     <label for="direccion.pais"><g:message code="persona.direccion.pais" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'direccion.pais', 'errors')}">
-                                    <g:textField name="direccion.pais" maxlength="16" value="${personaInstance?.direccion?.pais}" />
+                                    <g:textField name="direccion.pais" maxlength="16" value="${personaInstance?.direccion?.pais}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -201,7 +201,7 @@
                                     <label for="direccion.estado"><g:message code="persona.direccion.estado" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'direccion.estado', 'errors')}">
-                                    <g:textField name="direccion.estado" maxlength="16" value="${personaInstance?.direccion?.estado}" />
+                                    <g:textField name="direccion.estado" maxlength="16" value="${personaInstance?.direccion?.estado}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -210,7 +210,7 @@
                                     <label for="direccion.municipio"><g:message code="persona.direccion.municipio" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'direccion.municipio', 'errors')}">
-                                    <g:textField name="direccion.municipio" maxlength="32" value="${personaInstance?.direccion?.municipio}" />
+                                    <g:textField name="direccion.municipio" maxlength="32" value="${personaInstance?.direccion?.municipio}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -219,7 +219,7 @@
                                     <label for="direccion.ciudad"><g:message code="persona.direccion.ciudad" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'direccion.ciudad', 'errors')}">
-                                    <g:textField name="direccion.ciudad" maxlength="32" value="${personaInstance?.direccion?.ciudad}" />
+                                    <g:textField name="direccion.ciudad" maxlength="32" value="${personaInstance?.direccion?.ciudad}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -228,7 +228,7 @@
                                     <label for="direccion.ejido"><g:message code="persona.direccion.ejido" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'direccion.ejido', 'errors')}">
-                                    <g:textField name="direccion.ejido" maxlength="32" value="${personaInstance?.direccion?.ejido}" />
+                                    <g:textField name="direccion.ejido" maxlength="32" value="${personaInstance?.direccion?.ejido}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -237,7 +237,7 @@
                                     <label for="direccion.colonia"><g:message code="persona.direccion.colonia" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'direccion.colonia', 'errors')}">
-                                    <g:textField name="direccion.colonia" maxlength="32" value="${personaInstance?.direccion?.colonia}" />
+                                    <g:textField name="direccion.colonia" maxlength="32" value="${personaInstance?.direccion?.colonia}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
@@ -246,7 +246,7 @@
                                     <label for="direccion.calle"><g:message code="persona.direccion.calle" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: personaInstance, field: 'direccion.calle', 'errors')}">
-                                    <g:textField name="direccion.calle" maxlength="32" value="${personaInstance?.direccion?.calle}" />
+                                    <g:textField name="direccion.calle" maxlength="32" value="${personaInstance?.direccion?.calle}" onChange="conMayusculas(this)" />
                                 </td>
                             </tr>
 
