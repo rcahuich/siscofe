@@ -33,7 +33,7 @@
                     <g:select name="mes_ingreso" from="${['TODOS', 'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE']}" valueMessagePrefix="hoja.ingreso.tipoIngreso" />
                     </p>
                     <p>
-                    <label for="filtro"><g:message code="entrada.buscar" default="Durante el Ano De"/>:</label>
+                    <label for="filtro"><g:message code="entrada.buscar" default="Durante el Año De"/>:</label>
                     <g:select name="anio_ingreso" from="${1995..2020}" value="${ano}" />
                     </p>
                   </td>

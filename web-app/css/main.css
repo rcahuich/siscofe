@@ -25,6 +25,11 @@ html{
 	padding:0px;
 }
 
+#inicio {
+    background: url(../images/lu.png) no-repeat center;
+    padding:120px;
+}
+
 a:link, a:visited, a:hover {
     color: #666;
     font-weight: bold;
