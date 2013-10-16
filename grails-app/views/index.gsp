@@ -21,13 +21,13 @@
                         <li><a href="#"><span>Comunidad</span></a>
 				<div><ul>
 					<li><a href="persona/create"<span>Registrar Persona</span></a></li>
-                                        <li><a href="persona/buscarPersona.gsp"<span>Buscar Persona</span></a></li>
+                                        <li><a href="persona/buscar-persona"<span>Buscar Persona</span></a></li>
                                         <li><a href="persona/list"><span>Lista de Personas</span></a></li>
 					<li><a href="#"><span>Reportes</span></a>
                                         <div>
                                           <ul>
-                                            <li><a href="persona/tipoSangre.gsp"><span>Tipo de Sangre</span></a>
-                                            <li><a href="persona/buscarEdad.gsp"><span>Edades</span></a>
+                                            <li><a href="persona/buscar-sangre"><span>Tipo de Sangre</span></a>
+                                            <li><a href="persona/buscar-edad"><span>Edades</span></a>
                                           </ul>
                                         </div>
                                         </li>
@@ -35,7 +35,7 @@
 			</li>
                         <li><a href="#"><span>Miembros</span></a>
                             <div><ul>
-                                <li><a href="persona/buscarMiembro.gsp"<span>Buscar Miembro</span></a></li>
+                                <li><a href="persona/buscar-miembro"<span>Buscar Miembro</span></a></li>
                                 <li><a href="#"><span>Reportes</span></a>
                                 <div>
                                     <ul>
@@ -53,7 +53,7 @@
 					
 				</ul></div>
 			</li>
-			<li><a href="ayuda.gsp"><span>Ayuda</span></a></li>
+			<li><a href="ayuda"><span>Ayuda</span></a></li>
 		</ul>
         </div>
 <!--MENU END-->

@@ -6,4 +6,6 @@ import grails.plugins.springsecurity.Secured
 class InicioController {
 
     def index = { }
+	
+	def ayuda = { render view:'ayuda'}
 }

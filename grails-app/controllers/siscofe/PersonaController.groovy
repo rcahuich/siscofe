@@ -19,7 +19,11 @@ class PersonaController {
         def resultado = personaService.search(params,false)
         [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
     }
-
+	
+	def searchTypeBlood() {
+		render(view:'tipoSangre')
+	}
+	
     def tipoSangre = {
         def personaInstance = Persona.get(params.id)
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
@@ -201,6 +205,10 @@ class PersonaController {
             [personaInstance: personaInstance]
         }
     }
+	
+	def searchMember() {
+		render(view:'buscarMiembro')
+	}
 
     def buscarMiembro={
         def personaInstance = Persona.get(params.id)
@@ -215,6 +223,10 @@ class PersonaController {
 
     }
 
+	def searchPerson() {
+		render(view:'buscarPersona')
+	}
+	
     def buscarPersona = {
         def personaInstance = Persona.get(params.id)
         log.debug "f_nombre: $params.filtroNombre"
@@ -226,7 +238,7 @@ class PersonaController {
         audita(personaInstance,'BUSQUEDA | Realizo Busqueda de Persona')
         [personaInstanceList : resultado, personaInstanceTotal: Persona.count()]
     }
-
+	
     def hojaMiembro={
         log.debug "Entro a la Hoja del Miembro"
         log.debug "params: $params"
@@ -234,6 +246,10 @@ class PersonaController {
         render(view:'hojaMiembro',model:[hoja:personaService.hojaMiembro(params)])
     }
 
+	def searchAge() {
+		render(view:'buscarEdad')
+	}
+	
     def buscarEdad = {
         def personaInstance = Persona.get(params.id)
         log.debug "Entro a buscar por edad"
