@@ -40,10 +40,6 @@ class PersonaController {
 
     def create = {
         def personaInstance = new Persona()
-
-
-
-
         personaInstance.properties = params
         return [personaInstance: personaInstance]
     }
