@@ -31,6 +31,11 @@ class UrlMappings {
 		action= 'searchMember'
 	}
 	
+	"/persona/buscar-ingresos" {
+		controller= 'persona'
+		action= 'searchIncome'
+	}
+	
 	"/ayuda" {
 		controller= 'inicio'
 		action= 'ayuda'

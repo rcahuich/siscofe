@@ -40,7 +40,7 @@
                                 <div>
                                     <ul>
                                         <li><a href="#"<span><g:link class="persona" controller="persona" action="buscarMiembrosActivos"><g:message code="Miembros Activos" /></g:link></span></a></li>
-                                        <li><a href="persona/reportes/buscarIngresos.gsp"<span>Buscar Ingresos</span></a></li>
+                                        <li><a href="persona/buscar-ingresos"<span>Buscar Ingresos</span></a></li>
 <!--                                        <li><a href="#"><span>Libro de Iglesia</span></a>-->
                                     </ul>
                                 </div>

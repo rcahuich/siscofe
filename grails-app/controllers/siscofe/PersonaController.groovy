@@ -269,7 +269,11 @@ class PersonaController {
         audita(personaInstance,'BUSQUEDA | Realizo Busqueda de Miembro Activos')
         render(view:"reportes/miembrosActivos",model:[personaInstanceList: resultado, personaInstanceotal: Persona.count()])
     }
-
+	
+	def searchIncome() {
+		render(view:'reportes/buscarIngresos')
+	}
+	
     def buscarIngresos = {
         def personaInstance = Persona.get(params.id)
         log.debug "Entro a Buscar Ingresos"
