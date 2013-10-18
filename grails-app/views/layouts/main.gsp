@@ -6,7 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
 <html>
     <head>
-        <title>Siscofe - <g:layoutTitle default="Grails" /></title>
+        <title><g:layoutTitle default="..." /> - Siscofe</title>
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon-Siscofe.ico')}" type="image/x-icon" />
         
         <!-- Styles -->
@@ -26,10 +26,19 @@
         <link type="text/css" href="menu.css" rel="stylesheet" />
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="menu.js"></script>
+		<style>
+          body {
+            padding-top: 30px;
+            padding-bottom: 20px;
+          }
+
+          @media (min-width: 1200px) {
+            .container {
+              max-width: 1040px;
+            }
+          }
+        </style>
     </head>
-
-
-
     <body>
         <div id="header">
           <g:render template="/common/header" />
@@ -49,6 +58,8 @@
         </div>
 
       </div>
+      	<g:javascript library="application"/>
+        <g:javascript library="bootstrap3"/>
+        <r:layoutResources />
     </body>
-    <a href="http://apycom.com/"></a>
 </html>
