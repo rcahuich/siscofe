@@ -1,5 +1,7 @@
 import grails.converters.JSON
 
+import javax.servlet.http.HttpServletResponse
+
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 
 import org.springframework.security.authentication.AccountExpiredException
@@ -7,7 +9,7 @@ import org.springframework.security.authentication.CredentialsExpiredException
 import org.springframework.security.authentication.DisabledException
 import org.springframework.security.authentication.LockedException
 import org.springframework.security.core.context.SecurityContextHolder as SCH
-import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter
+import org.springframework.security.web.WebAttributes
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 class LoginController {
@@ -80,22 +82,22 @@ class LoginController {
 
 		def username = session[UsernamePasswordAuthenticationFilter.SPRING_SECURITY_LAST_USERNAME_KEY]
 		String msg = ''
-		def exception = session[AbstractAuthenticationProcessingFilter.SPRING_SECURITY_LAST_EXCEPTION_KEY]
+		def exception = session[WebAttributes.AUTHENTICATION_EXCEPTION]
 		if (exception) {
 			if (exception instanceof AccountExpiredException) {
-				msg = SpringSecurityUtils.securityConfig.errors.login.expired
+				msg = g.message(code: "springSecurity.errors.login.expired")
 			}
 			else if (exception instanceof CredentialsExpiredException) {
-				msg = SpringSecurityUtils.securityConfig.errors.login.passwordExpired
+				msg = g.message(code: "springSecurity.errors.login.passwordExpired")
 			}
 			else if (exception instanceof DisabledException) {
-				msg = SpringSecurityUtils.securityConfig.errors.login.disabled
+				msg = g.message(code: "springSecurity.errors.login.disabled")
 			}
 			else if (exception instanceof LockedException) {
-				msg = SpringSecurityUtils.securityConfig.errors.login.locked
+				msg = g.message(code: "springSecurity.errors.login.locked")
 			}
 			else {
-				msg = SpringSecurityUtils.securityConfig.errors.login.fail
+				msg = g.message(code: "springSecurity.errors.login.fail")
 			}
 		}
 
@@ -104,7 +106,7 @@ class LoginController {
 		}
 		else {
 			flash.message = msg
-			redirect action: auth, params: params
+			redirect action: 'auth', params: params
 		}
 	}
 
