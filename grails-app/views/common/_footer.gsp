@@ -1,14 +1,6 @@
-<!--
-  To change this template, choose Tools | Templates
-  and open the template in the editor.
--->
 
-<%@ page contentType="text/html;charset=UTF-8" %>
-
-<span class="copyright">&copy; 2010 Hecho con Groovy y Grails | Proyecto de Sistemas de Información<br />
-                        Rubén Ángel Cahuich Cahuich, Seth Karim Luis Martinez<br />
-        <sec:ifLoggedIn>
-            <a href="ayuda.gsp">Ayuda</a> | <a href="condiciones.gsp">Condiciones</a> | <span class="Button"><g:link class="persona" controller="bitacora"><g:message code="Bitacora" /></g:link></span>
-        </sec:ifLoggedIn>
-
-</span>
+<div id="footer">
+	<div class="container">
+		<p class="text-muted credit">Desarrollo y Diseño por  <a href="http://twitter.com/rbnseven" target="_blank">@rbnseven</a>, &copy; 2013</p>
+	</div>
+</div>
