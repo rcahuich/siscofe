@@ -8,17 +8,21 @@
         <title><g:message code="iglesia.lista" args="[entityName]" /></title>
     </head>
     <body>
-        <div class="nav">
+        
+        <div class="body">
+        
+        	<div class="page-header">
+		      <h2 ><g:message code="iglesia.lista" /></h2>
+		    </div>
+		    <div class="nav">
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="create" action="create"><g:message code="iglesia.nuevo" /></g:link></span>
         </div>
-        <div class="body">
-            <h1><g:message code="iglesia.lista" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="list">
-                <table>
+                <table class="table table-hover">
                     <thead>
                         <tr>
                         
