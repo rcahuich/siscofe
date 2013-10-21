@@ -1,75 +1,98 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
-<html>
+<html lang="es">
     <head>
-        <title><g:layoutTitle default="..." /> - Siscofe</title>
-        <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon-Siscofe.ico')}" type="image/x-icon" />
-        
-        <!-- Styles -->
-        <link rel="stylesheet" href="${resource(dir: 'css/bootstrap3', file: 'bootstrap.css')}" type="text/css">
-        <link href='http://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
-        
-        <g:javascript src="bootstrap3/jquery.js" />
-        <r:layoutResources /> 
-		<g:layoutHead/>
-		
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <g:javascript src="bootstrap3/html5shiv.js" />
-          <g:javascript src="bootstrap3/respond.min.js" />
-        <![endif]-->
+    	<meta charset="utf-8" />
+		<title><g:layoutTitle default="..." /> - Siscofe</title>
+		<link rel="shortcut icon" href="${resource(dir:'images',file:'favicon-Siscofe.ico')}" type="image/x-icon" />
+		<meta name="description" content="overview &amp; stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<style>
-			html,
-	        body {
-	          height: 100%;
-	          padding-top: 35px;
-	        }
-			#wrap {
-			  min-height: 100%;
-			  height: auto !important;
-			  height: 100%;
-			  /* Negative indent footer by its height */
-			  margin: 0 auto -60px;
-			  /* Pad bottom by footer height */
-			  padding: 0 0 60px;
-			}
-			.container {
-			  width: auto;
-			  max-width: 1040px;
-			  padding: 0 15px;
-			}
-			#footer {
-			  height: 60px;
-			  background-color: #f5f5f5;
-			  margin-top: 20px;
-			  padding: 15px;
-			}
-			#footer .container {
-			  padding-left: 15px;
-			  padding-right: 15px;
+		<!--basic styles-->
+
+		<link href="${resource(dir: 'css-ace', file: 'bootstrap.min.css')}" rel="stylesheet" />
+		<link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'font-awesome.min.css')}" />
+
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'font-awesome-ie7.min.css')}" />
+		<![endif]-->
+
+		<!--page specific plugin styles-->
+
+		<!--fonts-->
+
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+
+		<!--ace styles-->
+
+		<link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'ace.min.css')}" />
+		<link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'ace-rtl.min.css')}" />
+		<link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'ace-skins.min.css')}" />
+		
+		<script src="${resource(dir: 'js', file: 'ace-extra.min.js')}"></script>
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'ace-ie.min.css')}" />
+		<![endif]-->
+
+		<!--[if lt IE 9]>
+		<script src="${resource(dir: 'js', file: 'html5shiv.js')}"></script>
+		<script src="${resource(dir: 'js', file: 'respond.min.js')}"></script>
+		<![endif]-->
+
+		<!--inline styles related to this page-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<style type="text/css">
+        	.navbar-text {
+				margin-bottom: 0px;
 			}
         </style>
+    
     </head>
     <body>
-	    <div id="wrap">
-	        <div class="container">
-	          <g:render template="/common/header" />
-	        
-	          <g:layoutBody />
-	        
-	          
-	        </div>
-		</div>
+
+	    <g:render template="/common/header" />
+	    
+	    <div class="main-container-inner">
+	    	<g:render template="/common/paneldash" />
+	    	<div class="main-content">
+	    		<g:render template="/common/breadcrumbs" />
+	    		
+	    		<div class="page-content">
+	    			<g:layoutBody />		
+	    		</div>
+	    	</div>
+	    </div>
 		
-		<g:render template="/common/footer" />
-		
-      	<g:javascript library="application"/>
-        <g:javascript library="bootstrap3"/>
+		<!--[if !IE]>-->
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<!--<![endif]-->
+		<!--[if IE]>
+        	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <![endif]-->
+		<!--[if !IE]>-->
+			<script type="text/javascript">
+				window.jQuery || document.write("<script src='${resource(dir: 'js', file: 'jquery-2.0.3.min.js')}'>"+"<"+"/script>");
+			</script>
+		<!--<![endif]-->
+		<!--[if IE]>
+	        <script type="text/javascript">
+	            window.jQuery || document.write("<script src='${resource(dir: 'js', file: 'jquery-1.10.2.min.js')}'>"+"<"+"/script>");
+	        </script>
+        <![endif]-->
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='${resource(dir: 'js', file: 'jquery.mobile.custom.min.js')}'>"+"<"+"/script>");
+		</script>
+		<script src="${resource(dir: 'js', file: 'bootstrap.min.js')}"></script>
+		<script src="${resource(dir: 'js', file: 'typeahead-bs2.min.js')}"></script>
+
+
+		<!--page specific plugin scripts-->
+
+		<!--[if lte IE 8]>
+		  <script src="${resource(dir: 'js', file: 'excanvas.min.js')}"></script>
+		<![endif]-->
+	
+        <g:javascript library="ace"/>
         <r:layoutResources />
     </body>
 </html>

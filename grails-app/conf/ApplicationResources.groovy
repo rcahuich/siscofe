@@ -9,6 +9,18 @@ modules = {
 		resource url:'js/bootstrap3/holder.js'
 	}
 	
+	ace {
+		resource url:'js/jquery-ui-1.10.3.custom.min.js'
+		resource url:'js/jquery.ui.touch-punch.min.js'
+		resource url:'js/jquery.slimscroll.min.js'
+		resource url:'js/jquery.easy-pie-chart.min.js'
+		resource url:'js/jquery.sparkline.min.js'
+		resource url:'js/jquery.flot.min.js'
+		resource url:'js/jquery.flot.pie.min.js'
+		resource url:'js/jquery.flot.resize.min.js'
+		resource url:'js/ace-elements.min.js'
+		resource url:'js/ace.min.js'
+	}
 	/*validationEngine {
 		resource url:'js/validationEngine/jquery-1.7.2.min.js'
 		resource url:'js/validationEngine/jquery.validationEngine.js'
