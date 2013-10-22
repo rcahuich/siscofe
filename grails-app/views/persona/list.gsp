@@ -9,6 +9,128 @@
     </head>
     <body>
     
+    <a class="menu-toggler" id="menu-toggler" href="#">
+		<span class="menu-text"></span>
+	</a>
+
+				<div class="sidebar" id="sidebar">
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					</script>
+
+					<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+						<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+							<button class="btn btn-success">
+								<i class="icon-signal"></i>
+							</button>
+
+							<button class="btn btn-info">
+								<i class="icon-pencil"></i>
+							</button>
+
+							<button class="btn btn-warning">
+								<i class="icon-group"></i>
+							</button>
+
+							<button class="btn btn-danger">
+								<i class="icon-cogs"></i>
+							</button>
+						</div>
+
+						<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+							<span class="btn btn-success"></span>
+
+							<span class="btn btn-info"></span>
+
+							<span class="btn btn-warning"></span>
+
+							<span class="btn btn-danger"></span>
+						</div>
+					</div><!-- #sidebar-shortcuts -->
+
+					<ul class="nav nav-list">
+						<li>
+							<a href="${createLinkTo(dir:'/')}">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> Dashboard </span>
+							</a>
+						</li>
+						
+						<li class="active open">
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-group"></i>
+								<span class="menu-text"> Comunidad </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li class="active">
+									<a href="${createLink(controller:'persona', action:'list')}">
+										<i class="icon-double-angle-right"></i>
+										Asistentes
+									</a>
+								</li>
+								<li >
+									<a href="${createLink(controller:'persona', action:'create')}">
+										<i class="icon-double-angle-right"></i>
+										Nuevo Asistente
+									</a>
+								</li>
+							</ul>
+						</li>
+						
+						<li>
+							<a href="${createLink(controller:'persona', action:'searchMember')}">
+								<i class="icon-book"></i>
+								<span class="menu-text"> Miembros </span>
+							</a>
+						</li>
+						
+						<li>
+							<a href="${createLink(controller:'inicio', action:'ayuda')}">
+								<i class="icon-lightbulb"></i>
+								<span class="menu-text"> Ayuda </span>
+							</a>
+						</li>
+						
+					</ul><!-- /.nav-list -->
+
+					<div class="sidebar-collapse" id="sidebar-collapse">
+						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+					</div>
+
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+					</script>
+				</div>
+    
+    
+    <div class="main-content">
+    
+    <div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-group"></i>
+								<a href="${createLinkTo(dir:'/')}">Comunidad</a>
+							</li>
+							<li class="active">Asistentes</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+					<div class="page-content">
     	<div class="page-header position-relative">
 						<h1>
 							Lista de Asistentes
@@ -75,6 +197,7 @@
                 </table>
                 ${personaInstanceTotal}
                 <g:paginate total="${personaInstanceTotal}" />
-          
+          </div>
+         </div>
     </body>
 </html>

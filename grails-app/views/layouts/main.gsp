@@ -11,12 +11,16 @@
 
 		<link href="${resource(dir: 'css-ace', file: 'bootstrap.min.css')}" rel="stylesheet" />
 		<link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'font-awesome.min.css')}" />
-
+		
+		<r:layoutResources /> 
+		<g:layoutHead/>
+		
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'font-awesome-ie7.min.css')}" />
 		<![endif]-->
 
 		<!--page specific plugin styles-->
+		<link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'prettify.css')}" />
 
 		<!--fonts-->
 
@@ -28,11 +32,12 @@
 		<link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'ace-rtl.min.css')}" />
 		<link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'ace-skins.min.css')}" />
 		
-		<script src="${resource(dir: 'js', file: 'ace-extra.min.js')}"></script>
 		<!--[if lte IE 8]>
 		  <link rel="stylesheet" href="${resource(dir: 'css-ace', file: 'ace-ie.min.css')}" />
 		<![endif]-->
 
+		<script src="${resource(dir: 'js', file: 'ace-extra.min.js')}"></script>
+		
 		<!--[if lt IE 9]>
 		<script src="${resource(dir: 'js', file: 'html5shiv.js')}"></script>
 		<script src="${resource(dir: 'js', file: 'respond.min.js')}"></script>
@@ -52,14 +57,14 @@
 
 	    <g:render template="/common/header" />
 	    
-	    <div class="main-container-inner">
-	    	<g:render template="/common/paneldash" />
-	    	<div class="main-content">
-	    		<g:render template="/common/breadcrumbs" />
+	    <div class="main-container" id="main-container">
+	    	
+	    	
+	    	<div class="main-container-inner">
 	    		
-	    		<div class="page-content">
-	    			<g:layoutBody />		
-	    		</div>
+	    				<g:layoutBody />
+	    			
+	    		
 	    	</div>
 	    </div>
 		
@@ -91,7 +96,8 @@
 		<!--[if lte IE 8]>
 		  <script src="${resource(dir: 'js', file: 'excanvas.min.js')}"></script>
 		<![endif]-->
-	
+		
+		
         <g:javascript library="ace"/>
         <r:layoutResources />
     </body>

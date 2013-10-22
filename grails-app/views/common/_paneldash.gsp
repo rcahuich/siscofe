@@ -44,14 +44,31 @@
 								<span class="menu-text"> Dashboard </span>
 							</a>
 						</li>
-
-						<li <%= request.forwardURI == "${createLink(uri: '/persona/list')}" ? ' class="active"' : '' %>>
-							<a href="${createLink(controller:'persona', action:'list')}">
+						
+						<li>
+							<a href="#" class="dropdown-toggle">
 								<i class="icon-group"></i>
 								<span class="menu-text"> Comunidad </span>
-							</a>
-						</li>
 
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li >
+									<a href="${createLink(controller:'persona', action:'list')}">
+										<i class="icon-double-angle-right"></i>
+										Asistentes
+									</a>
+								</li>
+								<li >
+									<a href="${createLink(controller:'persona', action:'create')}">
+										<i class="icon-double-angle-right"></i>
+										Nuevo Asistente
+									</a>
+								</li>
+							</ul>
+						</li>
+						
 						<li <%= request.forwardURI == "${createLink(uri: '/persona/buscar-miembro')}" ? ' class="active"' : '' %>>
 							<a href="${createLink(controller:'persona', action:'searchMember')}">
 								<i class="icon-book"></i>
@@ -65,7 +82,6 @@
 								<span class="menu-text"> Ayuda </span>
 							</a>
 						</li>
-
 						
 					</ul><!-- /.nav-list -->
 

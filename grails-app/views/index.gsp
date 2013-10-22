@@ -5,7 +5,13 @@
     </head>
 
     <body>
-		<div class="page-header position-relative">
+    
+    			<g:render template="/common/paneldash" />
+	    		
+	    		<div class="main-content">
+	    			<g:render template="/common/breadcrumbs" />
+	    			<div class="page-content">
+	    				<div class="page-header position-relative">
 						<h1>
 							Sistema de Control de Feligresia de la IASD
 							<small>
@@ -13,28 +19,25 @@
 								bienvenido
 							</small>
 						</h1>
-		</div><!--/.page-header-->
-		
-
-		
-		<div class="row">
-			<div class="col-xs-7">
-				<blockquote>
-				  <p>Jes&uacute;s nos conoce individualmente, <br>y se conmueve por el sentimiento de nuestras flaquezas.<br>
-	            	 Nos conoce a todos por nombre.</p>
-				  <small>White, DTG 445</small>
-				</blockquote>
-			</div>
-			<div class="col-xs-5">
-				<!-- <img src="${resource(dir:'images',file:'lu.png')}" alt="Adventista" border="0"/> -->
-			</div>
-		</div>
-		
-		
-          	
-          	
-          
-
+						</div><!--/.page-header-->
+						
+				
+						
+						<div class="row">
+							<div class="col-xs-7">
+								<blockquote>
+								  <p>Jes&uacute;s nos conoce individualmente, <br>y se conmueve por el sentimiento de nuestras flaquezas.<br>
+					            	 Nos conoce a todos por nombre.</p>
+								  <small>White, DTG 445</small>
+								</blockquote>
+							</div>
+							<div class="col-xs-5">
+								<!-- <img src="${resource(dir:'images',file:'lu.png')}" alt="Adventista" border="0"/> -->
+							</div>
+						</div>
+						
+	    			</div>		
+	    		</div>
 
     </body>
 </html>
