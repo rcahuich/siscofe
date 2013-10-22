@@ -8,17 +8,26 @@
         <title><g:message code="persona.lista" args="[entityName]" /></title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
+    
+    	<div class="page-header position-relative">
+						<h1>
+							Lista de Asistentes
+							<small>
+								<i class="icon-double-angle-right"></i>
+								todas las personas que llegan a la iglesia
+							</small>
+						</h1>
+		</div><!--/.page-header-->
+	
             <span class="menuButton"><g:link class="create" action="create"><g:message code="persona.nuevo" /></g:link></span>
-        </div>
-        <div class="body">
-            <h1><g:message code="persona.lista" /></h1>
+        
+        
+        
             <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
+            	<div class="message">${flash.message}</div>
             </g:if>
-            <div class="list">
-                <table>
+            
+                <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
                         
@@ -64,10 +73,8 @@
                     </g:each>
                     </tbody>
                 </table>
-            </div>
-            <div class="paginateButtons">
+                ${personaInstanceTotal}
                 <g:paginate total="${personaInstanceTotal}" />
-            </div>
-        </div>
+          
     </body>
 </html>
